@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+}
+
+.carousel {
+  max-width: 100%;
+  margin: auto;
+  padding: 0 30px;
+  min-height: 50vh;
+  position: relative;
+}
+
+.carousel .card {
+  margin: 20px 0;
+  width: 350px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img-area {
+  position: absolute;
+}
+
+.carousel-indicators {
+  bottom: 30px;
+}
+
+.carousel-indicators > li {
+  cursor: pointer;
+  border: none;
+  border-radius: 100%;
+  box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-indicators .active {
+  background: white;
+  border-color: green;
+}

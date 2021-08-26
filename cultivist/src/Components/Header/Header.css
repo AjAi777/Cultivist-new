@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+html,
+body {
+  font-family: "Open Sans";
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgb(94, 93, 93);
+  box-sizing: border-box;
+  margin: 0;
+  width: auto;
+  top: 0;
+  left: 0;
+}
+
+body {
+  overflow-y: scroll;
+  width: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.navbar {
+  background: white;
+  height: 0rem;
+  min-height: 12vh;
+  margin-right: 1rem;
+}
+
+.navbar-brand {
+  margin-left: 1rem;
+}
+
+.navbar .navbar-brand Link {
+  padding: 1rem 0rem;
+  display: block;
+}
+
+.navbar-toggler {
+  background: #28a745;
+  border: none;
+  padding: 10px 6px;
+  outline: none;
+}
+
+.navbar-toggler span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border: 1px;
+  background: #fff;
+}
+
+.navbar-toggler span + span {
+  margin-top: 4px;
+  width: 22px;
+}
+
+.navbar-toggler span + span + span {
+  width: 22px;
+}
+
+.navbar-collapse {
+  display: flex;
+  flex-direction: row;
+}
+
+Link:hover {
+  background-color: yellow;
+}
