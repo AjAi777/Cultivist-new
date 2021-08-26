@@ -1,5 +1,5 @@
 import React from "react";
-import BGgray from "../../Images/BGgray.png";
+// import BGgray from "../../Images/BGgray.png";
 
 export default function Banner() {
   return (
@@ -17,7 +17,7 @@ export default function Banner() {
             }}
           >
             <img
-              src={BGgray}
+              src="https://source.unsplash.com/546x400/?plant,plant"
               className="img-fluid d-block rounded justify-content-md-center"
               alt="Background"
               style={{
@@ -44,12 +44,6 @@ export default function Banner() {
               >
                 Find your routine
               </button>
-              {/* <button
-                type="button"
-                className="btn btn-outline-success btn-lg px-4"
-              >
-                Default
-              </button> */}
             </div>
           </div>
         </div>

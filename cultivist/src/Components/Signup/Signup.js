@@ -19,12 +19,12 @@ const Signup = () => {
 
             <div className="modal-body p-5 pt-0">
               <form>
-              <div className="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
                     type="text"
                     className="form-control rounded-4"
                     id="name"
-                    placeholder="Name"
+                    placeholder="name"
                     autoComplete="off"
                   />
                   <label htmlfor="name">Name</label>
@@ -33,11 +33,12 @@ const Signup = () => {
                   <input
                     type="tel"
                     className="form-control rounded-4"
-                    id="number"
-                    placeholder="numbet"
+                    id="phone"
+                    placeholder="phone"
+                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                     autoComplete="off"
                   />
-                  <label htmlfor="numbet">Phone no</label>
+                  <label htmlfor="number">Phone no</label>
                 </div>
                 <div className="form-floating mb-3">
                   <input
@@ -67,7 +68,7 @@ const Signup = () => {
                     placeholder="cpassword"
                     autoComplete="off"
                   />
-                  <label for="cassword">Confirm Password</label>
+                  <label for="cpassword">Confirm Password</label>
                 </div>
                 <button
                   className="w-100 mb-2 btn btn-lg rounded-4 btn-success"
@@ -79,7 +80,10 @@ const Signup = () => {
                   By clicking Sign up, you agree to the terms of use.
                 </small>
                 <hr className="my-4" />
-                <h2 className="fs-5 fw-bold mb-3">Dont have an Account?</h2>
+
+                <h2 className="fs-5 fw-bold mt-2 mb-4">
+                  Dont have an Account?
+                </h2>
                 <Link to="/signin">
                   <button
                     className="w-100 py-2 mb-2 btn btn-outline-success rounded-4"

@@ -11,10 +11,10 @@ router.get("/", (req, res) => {
 
 //signup route
 router.post("/signup", async (req, res) => {
-  const { name, email, phone, password, cpassword } = req.body; //Get Data from body
+  const { name, phone, email, password, cpassword } = req.body; //Get Data from body
 
   //Checking if user kept anything empty // Validation Check
-  if (!name || !email || !phone || !password || !cpassword) {
+  if (!name || !phone || !email || !password || !cpassword) {
     return res.status(422).json({ error: "Plz fill the field properly" });
   }
 
@@ -26,7 +26,7 @@ router.post("/signup", async (req, res) => {
     } else if (password != cpassword) {
       return res.status(422).json({ error: "Password not matching" });
     } else {
-      const user = new User({ name, email, phone, password, cpassword }); //If No, get data
+      const user = new User({ name, phone, email, password, cpassword }); //If No, get data
 
       const userSignup = await user.save(); //Save in our collection
 

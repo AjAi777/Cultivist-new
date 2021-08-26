@@ -8,7 +8,7 @@ export default function Plant() {
       <section className="py-5 text-center container">
         <div className="row py-lg-5">
           <div className="col-lg-6 col-md-8 mx-auto mt-5">
-            <h1 className="fw-light" style={{ marginTop: "30px" }}>
+            <h1 className="fw-bold" style={{ marginTop: "30px" }}>
               Plant a Tree Now
             </h1>
             <p className="lead text-muted">
@@ -33,23 +33,10 @@ export default function Plant() {
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div className="col">
               <div className="card shadow-sm">
-                <svg
-                  className="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-
+                <img
+                  src="https://source.unsplash.com/220x150/?plant,nature"
+                  alt=""
+                />
                 <div className="card-body">
                   <strong className="card-head" style={{ fontSize: "20px" }}>
                     Plant 1
@@ -88,22 +75,10 @@ export default function Plant() {
             </div>
             <div className="col">
               <div className="card shadow-sm">
-                <svg
-                  className="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
+                <img
+                  src="https://source.unsplash.com/220x150/?plant,tree"
+                  alt=""
+                />
 
                 <div className="card-body">
                   <strong className="card-head" style={{ fontSize: "20px" }}>
@@ -143,23 +118,10 @@ export default function Plant() {
             </div>
             <div className="col">
               <div className="card shadow-sm">
-                <svg
-                  className="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-
+                <img
+                  src="https://source.unsplash.com/220x150/?plant,plant"
+                  alt=""
+                />
                 <div className="card-body">
                   <strong className="card-head" style={{ fontSize: "20px" }}>
                     Plant 3
@@ -196,347 +158,11 @@ export default function Plant() {
                 </div>
               </div>
             </div>
-
-            <div className="col">
-              <div className="card shadow-sm">
-                <svg
-                  className="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-
-                <div className="card-body">
-                  <strong className="card-head" style={{ fontSize: "20px" }}>
-                    Plant 4
-                  </strong>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="d-flex justify-content-end align-items-center">
-                      <small className="d-flex" style={{ fontSize: "15px" }}>
-                        Contribution :
-                      </small>
-                      <small
-                        className="d-flex flex-start"
-                        style={{ fontSize: "14px", marginLeft: "5px" }}
-                      >
-                        ₹ 300.00
-                      </small>
-                    </div>
-                    <div className="d-flex justify-content-end align-items-center">
-                      <div className="btn-group">
-                        <button
-                          type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          style={{ backgroundColor: "green", color: "white" }}
-                        >
-                          Plant Now
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col">
-              <div className="card shadow-sm">
-                <svg
-                  className="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-
-                <div className="card-body">
-                  <strong className="card-head" style={{ fontSize: "20px" }}>
-                    Plant 5
-                  </strong>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="d-flex justify-content-end align-items-center">
-                      <small className="d-flex" style={{ fontSize: "15px" }}>
-                        Contribution :
-                      </small>
-                      <small
-                        className="d-flex flex-start"
-                        style={{ fontSize: "14px", marginLeft: "5px" }}
-                      >
-                        ₹ 300.00
-                      </small>
-                    </div>
-                    <div className="d-flex justify-content-end align-items-center">
-                      <div className="btn-group">
-                        <button
-                          type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          style={{ backgroundColor: "green", color: "white" }}
-                        >
-                          Plant Now
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col">
-              <div className="card shadow-sm">
-                <svg
-                  className="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-
-                <div className="card-body">
-                  <strong className="card-head" style={{ fontSize: "20px" }}>
-                    Plant 6
-                  </strong>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="d-flex justify-content-end align-items-center">
-                      <small className="d-flex" style={{ fontSize: "15px" }}>
-                        Contribution :
-                      </small>
-                      <small
-                        className="d-flex flex-start"
-                        style={{ fontSize: "14px", marginLeft: "5px" }}
-                      >
-                        ₹ 300.00
-                      </small>
-                    </div>
-                    <div className="d-flex justify-content-end align-items-center">
-                      <div className="btn-group">
-                        <button
-                          type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          style={{ backgroundColor: "green", color: "white" }}
-                        >
-                          Plant Now
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col">
-              <div className="card shadow-sm">
-                <svg
-                  className="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-
-                <div className="card-body">
-                  <strong className="card-head" style={{ fontSize: "20px" }}>
-                    Plant 7
-                  </strong>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="d-flex justify-content-end align-items-center">
-                      <small className="d-flex" style={{ fontSize: "15px" }}>
-                        Contribution :
-                      </small>
-                      <small
-                        className="d-flex flex-start"
-                        style={{ fontSize: "14px", marginLeft: "5px" }}
-                      >
-                        ₹ 300.00
-                      </small>
-                    </div>
-                    <div className="d-flex justify-content-end align-items-center">
-                      <div className="btn-group">
-                        <button
-                          type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          style={{ backgroundColor: "green", color: "white" }}
-                        >
-                          Plant Now
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col">
-              <div className="card shadow-sm">
-                <svg
-                  className="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-
-                <div className="card-body">
-                  <strong className="card-head" style={{ fontSize: "20px" }}>
-                    Plant 8
-                  </strong>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="d-flex justify-content-end align-items-center">
-                      <small className="d-flex" style={{ fontSize: "15px" }}>
-                        Contribution :
-                      </small>
-                      <small
-                        className="d-flex flex-start"
-                        style={{ fontSize: "14px", marginLeft: "5px" }}
-                      >
-                        ₹ 300.00
-                      </small>
-                    </div>
-                    <div className="d-flex justify-content-end align-items-center">
-                      <div className="btn-group">
-                        <button
-                          type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          style={{ backgroundColor: "green", color: "white" }}
-                        >
-                          Plant Now
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col">
-              <div className="card shadow-sm">
-                <svg
-                  className="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-
-                <div className="card-body">
-                  <strong className="card-head" style={{ fontSize: "20px" }}>
-                    Plant 9
-                  </strong>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="d-flex justify-content-end align-items-center">
-                      <small className="d-flex" style={{ fontSize: "15px" }}>
-                        Contribution :
-                      </small>
-                      <small
-                        className="d-flex flex-start"
-                        style={{ fontSize: "14px", marginLeft: "5px" }}
-                      >
-                        ₹ 300.00
-                      </small>
-                    </div>
-                    <div className="d-flex justify-content-end align-items-center">
-                      <div className="btn-group">
-                        <button
-                          type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          style={{
-                            backgroundColor: "green",
-                            color: "white",
-                          }}
-                        >
-                          Plant Now
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
     </>
   );

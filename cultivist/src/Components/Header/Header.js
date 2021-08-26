@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../Images/logo.jpg";
+import logo from "../../Images/logo.png";
 import "./Header.css";
 
 export default function Header() {
@@ -12,7 +12,7 @@ export default function Header() {
       >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <img src={logo} alt="logo" width="110" height="40" />
+            <img src={logo} alt="logo" width="120" height="38" />
           </Link>
           <button
             className="navbar-toggler"

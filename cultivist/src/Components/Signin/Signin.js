@@ -22,19 +22,19 @@ const Signin = () => {
                   <input
                     type="email"
                     className="form-control rounded-4"
-                    id="floatingInput"
+                    id="email"
                     placeholder="name@example.com"
                   />
-                  <label for="floatingInput">Email address</label>
+                  <label htmlfor="email">Email address</label>
                 </div>
                 <div className="form-floating mb-3">
                   <input
                     type="password"
                     className="form-control rounded-4"
-                    id="floatingPassword"
+                    id="password"
                     placeholder="Password"
                   />
-                  <label for="floatingPassword">Password</label>
+                  <label htmlfor="password">Password</label>
                 </div>
                 <button
                   className="w-100 mb-2 btn btn-lg rounded-4 btn-success"
@@ -46,7 +46,10 @@ const Signin = () => {
                   By clicking Sign up, you agree to the terms of use.
                 </small>
                 <hr className="my-4" />
-                <h2 className="fs-5 fw-bold mb-3">Already have an Account?</h2>
+                <br></br>
+                <h2 className="fs-5 fw-bold mt-2 mb-4">
+                  Already have an Account?
+                </h2>
                 <Link to="/signup">
                   <button
                     className="w-100 py-2 mb-2 btn btn-outline-success rounded-4"
