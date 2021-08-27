@@ -5,6 +5,7 @@ import Video from "./Video";
 import RoutineOne from "./RoutineOne";
 import RoutineTwo from "./RoutineTwo";
 import RoutineThree from "./RoutineThree";
+import Image from "./Image";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <RoutineOne />
       <RoutineTwo />
       <RoutineThree />
+      <Image />
     </>
   );
 }

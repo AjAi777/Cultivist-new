@@ -24,6 +24,8 @@ const Signin = () => {
                     className="form-control rounded-4"
                     id="email"
                     placeholder="name@example.com"
+                    pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                    required
                   />
                   <label htmlfor="email">Email address</label>
                 </div>
@@ -33,6 +35,8 @@ const Signin = () => {
                     className="form-control rounded-4"
                     id="password"
                     placeholder="Password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    required
                   />
                   <label htmlfor="password">Password</label>
                 </div>

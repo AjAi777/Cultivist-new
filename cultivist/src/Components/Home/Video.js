@@ -17,13 +17,14 @@ export default function Video() {
               type="video/mp4"
               frameBorder="0"
               controls
+              poster="https://source.unsplash.com/450x300/?plant,tree,tree"
               allowFullScreen
               style={{ width: "100%", height: "100%" }}
             ></video>
           </div>
           <div className="col-lg-6">
             <p
-              className="lead mt-5 mb-3 text-center"
+              className="lead mt-2 mb-3 text-center"
               style={{ fontSize: "17px" }}
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure

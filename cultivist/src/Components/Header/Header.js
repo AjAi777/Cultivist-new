@@ -35,6 +35,8 @@ export default function Header() {
                   className="list-group-item active"
                   aria-current="page"
                   to="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
                   style={{
                     width: "9rem",
                     height: "2.3rem",
@@ -206,6 +208,52 @@ export default function Header() {
           </div>
         </div>
       </nav>
+
+      {/* MODAL */}
+      <div
+        className="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-scrollable">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title fw-bold" id="staticBackdropLabel">
+                GET STARTED
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <p>
+                This is some placeholder content to show the scrolling behavior
+                for modals. We use repeated line breaks to demonstrate how
+                content can exceed minimum inner height, thereby showing inner
+                scrolling. When content becomes longer than the prefedined
+                max-height of modal, content will be cropped and scrollable
+                within the modal.
+              </p>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="submit"
+                data-bs-dismiss="modal"
+                className="btn btn-success"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

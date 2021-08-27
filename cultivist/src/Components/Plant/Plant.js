@@ -5,7 +5,7 @@ import "./Plant.css";
 export default function Plant() {
   return (
     <>
-      <section className="py-5 text-center container">
+      <section className="py-5 mt-5 text-center container">
         <div className="row py-lg-5">
           <div className="col-lg-6 col-md-8 mx-auto mt-5">
             <h1 className="fw-bold" style={{ marginTop: "30px" }}>
@@ -28,8 +28,8 @@ export default function Plant() {
         </div>
       </section>
 
-      <div className="album py-5 bg-light">
-        <div className="container">
+      <div className="album py-5 mb-5">
+        <div className="container mb-5">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div className="col">
               <div className="card shadow-sm">

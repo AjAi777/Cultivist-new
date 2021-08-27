@@ -3,9 +3,9 @@ import React from "react";
 export default function RoutineOne() {
   return (
     <>
-      <div className="container col-xxl-8 px-5 py-5 mb-5 text-center">
+      <div className="container col-xxl-8 px-5 py-2 mb-5 text-center">
         <div className="row">
-          <div className="col-lg-9 col-md-5 mx-auto pb-5 mt-5">
+          <div className="col-lg-9 col-md-5 mx-auto pb-5">
             <p className="lead text-muted mt-5">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
               officia accusamus, architecto temporibus fugiat natus aliquid
