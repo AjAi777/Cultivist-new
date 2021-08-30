@@ -3,3 +3,50 @@
   width: auto;
   height: auto;
 }
+
+.para {
+  margin-right: 12rem;
+}
+
+.paraa {
+  margin-right: 5rem;
+}
+
+.pura {
+  margin-left: 5rem;
+}
+
+.head {
+  margin-left: 1rem;
+}
+
+.raj {
+  margin-left: 12rem;
+}
+
+@media only screen and (max-width: 1140px) {
+  .para {
+    margin-right: 0rem;
+  }
+  .pura {
+    margin-left: 0rem;
+  }
+  .paraa {
+    margin-right: 0rem;
+  }
+  .head {
+    margin-left: 1rem;
+  }
+  .navbar-collapse .nav-item {
+    text-align: start;
+  }
+  .fam {
+    font-size: 5px;
+  }
+  .tac {
+    margin-left: 50px;
+  }
+  .tuk {
+    margin: auto;
+  }
+}

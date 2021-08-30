@@ -6,17 +6,21 @@ import RoutineOne from "./RoutineOne";
 import RoutineTwo from "./RoutineTwo";
 import RoutineThree from "./RoutineThree";
 import Image from "./Image";
+import Picture from "./Picture";
 
 export default function Home() {
   return (
     <>
-      <Banner />
-      <Video />
-      <Testimonial />
-      <RoutineOne />
-      <RoutineTwo />
-      <RoutineThree />
-      <Image />
+      <div>
+        <Banner />
+        <Video />
+        <Picture />
+        <Testimonial />
+        <RoutineOne />
+        <RoutineTwo />
+        <RoutineThree />
+        <Image />
+      </div>
     </>
   );
 }

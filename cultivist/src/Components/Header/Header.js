@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <>
       <nav
-        className="navbar navbar-expand-lg navbar-light fixed-top shadow"
+        className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm"
         style={{ width: "100%" }}
       >
         <div className="container-fluid">
@@ -28,43 +28,45 @@ export default function Header() {
             <span></span>
             <span></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav list-group ms-auto mb-2 mb-lg-0 text-center">
-              <li className="nav-item">
+          <div
+            className="navbar-collapse collapse text-center"
+            id="navbarSupportedContent"
+          >
+            <ul
+              className="navbar-nav me-auto mb-2 mb-lg-0 text-center"
+              style={{ marginLeft: "0.5rem" }}
+            >
+              <li className="nav-item head">
                 <Link
-                  className="list-group-item active"
+                  className="nav-link active"
                   aria-current="page"
                   to="#"
                   data-bs-toggle="modal"
                   data-bs-target="#staticBackdrop"
                   style={{
-                    width: "9rem",
-                    height: "2.3rem",
-                    fontSize: "0.8rem",
-                    backgroundColor: "green",
-                    color: "white",
-                    borderColor: "green",
+                    margin: "1rem 0rem 1rem 0rem",
+                    fontSize: "1rem",
+                    fontWeight: "600",
+                    color: "green",
                   }}
                 >
                   Get Started
                 </Link>
               </li>
 
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown head">
                 <Link
-                  className="list-group-item dropdown-toggle active"
+                  className="nav-link dropdown-toggle"
                   to="#"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                   style={{
-                    width: "9rem",
-                    height: "2.3rem",
-                    fontSize: "0.8rem",
-                    backgroundColor: "white",
-                    color: "green",
-                    borderColor: "green",
+                    margin: "1rem 0rem 1rem 0rem",
+                    fontSize: "1rem",
+                    fontWeight: "600",
+                    color: "lightblack",
                   }}
                 >
                   Shop
@@ -91,21 +93,19 @@ export default function Header() {
                 </ul>
               </li>
 
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown head">
                 <Link
-                  className="list-group-item dropdown-toggle active"
+                  className="nav-link dropdown-toggle"
                   to="#"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                   style={{
-                    width: "9rem",
-                    height: "2.3rem",
-                    fontSize: "0.8rem",
-                    backgroundColor: "white",
-                    color: "green",
-                    borderColor: "green",
+                    margin: "1rem 0rem 1rem 0rem",
+                    fontSize: "1rem",
+                    fontWeight: "600",
+                    color: "lightblack",
                   }}
                 >
                   Gifting
@@ -132,83 +132,87 @@ export default function Header() {
                 </ul>
               </li>
 
-              <li className="nav-item">
+              <li className="nav-item head">
                 <Link
-                  className="list-group-item active"
+                  className="nav-link "
                   aria-current="page"
                   to="#"
                   style={{
-                    width: "9rem",
-                    height: "2.3rem",
-                    fontSize: "0.8rem",
-                    backgroundColor: "white",
-                    color: "green",
-                    borderColor: "green",
+                    margin: "1rem 0rem 1rem 0rem",
+                    fontSize: "1rem",
+                    fontWeight: "600",
+                    color: "lightblack",
                   }}
                 >
                   Curated Content
                 </Link>
               </li>
 
-              <li className="nav-item">
+              <li className="nav-item head">
                 <Link
-                  className="list-group-item active"
+                  className="nav-link"
                   aria-current="page"
                   to="#"
                   style={{
-                    width: "9rem",
-                    height: "2.3rem",
-                    fontSize: "0.8rem",
-                    backgroundColor: "white",
-                    color: "green",
-                    borderColor: "green",
+                    margin: "1rem 0rem 1rem 0rem",
+                    fontSize: "1rem",
+                    fontWeight: "600",
+                    color: "lightblack",
                   }}
                 >
                   Send Post Cards
                 </Link>
               </li>
-
-              <li className="nav-item">
+              <li className="nav-item raj me-auto head">
                 <Link
-                  className="list-group-item active"
+                  className="nav-link text-end"
                   aria-current="page"
-                  to="/plant"
+                  to="#"
                   style={{
-                    width: "9rem",
-                    height: "2.3rem",
-                    fontSize: "0.8rem",
-                    backgroundColor: "white",
-                    color: "green",
-                    borderColor: "green",
+                    margin: "1rem 0rem 1rem 0rem",
+                    fontWeight: "600",
+                    fontSize: "1rem",
+                    color: "lightblack",
                   }}
                 >
-                  Plant a Tree Now
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link
-                  className="list-group-item active"
-                  aria-current="page"
-                  to="/signin"
-                  style={{
-                    width: "9rem",
-                    height: "2.3rem",
-                    fontSize: "0.8rem",
-                    backgroundColor: "white",
-                    color: "green",
-                    borderColor: "green",
-                    marginRight: "25px",
-                  }}
-                >
-                  Sign In
+                  Contact
                 </Link>
               </li>
             </ul>
+            <hr></hr>
+            <Link to="/plant">
+              <button
+                className="btn btn-success"
+                style={{
+                  width: "7rem",
+                  fontSize: "1rem",
+                  fontWeight: "600",
+                  marginRight: "1rem",
+                  borderRadius: "0.4rem",
+                }}
+              >
+                Plant Tree
+              </button>
+            </Link>
+
+            <Link to="/signin">
+              <button
+                className="btn btn-outline-success"
+                style={{
+                  width: "7rem",
+                  marginRight: "1rem",
+                  fontWeight: "600",
+                  fontSize: "1rem",
+                  borderRadius: "0.4rem",
+                  borderColor: "green",
+                }}
+              >
+                Sign In
+              </button>
+            </Link>
           </div>
         </div>
       </nav>
-
       {/* MODAL */}
       <div
         className="modal fade"
@@ -253,7 +257,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </div>{" "}
     </>
   );
 }
