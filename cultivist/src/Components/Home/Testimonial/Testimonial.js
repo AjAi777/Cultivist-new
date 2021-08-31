@@ -57,7 +57,7 @@ class Testimonial extends React.Component {
           </div>
         </div>
         <OwlCarousel className="owl-carousel owl-theme" {...options}>
-          <div className="card shadow-sm mt-4">
+          <div className="card shadow-sm mt-4 active">
             <div className="content px-4 py-4">
               <div className="row">
                 <div className="col-3">

@@ -20,7 +20,7 @@ export default function RoutineThree() {
             style={{ width: "450px", height: "270px" }}
           >
             <img
-              src="https://source.unsplash.com/450x270/?plant,bushes"
+              src="https://source.unsplash.com/450x270/?plant,forest,tree"
               className="img-fluid rounded justify-content-md-center"
               alt="BGgray"
               style={{ width: "100%", height: "100%" }}
@@ -48,7 +48,7 @@ export default function RoutineThree() {
             style={{ width: "450px", height: "270px" }}
           >
             <img
-              src="https://source.unsplash.com/450x270/?plant,tree"
+              src="https://source.unsplash.com/450x270/?plant,tree,forest"
               className="img-fluid rounded justify-content-md-center"
               alt="BGgray"
               style={{ width: "100%", height: "100%" }}

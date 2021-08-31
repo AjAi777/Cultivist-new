@@ -36,6 +36,13 @@ body {
   margin-right: 1rem;
 }
 
+ul {
+  list-style-type: none;
+}
+.nav-link {
+  position: relative;
+}
+
 .navbar-brand {
   margin-left: 1rem;
   color: "green";
@@ -46,7 +53,7 @@ body {
   transition-delay: 0s;
 }
 
-.navbar .navbar-brand Link {
+.navbar Link {
   padding: 1rem 0rem;
   display: block;
 }
@@ -58,27 +65,9 @@ body {
   outline: none;
 }
 
-.navbar-toggler span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  border: 1px;
-  background: #fff;
-}
-
-.navbar-toggler span + span {
-  margin-top: 4px;
-  width: 22px;
-}
-
-.navbar-toggler span + span + span {
-  width: 22px;
-}
-
 .navbar-collapse {
   display: flex;
   flex-direction: row;
   background-color: white;
   width: 100%;
-  margin: auto;
 }

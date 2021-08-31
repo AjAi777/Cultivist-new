@@ -32,3 +32,7 @@
 .owl-carousel .next-slide:hover {
   background-position: -24px -53px;
 }
+
+.card {
+  border-color: black;
+}

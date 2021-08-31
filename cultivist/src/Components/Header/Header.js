@@ -24,16 +24,14 @@ export default function Header() {
             aria-label="Toggle navigation"
             style={{ marginRight: "25px" }}
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <i className="bi bi-list" style={{ color: "white" }}></i>
           </button>
           <div
-            className="navbar-collapse collapse text-center"
+            className="navbar-collapse collapse text-center justify-content-between"
             id="navbarSupportedContent"
           >
             <ul
-              className="navbar-nav me-auto mb-2 mb-lg-0 text-center"
+              className="navbar-nav ml-auto mb-2 mb-lg-0 text-center"
               style={{ marginLeft: "0.5rem" }}
             >
               <li className="nav-item head">
@@ -163,13 +161,13 @@ export default function Header() {
                   Send Post Cards
                 </Link>
               </li>
-              <li className="nav-item raj me-auto head">
+              <li className="nav-item head raj">
                 <Link
-                  className="nav-link text-end"
+                  className="nav-link"
                   aria-current="page"
                   to="#"
                   style={{
-                    margin: "1rem 0rem 1rem 0rem",
+                    margin: "1rem 1rem 1rem 0rem",
                     fontWeight: "600",
                     fontSize: "1rem",
                     color: "lightblack",
@@ -178,38 +176,43 @@ export default function Header() {
                   Contact
                 </Link>
               </li>
+              <hr></hr>
+              <li className="d-flex align-items-center nav-item">
+                <Link to="/plant">
+                  <button
+                    className="btn btn-success"
+                    style={{
+                      width: "7rem",
+                      margin: "1rem 1rem 1rem 0rem",
+                      fontSize: "1rem",
+                      fontWeight: "600",
+                      marginRight: "1rem",
+                      borderRadius: "0.4rem",
+                    }}
+                  >
+                    Plant Tree
+                  </button>
+                </Link>
+              </li>
+              <li className="d-flex align-items-center nav-item">
+                <Link to="/signin">
+                  <button
+                    className="btn btn-outline-success"
+                    style={{
+                      width: "7rem",
+                      marginRight: "1rem",
+                      margin: "1rem 1rem 1rem 0rem",
+                      fontWeight: "600",
+                      fontSize: "1rem",
+                      borderRadius: "0.4rem",
+                      borderColor: "green",
+                    }}
+                  >
+                    Sign In
+                  </button>
+                </Link>
+              </li>
             </ul>
-            <hr></hr>
-            <Link to="/plant">
-              <button
-                className="btn btn-success"
-                style={{
-                  width: "7rem",
-                  fontSize: "1rem",
-                  fontWeight: "600",
-                  marginRight: "1rem",
-                  borderRadius: "0.4rem",
-                }}
-              >
-                Plant Tree
-              </button>
-            </Link>
-
-            <Link to="/signin">
-              <button
-                className="btn btn-outline-success"
-                style={{
-                  width: "7rem",
-                  marginRight: "1rem",
-                  fontWeight: "600",
-                  fontSize: "1rem",
-                  borderRadius: "0.4rem",
-                  borderColor: "green",
-                }}
-              >
-                Sign In
-              </button>
-            </Link>
           </div>
         </div>
       </nav>
@@ -257,7 +260,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </div>{" "}
+      </div>
     </>
   );
 }
