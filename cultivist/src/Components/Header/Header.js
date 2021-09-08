@@ -165,9 +165,9 @@ export default function Header() {
                 <Link
                   className="nav-link"
                   aria-current="page"
-                  to="#"
+                  to="/contact"
                   style={{
-                    margin: "1rem 1rem 1rem 0rem",
+                    margin: "1rem 1.5rem 1rem 0rem",
                     fontWeight: "600",
                     fontSize: "1rem",
                     color: "lightblack",
@@ -182,7 +182,7 @@ export default function Header() {
                   <button
                     className="btn btn-success"
                     style={{
-                      width: "7rem",
+                      width: "8rem",
                       margin: "1rem 1rem 1rem 0rem",
                       fontSize: "1rem",
                       fontWeight: "600",
@@ -190,7 +190,7 @@ export default function Header() {
                       borderRadius: "0.4rem",
                     }}
                   >
-                    Plant Tree
+                    Plant a Tree
                   </button>
                 </Link>
               </li>
@@ -222,7 +222,7 @@ export default function Header() {
         id="staticBackdrop"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >

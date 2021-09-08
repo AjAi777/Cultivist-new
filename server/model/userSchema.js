@@ -10,10 +10,12 @@ const userSchema = new mongoose.Schema({
   phone: {
     type: Number,
     required: true,
+    unique: true,
   },
   email: {
     type: String,
     required: true,
+    unique: true,
   },
   password: {
     type: String,
@@ -46,7 +48,7 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.generateAuthToken = async function () {
   try {
     let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY); //Get id of user
-    this.tokens = this.tokens.concat({ token: token });
+    this.tokens = this.tokens.concat({ token : token });
     await this.save();
     return token;
   } catch {

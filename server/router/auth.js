@@ -1,6 +1,8 @@
+const jwt = require("jsonwebtoken");
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
+const authenticate = require("../middleware/authenticate");
 
 require("../db/conn");
 const User = require("../model/userSchema");
@@ -30,20 +32,20 @@ router.post("/signup", async (req, res) => {
 
       const userSignup = await user.save(); //Save in our collection
 
-      console.log("user registered successfully");
-      console.log(userSignup);
-
-      res.status(201).json({ message: "user registered successfully" }); // User Registered
+      if (userSignup) {
+        res.status(201).json({ message: "Successfully Signup" }); // User Registered
+      } else {
+        res.status(500).json({ error: "Failed Signup" });
+      }
     }
   } catch (err) {
     console.log(err);
   }
 });
 
-//login route
+//signin route
 router.post("/signin", async (req, res) => {
   try {
-    let token;
     const { email, password } = req.body; //Get Data from body
 
     //Checking if user kept anything empty
@@ -77,6 +79,12 @@ router.post("/signin", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+// Get user data for contact us
+router.get("/getdata", authenticate, (req, res) => {
+  console.log("Get my Data");
+  res.send(req.rootUser);
 });
 
 module.exports = router;

@@ -37,7 +37,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li className="nav-item mb-2">
-                  <Link to="#" className="nav-link p-0 ">
+                  <Link to="/faq" className="nav-link p-0 ">
                     FAQs
                   </Link>
                 </li>
@@ -64,7 +64,7 @@ export default function Footer() {
                 </li>
                 <li className="nav-item mb-2">
                   <Link to="#" className="nav-link p-0 ">
-                    Blog
+                    Terms &amp; Conditions
                   </Link>
                 </li>
               </ul>
@@ -74,23 +74,23 @@ export default function Footer() {
               <h6>SOCIAL</h6>
               <ul className="nav flex-column">
                 <li className="nav-item mb-2">
+                  <Link to="#" className="nav-link p-0 ">
+                    <i className="bi bi-linkedin" /> <span>Linkedin</span>
+                  </Link>
+                </li>
+                <li className="nav-item mb-2">
                   <Link to="#" className="nav-link p-0">
                     <i className="bi bi-facebook" /> <span>Facebook</span>
                   </Link>
                 </li>
                 <li className="nav-item mb-2">
                   <Link to="#" className="nav-link p-0 ">
-                    <i className="bi bi-linkedin" /> <span>Linkedin</span>
+                    <i className="bi bi-instagram" /> <span>Instagram</span>
                   </Link>
                 </li>
                 <li className="nav-item mb-2">
                   <Link to="#" className="nav-link p-0 ">
                     <i className="bi bi-twitter" /> <span>Twitter</span>
-                  </Link>
-                </li>
-                <li className="nav-item mb-2">
-                  <Link to="#" className="nav-link p-0 ">
-                    <i className="bi bi-youtube" /> <span>Youtube</span>
                   </Link>
                 </li>
               </ul>

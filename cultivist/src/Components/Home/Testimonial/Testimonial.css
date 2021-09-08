@@ -1,35 +1,38 @@
 .nav-btn {
   height: 47px;
   position: absolute;
-  width: 26px;
+  width: 23px;
   cursor: pointer;
   top: 90px !important;
+  padding: 10px;
+  background-color: black;
 }
 
-.owl-carousel .owl-prev.disabled,
-.owl-carousel .owl-next.disabled {
-  pointer-events: none;
-  opacity: 0.2;
+.owl-theme .owl-nav [class*="owl-"] {
+  position: absolute;
+  top: 33%;
 }
 
-.owl-carousel .prev-slide {
-  left: -23.5px;
-  padding: 10px 0px 5px 0px;
-  background-color: lightgray;
+.owl-carousel .owl-nav button.owl-prev {
+  left: -27px;
+  height: 60px;
+  width: 22px;
+  background: lightgray;
   color: white;
-  border-radius: 1px;
+  border-radius: 2px;
 }
-.owl-carousel .next-slide {
-  right: -23.5px;
-  padding: 10px 0px 5px 0px;
-  background-color: lightgray;
+.owl-carousel .owl-nav button.owl-next {
+  right: -27px;
+  height: 60px;
+  width: 22px;
+  background: lightgray;
   color: white;
-  border-radius: 1px;
+  border-radius: 2px;
 }
-.owl-carousel .prev-slide:hover {
+.owl-carousel .owl-prev:hover {
   background-position: 0px -53px;
 }
-.owl-carousel .next-slide:hover {
+.owl-carousel .owl-next:hover {
   background-position: -24px -53px;
 }
 

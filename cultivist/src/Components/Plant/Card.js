@@ -5,7 +5,10 @@ export default function Card() {
     <>
       <div className="album jadoo py-5 bg-light mb-5">
         <div className="container">
-          <h1 className="fw-bold text-center" style={{ margin: "10px 0 40px 0" }}>
+          <h1
+            className="fw-bold text-center"
+            style={{ margin: "10px 0 40px 0" }}
+          >
             Plants
           </h1>
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -40,8 +43,7 @@ export default function Card() {
                       <div className="btn-group">
                         <button
                           type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          style={{ backgroundColor: "green", color: "white" }}
+                          className="btn btn-sm btn-success"
                         >
                           Plant Now
                         </button>
@@ -83,8 +85,7 @@ export default function Card() {
                       <div className="btn-group">
                         <button
                           type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          style={{ backgroundColor: "green", color: "white" }}
+                          className="btn btn-sm btn-success"
                         >
                           Plant Now
                         </button>
@@ -125,8 +126,7 @@ export default function Card() {
                       <div className="btn-group">
                         <button
                           type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          style={{ backgroundColor: "green", color: "white" }}
+                          className="btn btn-sm btn-success"
                         >
                           Plant Now
                         </button>

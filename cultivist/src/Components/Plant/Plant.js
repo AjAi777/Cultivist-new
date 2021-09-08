@@ -26,7 +26,7 @@ export default function Plant() {
                   <img
                     src="https://source.unsplash.com/60x60/?forest,logo"
                     alt="bd"
-                    style={{ width: "60px", height: "60px" }}
+                    style={{ width: "80px", height: "80px" }}
                   />
                 </div>
                 <div
@@ -41,7 +41,7 @@ export default function Plant() {
                   <img
                     src="https://source.unsplash.com/60x60/?plant,logo"
                     alt="bd"
-                    style={{ width: "60px", height: "60px" }}
+                    style={{ width: "80px", height: "80px" }}
                   />
                 </div>
                 <div
@@ -56,7 +56,7 @@ export default function Plant() {
                   <img
                     src="https://source.unsplash.com/60x60/?tree,logo"
                     alt="bd"
-                    style={{ width: "60px", height: "60px" }}
+                    style={{ width: "80px", height: "80px" }}
                   />
                 </div>
                 <div
@@ -71,7 +71,7 @@ export default function Plant() {
                   <img
                     src="https://source.unsplash.com/60x60/?bushes,logo"
                     alt="bd"
-                    style={{ width: "60px", height: "60px" }}
+                    style={{ width: "80px", height: "80px" }}
                   />
                 </div>
                 <div
@@ -93,7 +93,7 @@ export default function Plant() {
               style={{ width: "1000px", height: "500px" }}
             ></img>
             <button
-              className="btn mt-4 btn-outline-secondary btn-lg justify-content-center"
+              className="btn mt-4 btn-outline-success btn-lg justify-content-center"
               style={{ width: "150px" }}
             >
               Buy Now

@@ -1,13 +1,72 @@
-import React from "react";
-
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 const Signup = () => {
+  const history = useHistory();
+  const [user, setUser] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+    cpassword: "",
+  });
+
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+
+  const [cpasswordShown, setCPasswordShown] = useState(false);
+  const toggleCPasswordVisiblity = () => {
+    setCPasswordShown(cpasswordShown ? false : true);
+  };
+
+  let name, value;
+
+  const handleInputs = (e) => {
+    console.log(e);
+    name = e.target.name;
+    value = e.target.value;
+
+    setUser({ ...user, [name]: value });
+  };
+
+  const PostData = async (e) => {
+    e.preventDefault();
+
+    const { name, phone, email, password, cpassword } = user;
+
+    const res = await fetch("/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        email,
+        password,
+        cpassword,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (res.status === 422 || !data) {
+      window.alert("Invalid Credentials");
+      console.log("Invalid Credentials");
+    } else {
+      window.alert("Signup Successful");
+      console.log("Signup Successful");
+      history.push("/signin");
+    }
+  };
+
   return (
     <>
       <div
         className="modal modal-signin position-static d-block mt-5 py-5"
-        tabindex="-1"
+        tabIndex="-1"
         role="dialog"
         id="modalSignin"
       >
@@ -18,7 +77,7 @@ const Signup = () => {
             </div>
 
             <div className="modal-body p-5 pt-0">
-              <form>
+              <form method="POST" className="signup-form">
                 <div className="form-floating mb-3">
                   <input
                     type="text"
@@ -27,9 +86,11 @@ const Signup = () => {
                     id="name"
                     placeholder="name"
                     autoComplete="off"
+                    value={user.name}
+                    onChange={handleInputs}
                     required
                   />
-                  <label htmlfor="name">Name</label>
+                  <label htmlFor="name">Name</label>
                 </div>
                 <div className="form-floating mb-3">
                   <input
@@ -39,12 +100,14 @@ const Signup = () => {
                     id="phone"
                     placeholder="number"
                     autoComplete="off"
+                    value={user.phone}
+                    onChange={handleInputs}
                     pattern="[789][0-9]{9}"
                     min="10"
                     max="15"
                     required
                   />
-                  <label htmlfor="phone">Phone no</label>
+                  <label htmlFor="phone">Phone no</label>
                 </div>
                 <div className="form-floating mb-3">
                   <input
@@ -55,34 +118,64 @@ const Signup = () => {
                     placeholder="name@example.com"
                     pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
                     autoComplete="off"
+                    value={user.email}
+                    onChange={handleInputs}
                     required
                   />
-                  <label htmlfor="email">Email address</label>
+                  <label htmlFor="email">Email address</label>
                 </div>
-                <div className="form-floating mb-3">
+                <div className="form-floating input-group mb-3">
                   <input
-                    type="password"
+                    type={passwordShown ? "text" : "password"}
                     name="password"
                     className="form-control rounded-4"
                     id="password"
                     placeholder="password"
                     autoComplete="off"
+                    value={user.password}
+                    onChange={handleInputs}
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                     required
                   />
-                  <label for="password">Password</label>
+                  <label htmlFor="password">
+                    Password (minimum 8 characters)
+                  </label>
+                  <div className="input-group-text bg-white">
+                    <i
+                      className={
+                        passwordShown
+                          ? "bi bi-eye-fill"
+                          : "bi bi-eye-slash-fill"
+                      }
+                      onClick={togglePasswordVisiblity}
+                      style={{ cursor: "pointer" }}
+                    />
+                  </div>
                 </div>
-                <div className="form-floating mb-3">
+                <div className="form-floating input-group mb-3">
                   <input
-                    type="cpassword"
+                    type={cpasswordShown ? "text" : "password"}
                     name="cpassword"
                     className="form-control rounded-4"
                     id="cpassword"
                     placeholder="cpassword"
                     autoComplete="off"
+                    value={user.cpassword}
+                    onChange={handleInputs}
                     required
                   />
-                  <label for="cpassword">Confirm Password</label>
+                  <label htmlFor="cpassword">Confirm Password</label>
+                  <div className="input-group-text bg-white">
+                    <i
+                      className={
+                        cpasswordShown
+                          ? "bi bi-eye-fill"
+                          : "bi bi-eye-slash-fill"
+                      }
+                      onClick={toggleCPasswordVisiblity}
+                      style={{ cursor: "pointer" }}
+                    />
+                  </div>
                 </div>
                 <div className="col-12 mb-4">
                   <div className="form-check">
@@ -93,7 +186,10 @@ const Signup = () => {
                       id="invalidCheck"
                       required
                     />
-                    <label className="form-check-label ml-2" for="invalidCheck">
+                    <label
+                      className="form-check-label ml-2"
+                      htmlFor="invalidCheck"
+                    >
                       Agree to the Terms and Conditions
                     </label>
                     <div className="invalid-feedback">
@@ -102,12 +198,16 @@ const Signup = () => {
                   </div>
                 </div>
 
-                <button
-                  className="w-100 mb-2 btn btn-lg rounded-4 btn-success"
-                  type="submit"
-                >
-                  Sign up
-                </button>
+                <div className="form-floating form-button">
+                  <input
+                    type="submit"
+                    name="signup"
+                    className="form-submit w-100 mb-2 btn btn-lg rounded-4 btn-success"
+                    id="signup"
+                    value="Sign up"
+                    onClick={PostData}
+                  />
+                </div>
 
                 <hr className="my-4" />
 

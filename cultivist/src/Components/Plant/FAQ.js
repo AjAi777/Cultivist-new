@@ -9,9 +9,9 @@ export default function FAQ() {
           id="accordionFlushExample"
           style={{ margin: "0px 40px 0px 40px" }}
         >
-          <h3 className="fw-bold" style={{ margin: "10px 0 40px 0" }}>
+          <h2 className="fw-bold" style={{ margin: "10px 0 40px 0" }}>
             FAQs
-          </h3>
+          </h2>
           <div class="accordion-item shadow-sm">
             <h2 class="accordion-header" id="flush-headingOne">
               <button
