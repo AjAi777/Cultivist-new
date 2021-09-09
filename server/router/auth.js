@@ -82,9 +82,9 @@ router.post("/signin", async (req, res) => {
 });
 
 // Get user data for contact us
-router.post("/getdata", authenticate, (req, res) => {
+router.get("/getdata", authenticate, (req, res) => {
   console.log("Get my Data");
-  res.send(req.User);
+  res.send(req.rootUser);
 });
 
 module.exports = router;
