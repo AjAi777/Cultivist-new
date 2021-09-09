@@ -37,26 +37,45 @@ const userSchema = new mongoose.Schema({
 
 //hashing the password using bcrypt
 userSchema.pre("save", async function (next) {
-  if (this.isModified("password")) {
-    this.password = await bcrypt.hash(this.password, 12);
-    this.cpassword = await bcrypt.hash(this.cpassword, 12);
+  const user = this;
+  if (user.isModified("password")) {
+    user.password = await bcrypt.hash(user.password, 12);
+    user.cpassword = await bcrypt.hash(user.cpassword, 12);
   }
   next();
 });
 
 //Generating token
+// userSchema.methods.generateAuthToken = async function () {
+//   try {
+//     let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY); //Get id of user
+//     this.tokens = this.tokens.concat({ token : token });
+//     await this.save();
+//     return token;
+//   } catch {
+//     console.log(err);
+//   }
+// };
+
 userSchema.methods.generateAuthToken = async function () {
+  const user = this;
+  // generate token
   try {
-    let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY); //Get id of user
-    this.tokens = this.tokens.concat({ token : token });
-    await this.save();
+    const token = jwt.sign(
+      { _id: user._id.toString() },
+      process.env.SECRET_KEY
+    );
+
+    // add token to user model
+    user.tokens = user.tokens.concat({ token });
+    await user.save();
     return token;
-  } catch {
-    console.log(err);
+  } catch (e) {
+    throw new Error(e);
   }
 };
 
 //collection creation
-const User = mongoose.model("USER", userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;

@@ -60,7 +60,7 @@ router.post("/signin", async (req, res) => {
       //Password match check
       const isMatch = await bcrypt.compare(password, userSignin.password);
 
-      token = await userSignin.generateAuthToken(); //Generate user auth token
+      const token = await userSignin.generateAuthToken(); //Generate user auth token
       console.log(token);
 
       res.cookie("jwtoken", token, {
@@ -82,9 +82,9 @@ router.post("/signin", async (req, res) => {
 });
 
 // Get user data for contact us
-router.get("/getdata", authenticate, (req, res) => {
+router.post("/getdata", authenticate, (req, res) => {
   console.log("Get my Data");
-  res.send(req.rootUser);
+  res.send(req.User);
 });
 
 module.exports = router;
