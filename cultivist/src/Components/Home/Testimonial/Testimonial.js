@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+import ReactOwlCarousel from "react-owl-carousel";
 import { Link } from "react-router-dom";
 import Person from "../../../Images/Person.png";
 import Quote from "../../../Images/Quote.png";
@@ -46,17 +44,21 @@ class Testimonial extends Component {
             </div>
           </div>
 
-          <OwlCarousel
+          <ReactOwlCarousel
             className="owl-carousel mt-5 owl-theme"
             margin={10}
+            nav={true}
             items={3}
             loop={true}
             dots={true}
             autoplay={true}
             autoplaySpeed={500}
             responsiveClass={true}
-            smartSpeed={900}
-            navText={["<", ">"]}
+            smartSpeed={500}
+            navText={[
+              "<i class='bi bi-chevron-left'/>",
+              "<i class='bi bi-chevron-right'/>",
+            ]}
             responsive={this.state.responsive}
           >
             <div className="card item shadow-sm mt-4 active">
@@ -364,7 +366,7 @@ class Testimonial extends Component {
                 </div>
               </div>
             </div>
-          </OwlCarousel>
+          </ReactOwlCarousel>
         </div>
       </>
     );
