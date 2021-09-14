@@ -10,6 +10,6 @@ mongoose
     useFindAndModify: false,
   })
   .then(() => {
-    console.log("connection successful");
+    console.log("Connect to Mongo Successfully");
   })
-  .catch((err) => console.log("no connection"));
+  .catch((err) => console.log("No connection"));

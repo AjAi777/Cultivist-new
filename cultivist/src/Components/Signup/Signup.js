@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-const Signup = () => {
-  const history = useHistory();
-  const [user, setUser] = useState({
+const Signup = (props) => {
+  let history = useHistory();
+
+  const [credentials, setCredentials] = useState({
     name: "",
     phone: "",
     email: "",
@@ -16,27 +17,16 @@ const Signup = () => {
     setPasswordShown(passwordShown ? false : true);
   };
 
-  const [cpasswordShown, setCPasswordShown] = useState(false);
-  const toggleCPasswordVisiblity = () => {
-    setCPasswordShown(cpasswordShown ? false : true);
+  const [passwordCShown, setPasswordCShown] = useState(false);
+  const togglePasswordCVisiblity = () => {
+    setPasswordCShown(passwordCShown ? false : true);
   };
 
-  let name, value;
-
-  const handleInputs = (e) => {
-    console.log(e);
-    name = e.target.name;
-    value = e.target.value;
-
-    setUser({ ...user, [name]: value });
-  };
-
-  const PostData = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const { name, phone, email, password } = credentials;
 
-    const { name, phone, email, password, cpassword } = user;
-
-    const res = await fetch("/signup", {
+    const response = await fetch("http://localhost:4000/api/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,38 +36,44 @@ const Signup = () => {
         phone,
         email,
         password,
-        cpassword,
       }),
     });
-
-    const data = await res.json();
-
-    if (res.status === 422 || !data) {
-      window.alert("Invalid Credentials");
-      console.log("Invalid Credentials");
-    } else {
-      window.alert("Signup Successful");
-      console.log("Signup Successful");
+    const json = await response.json();
+    console.log(json);
+    if (json.success) {
+      // Save the auth token and redirect
+      localStorage.setItem('token', json.authtoken); 
+      props.showAlert("Account Created Successfully", "success");
       history.push("/signin");
+    } else {
+      props.showAlert("Invalid Details", "danger");
     }
+  };
+
+  const onChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
   return (
     <>
       <div
-        className="modal modal-signin position-static d-block mt-5 py-5"
+        className="modal modal-signin position-static d-block mt-3 pb-5"
         tabIndex="-1"
         role="dialog"
         id="modalSignin"
       >
-        <div className="modal-dialog mt-5 mb-5" role="document">
+        <div className="modal-dialog mb-5" role="document">
           <div className="modal-content rounded-5 shadow">
             <div className="modal-header p-5 pb-4 border-bottom-0">
               <h2 className="fw-bold mb-0 ">Sign up</h2>
             </div>
 
             <div className="modal-body p-5 pt-0">
-              <form method="POST" className="signup-form">
+              <form
+                method="POST"
+                className="signup-form"
+                onSubmit={handleSubmit}
+              >
                 <div className="form-floating mb-3">
                   <input
                     type="text"
@@ -86,25 +82,23 @@ const Signup = () => {
                     id="name"
                     placeholder="name"
                     autoComplete="off"
-                    value={user.name}
-                    onChange={handleInputs}
+                    value={credentials.name}
+                    onChange={onChange}
                     required
                   />
                   <label htmlFor="name">Name</label>
                 </div>
                 <div className="form-floating mb-3">
                   <input
-                    type="tel"
+                    type="phone"
                     name="phone"
                     className="form-control rounded-4"
                     id="phone"
-                    placeholder="number"
+                    placeholder="phone"
                     autoComplete="off"
-                    value={user.phone}
-                    onChange={handleInputs}
-                    pattern="[789][0-9]{9}"
-                    min="10"
-                    max="15"
+                    value={credentials.phone}
+                    onChange={onChange}
+                    minLength="5"
                     required
                   />
                   <label htmlFor="phone">Phone no</label>
@@ -115,31 +109,29 @@ const Signup = () => {
                     name="email"
                     className="form-control rounded-4"
                     id="email"
-                    placeholder="name@example.com"
-                    pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
                     autoComplete="off"
-                    value={user.email}
-                    onChange={handleInputs}
+                    placeholder="email"
+                    value={credentials.email}
+                    onChange={onChange}
                     required
                   />
                   <label htmlFor="email">Email address</label>
                 </div>
-                <div className="form-floating input-group mb-3">
+                <div className="form-floating input-group mb-1">
                   <input
                     type={passwordShown ? "text" : "password"}
-                    name="password"
                     className="form-control rounded-4"
+                    name="password"
                     id="password"
                     placeholder="password"
+                    aria-describedby="passwordHelp"
+                    value={credentials.password}
                     autoComplete="off"
-                    value={user.password}
-                    onChange={handleInputs}
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    onChange={onChange}
+                    minLength="8"
                     required
                   />
-                  <label htmlFor="password">
-                    Password (minimum 8 characters)
-                  </label>
+                  <label htmlFor="password">Password</label>
                   <div className="input-group-text bg-white">
                     <i
                       className={
@@ -152,27 +144,36 @@ const Signup = () => {
                     />
                   </div>
                 </div>
+                <div
+                  id="passwordHelp"
+                  className="form-text mb-3"
+                  style={{ marginLeft: "10px" }}
+                >
+                  *Minimum 8 Characters
+                </div>
+
                 <div className="form-floating input-group mb-3">
                   <input
-                    type={cpasswordShown ? "text" : "password"}
-                    name="cpassword"
+                    type={passwordCShown ? "text" : "password"}
                     className="form-control rounded-4"
+                    name="cpassword"
                     id="cpassword"
                     placeholder="cpassword"
+                    aria-describedby="passwordHelp"
+                    value={credentials.cpassword}
                     autoComplete="off"
-                    value={user.cpassword}
-                    onChange={handleInputs}
+                    onChange={onChange}
                     required
                   />
                   <label htmlFor="cpassword">Confirm Password</label>
                   <div className="input-group-text bg-white">
                     <i
                       className={
-                        cpasswordShown
+                        passwordCShown
                           ? "bi bi-eye-fill"
                           : "bi bi-eye-slash-fill"
                       }
-                      onClick={toggleCPasswordVisiblity}
+                      onClick={togglePasswordCVisiblity}
                       style={{ cursor: "pointer" }}
                     />
                   </div>
@@ -205,7 +206,6 @@ const Signup = () => {
                     className="form-submit w-100 mb-2 btn btn-lg rounded-4 btn-success"
                     id="signup"
                     value="Sign up"
-                    onClick={PostData}
                   />
                 </div>
 

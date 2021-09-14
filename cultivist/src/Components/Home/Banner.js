@@ -5,7 +5,7 @@ export default function Banner() {
   return (
     <>
       <section className="background firstSection py-5">
-        <div className="box-main py-5 mt-3">
+        <div className="box-main py-5 ">
           <div className="firstHalf text-center justify-content-md-center">
             <h1 className="display-4 fw-bold text-big">We are Cultivist</h1>
             <p className="fx-bold text-small mt-3">

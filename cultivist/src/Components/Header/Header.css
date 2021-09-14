@@ -71,3 +71,9 @@ ul {
   background-color: white;
   width: 100%;
 }
+
+@media (min-width: 992px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}

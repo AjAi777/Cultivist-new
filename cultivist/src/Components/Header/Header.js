@@ -1,9 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import logo from "../../Images/logo.png";
 import "./Header.css";
 
 export default function Header() {
+  let history = useHistory();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    history.push("/signin");
+  };
   return (
     <>
       <nav
@@ -51,7 +56,6 @@ export default function Header() {
                   Get Started
                 </Link>
               </li>
-
               <li className="nav-item dropdown head">
                 <Link
                   className="nav-link dropdown-toggle"
@@ -90,7 +94,6 @@ export default function Header() {
                   </li>
                 </ul>
               </li>
-
               <li className="nav-item dropdown head">
                 <Link
                   className="nav-link dropdown-toggle"
@@ -129,7 +132,6 @@ export default function Header() {
                   </li>
                 </ul>
               </li>
-
               <li className="nav-item head">
                 <Link
                   className="nav-link "
@@ -145,7 +147,6 @@ export default function Header() {
                   Curated Content
                 </Link>
               </li>
-
               <li className="nav-item head">
                 <Link
                   className="nav-link"
@@ -194,8 +195,26 @@ export default function Header() {
                   </button>
                 </Link>
               </li>
+
               <li className="d-flex align-items-center nav-item">
-                <Link to="/signin">
+                {!localStorage.getItem("token") ? (
+                  <Link to="/signin">
+                    <button
+                      className="btn btn-outline-success"
+                      style={{
+                        width: "7rem",
+                        marginRight: "1rem",
+                        margin: "1rem 1rem 1rem 0rem",
+                        fontWeight: "600",
+                        fontSize: "1rem",
+                        borderRadius: "0.4rem",
+                        borderColor: "green",
+                      }}
+                    >
+                      Sign In
+                    </button>
+                  </Link>
+                ) : (
                   <button
                     className="btn btn-outline-success"
                     style={{
@@ -207,10 +226,11 @@ export default function Header() {
                       borderRadius: "0.4rem",
                       borderColor: "green",
                     }}
+                    onClick={handleLogout}
                   >
-                    Sign In
+                    Sign Out
                   </button>
-                </Link>
+                )}
               </li>
             </ul>
           </div>

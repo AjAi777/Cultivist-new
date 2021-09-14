@@ -24,6 +24,12 @@
   margin-left: 11rem;
 }
 
+.accordion-flush .accordion-item .accordion-button {
+  border-radius: 2px;
+  border-color: black;
+  border: 2px;
+}
+
 @media only screen and (max-width: 1140px) {
   .para {
     margin-right: 0rem;

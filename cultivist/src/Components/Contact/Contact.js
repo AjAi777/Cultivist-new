@@ -7,10 +7,11 @@ const Contact = () => {
 
   const callContactPage = async () => {
     try {
-      const res = await fetch("/getdata", {
+      const res = await fetch("/contact", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
+          "auth-token": "authToken"
         },
       });
 
@@ -32,8 +33,8 @@ const Contact = () => {
   return (
     <>
       <div
-        className="contact_info jadoo py-5"
-        style={{ marginTop: "15vh", marginBottom: "15vh" }}
+        className="contact_info jadoo pb-5"
+        style={{ marginTop: "5vh", marginBottom: "15vh" }}
       >
         <div className="container">
           <section className="my-5 col-lg-10 offset-lg-1">
