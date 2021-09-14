@@ -56,7 +56,7 @@ router.post(
       //   httpOnly: false,
       //   secure: false,
       // });
-
+      console.log(authtoken);
       success = true;
       res.json({ success, authtoken });
     } catch (error) {
@@ -97,7 +97,7 @@ router.post(
         success = false;
         return res.status(400).json({ success, error: "Invalid Credentials" });
       }
-
+      
       // Auth Token
       const data = {
         user: {
@@ -106,10 +106,7 @@ router.post(
       };
       const authtoken = jwt.sign(data, process.env.SECRET_KEY);
 
-      // res.cookie("authToken", token, {
-      //   httpOnly: false,
-      //   secure: false,
-      // });
+      console.log(authtoken);
 
       success = true;
       res.json({ success, authtoken });

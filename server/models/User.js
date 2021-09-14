@@ -22,15 +22,16 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  // tokens: [
-  //   {
-  //     token: {
-  //       type: String,
-  //       required: true,
-  //     },
-  //   },
-  // ],
+  tokens: [
+    {
+      token: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
 });
+
 
 //collection creation
 const User = mongoose.model("User", userSchema);
