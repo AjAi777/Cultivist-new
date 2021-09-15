@@ -97,7 +97,7 @@ router.post(
         success = false;
         return res.status(400).json({ success, error: "Invalid Credentials" });
       }
-      
+
       // Auth Token
       const data = {
         user: {
