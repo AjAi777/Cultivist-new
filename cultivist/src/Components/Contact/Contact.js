@@ -1,34 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
-  const [userData, setUserData] = useState({});
+  const [credentials, setCredentials] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
 
-  const callContactPage = async () => {
-    try {
-      const res = await fetch("/contact", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token": "authToken",
-        },
-      });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-      const data = await res.json();
-      setUserData(data);
-
-      if (!res.status === 200) {
-        throw new Error(res.error);
-      }
-    } catch (err) {
-      console.log(err);
+    const response = await fetch("http://localhost:4000/api/help/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: credentials.name,
+        phone: credentials.phone,
+        email: credentials.email,
+        message: credentials.message,
+      }),
+    });
+    const json = await response.json();
+    if (json.success) {
+      // Save the auth token and redirect
+      localStorage.setItem("help", json.contact);
     }
   };
 
-  useEffect(() => {
-    callContactPage();
-  }, []);
+  const onChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
 
   return (
     <>
@@ -101,7 +107,11 @@ const Contact = () => {
                   style={{ border: "1px solid lightgray" }}
                 >
                   <div className="card-body">
-                    <form method="GET" className="contact-form">
+                    <form
+                      method="POST"
+                      className="contact-form"
+                      onSubmit={handleSubmit}
+                    >
                       <div className="form-header ">
                         <h3 className="fw-bold" style={{ color: "green" }}>
                           Have a general question?
@@ -120,7 +130,8 @@ const Contact = () => {
                           id="name"
                           placeholder="name"
                           autoComplete="off"
-                          value={userData.name}
+                          onChange={onChange}
+                          value={credentials.name}
                           required
                         />
                         <label htmlFor="name">Your Name</label>
@@ -128,16 +139,14 @@ const Contact = () => {
 
                       <div className="form-floating mb-2">
                         <input
-                          type="tel"
+                          type="phone"
                           name="phone"
                           className="form-control form-control-sm"
                           id="phone"
                           placeholder="number"
                           autoComplete="off"
-                          pattern="[789][0-9]{9}"
-                          min="10"
-                          max="15"
-                          value={userData.phone}
+                          onChange={onChange}
+                          value={credentials.phone}
                           required
                         />
                         <label htmlFor="phone">Your Phone no</label>
@@ -149,9 +158,9 @@ const Contact = () => {
                           className="form-control form-control-sm"
                           id="email"
                           placeholder="name@example.com"
-                          pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                          onChange={onChange}
                           autoComplete="off"
-                          value={userData.email}
+                          value={credentials.email}
                           required
                         />
                         <label htmlFor="email"> Your Email address</label>
@@ -160,9 +169,12 @@ const Contact = () => {
                       <div className="form-floating mb-2">
                         <textarea
                           className="form-control form-control-sm"
-                          placeholder="help"
-                          id="help"
+                          placeholder="message"
+                          id="message"
+                          name="message"
                           style={{ height: "100px" }}
+                          onChange={onChange}
+                          value={credentials.message}
                           required
                         ></textarea>
                         <label htmlFor="floatingTextarea2">Your Question</label>
@@ -172,6 +184,7 @@ const Contact = () => {
                         <button
                           className="btn btn-success"
                           style={{ width: "100%" }}
+                          type="submit"
                         >
                           Submit
                         </button>

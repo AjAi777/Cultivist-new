@@ -26,6 +26,11 @@ const Signup = (props) => {
     e.preventDefault();
     const { name, phone, email, password } = credentials;
 
+    if (credentials.cpassword !== credentials.password) {
+      window.alert("Password Not Match, Please Try Again", "danger");
+      return false;
+    }
+
     const response = await fetch("http://localhost:4000/api/auth/signup", {
       method: "POST",
       headers: {

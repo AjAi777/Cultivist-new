@@ -18,6 +18,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/help", require("./routes/help"));
 
 // Cookie
 // app.use(cookieParser());
