@@ -27,6 +27,7 @@
     "express-validator": "^6.12.1",
     "got": "^8.3.2",
     "heroku": "^7.59.0",
+    "ionic": "^5.4.16",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.8",
     "morgan": "^1.10.0",
