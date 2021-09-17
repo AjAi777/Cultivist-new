@@ -15,6 +15,8 @@
   "author": "Cultivist",
   "license": "ISC",
   "dependencies": {
+    "@hapi/bourne": "^2.0.0",
+    "@hapi/topo": "^5.1.0",
     "@heroku-cli/plugin-buildpacks": "^7.54.0",
     "@heroku/buildpack-registry": "^1.0.1",
     "async-file": "^2.0.2",
@@ -33,7 +35,8 @@
     "morgan": "^1.10.0",
     "phoenix": "^1.6.0-rc.0",
     "strip-final-newline": "^3.0.0",
-    "uuid": "^7.0.3"
+    "uuid": "^7.0.3",
+    "valid-url": "^1.0.9"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
