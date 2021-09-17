@@ -9,7 +9,13 @@ const morgan = require("morgan");
 dotenv.config({ path: "./config/config.env" });
 
 // CORS Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+  })
+);
+
 // Logger Middleware
 app.use(morgan("dev"));
 
