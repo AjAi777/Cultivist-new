@@ -40,7 +40,7 @@ const Contact = () => {
     <>
       <div
         className="contact_info jadoo pb-5"
-        style={{ marginTop: "5vh", marginBottom: "15vh" }}
+        style={{ marginTop: "25vh", marginBottom: "15vh" }}
       >
         <div className="container">
           <section className="my-5 col-lg-10 offset-lg-1">

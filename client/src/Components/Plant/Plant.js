@@ -9,7 +9,7 @@ export default function Plant() {
     <>
       <div
         className="jadoo px-4 text-center bg-light pb-5 pt-5"
-        style={{ marginTop: "0vh" }}
+        style={{ marginTop: "15vh" }}
       >
         <h1 className="fw-bold" style={{ marginTop: "10px" }}>
           Plant a Tree Now
@@ -22,11 +22,11 @@ export default function Plant() {
           <div className="container ">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-4 tac">
               <div className="col d-flex justify-content-md-center text-center">
-                <div>
+                <div style={{ width: "80px", height: "80px" }}>
                   <img
                     src="https://source.unsplash.com/60x60/?forest,logo"
                     alt="bd"
-                    style={{ width: "80px", height: "80px" }}
+                    style={{ width: "100%px", height: "100%px" }}
                   />
                 </div>
                 <div

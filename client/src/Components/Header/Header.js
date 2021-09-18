@@ -8,6 +8,7 @@ export default function Header() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     history.push("/signin");
+    window.location.reload(false);
   };
   return (
     <>
@@ -62,7 +63,6 @@ export default function Header() {
                   to="#"
                   id="navbarDropdown"
                   role="button"
-                  data-bs-toggle="dropdown"
                   aria-expanded="false"
                   style={{
                     margin: "1rem 0rem 1rem 0rem",
@@ -100,7 +100,6 @@ export default function Header() {
                   to="#"
                   id="navbarDropdown"
                   role="button"
-                  data-bs-toggle="dropdown"
                   aria-expanded="false"
                   style={{
                     margin: "1rem 0rem 1rem 0rem",
@@ -182,6 +181,8 @@ export default function Header() {
                 <Link to="/plant">
                   <button
                     className="btn btn-success"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
                     style={{
                       width: "8rem",
                       margin: "1rem 1rem 1rem 0rem",
@@ -201,6 +202,8 @@ export default function Header() {
                   <Link to="/signin">
                     <button
                       className="btn btn-outline-success"
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
                       style={{
                         width: "7rem",
                         marginRight: "1rem",
@@ -217,6 +220,8 @@ export default function Header() {
                 ) : (
                   <button
                     className="btn btn-outline-success"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
                     style={{
                       width: "7rem",
                       marginRight: "1rem",
