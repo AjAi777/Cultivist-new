@@ -1,5 +1,4 @@
 import React from "react";
-import BGvideo from "../../Video/BGvideo.mp4";
 import "./Video.css";
 
 export default function Video() {
@@ -13,17 +12,13 @@ export default function Video() {
                 Discover <span>Cultivist</span> in a minute
               </h3>
             </div>
-            <div className="iframe-container mt-4">
-              <video
+            <div className="iframe-container mt-4 mb-3">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/7LCvpjwg250?modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&color=white&controls=0"
                 width="560"
                 height="315"
-                src={BGvideo}
-                type="video/mp4"
-                frameBorder="0"
-                controls
-                autoPlay={false}
-                allowFullScreen="allowFullScreen"
-              ></video>
+                frameborder="0"
+              ></iframe>
             </div>
           </div>
         </div>
