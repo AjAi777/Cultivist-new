@@ -22,7 +22,6 @@ export default function Video() {
                 frameBorder="0"
                 controls
                 autoPlay={false}
-                poster="https://source.unsplash.com/560x315/?plant,forest"
                 allowFullScreen="allowFullScreen"
               ></video>
             </div>
