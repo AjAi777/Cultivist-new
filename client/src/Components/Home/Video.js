@@ -4,7 +4,7 @@ import "./Video.css";
 export default function Video() {
   return (
     <>
-      <div className="jadoo px-4 text-center py-4">
+      <div className="jadoo text-center py-4">
         <div className="row d-flex h-full justify-content-center">
           <div className="col-12 col-lg-9 align-self-center">
             <div className=" text-center">
@@ -17,7 +17,7 @@ export default function Video() {
                 src="https://www.youtube-nocookie.com/embed/7LCvpjwg250?modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&color=white&controls=0"
                 width="560"
                 height="315"
-                frameborder="0"
+                frameBorder="0"
               ></iframe>
             </div>
           </div>

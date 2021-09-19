@@ -63,6 +63,8 @@ export default function Header() {
                   to="#"
                   id="navbarDropdown"
                   role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
                   aria-expanded="false"
                   style={{
                     margin: "1rem 0rem 1rem 0rem",
@@ -100,6 +102,8 @@ export default function Header() {
                   to="#"
                   id="navbarDropdown"
                   role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
                   aria-expanded="false"
                   style={{
                     margin: "1rem 0rem 1rem 0rem",
