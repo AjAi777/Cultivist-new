@@ -21,13 +21,22 @@
 }
 
 .raj {
-  margin-left: 11rem;
+  margin-left: 8.5rem;
 }
 
 .accordion-flush .accordion-item .accordion-button {
   border-radius: 2px;
   border-color: black;
   border: 2px;
+}
+
+.faq {
+  margin-right: 3rem;
+  margin-left: 3rem;
+}
+
+.abb {
+  margin-right: 1.5rem;
 }
 
 @media only screen and (max-width: 1140px) {
@@ -54,5 +63,12 @@
   }
   .tuk {
     margin: 30px;
+  }
+  .faq {
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
+  .abb {
+    margin-right: 0rem;
   }
 }

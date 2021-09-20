@@ -15,6 +15,7 @@ export default function Video() {
             <div className="iframe-container mt-4 mb-3">
               <iframe
                 src="https://www.youtube-nocookie.com/embed/7LCvpjwg250?modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&color=white&controls=0"
+                title="Cultivist"
                 width="560"
                 height="315"
                 frameBorder="0"

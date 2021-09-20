@@ -17,9 +17,6 @@ export default function Header() {
         style={{ width: "100%" }}
       >
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <img src={logo} alt="logo" width="120" height="38" />
-          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -28,10 +25,30 @@ export default function Header() {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            style={{ marginRight: "25px" }}
+            style={{ marginLeft: "15px" }}
           >
             <i className="bi bi-list" style={{ color: "white" }}></i>
           </button>
+          <Link className="navbar-brand ms-auto" to="/">
+            <img
+              src={logo}
+              alt="logo"
+              width="120"
+              height="38"
+              className="cult"
+            />
+          </Link>
+          <Link to="#" className="ms-auto" style={{ color: "green" }}>
+            <div className="moving-cart">
+              <i class="bi bi-cart-fill "></i>
+              <span
+                class="badge rounded-pill badge-notification bg-danger"
+                id="#lblCartCount"
+              >
+                1
+              </span>
+            </div>
+          </Link>
           <div
             className="navbar-collapse collapse text-center justify-content-between"
             id="navbarSupportedContent"
@@ -180,7 +197,6 @@ export default function Header() {
                   Contact
                 </Link>
               </li>
-              <hr></hr>
               <li className="d-flex align-items-center nav-item">
                 <Link to="/plant">
                   <button
@@ -201,7 +217,7 @@ export default function Header() {
                 </Link>
               </li>
 
-              <li className="d-flex align-items-center nav-item">
+              <li className="d-flex align-items-center nav-item abb">
                 {!localStorage.getItem("token") ? (
                   <Link to="/signin">
                     <button

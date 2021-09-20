@@ -4,12 +4,8 @@ export default function FAQ() {
   return (
     <>
       <div className="jadoo px-4 text-center py-4 bg-light mb-5">
-        <div
-          className="accordion accordion-flush"
-          id="accordionFlushExample"
-          style={{ margin: "0px 40px 0px 40px" }}
-        >
-          <h2 className="fw-bold" style={{ margin: "10px 0 40px 0" }}>
+        <div className="accordion accordion-flush mb-3 faq" id="accordionFlushExample">
+          <h2 className="fw-bold" style={{ margin: "10px 0 30px 0" }}>
             FAQs
           </h2>
           <div className="accordion-item mt-2 shadow-sm">

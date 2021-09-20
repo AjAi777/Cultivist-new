@@ -17,11 +17,6 @@ body {
 .btn {
   border: 2px solid rgba(0, 0, 0, 0.17);
   border-radius: 4px;
-  transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: border-color;
-  transition-duration: 0.4s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0s;
 }
 
 body {
@@ -46,11 +41,6 @@ ul {
 .navbar-brand {
   margin-left: 1rem;
   color: "green";
-  transition: color 0.3s ease-in-out;
-  transition-property: color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
 }
 
 .navbar Link {
@@ -72,8 +62,61 @@ ul {
   width: 100%;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 950px) {
   .dropdown:hover .dropdown-menu {
     display: block;
   }
+}
+
+@media (min-width: 950px) {
+  .moving-cart {
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  .moving-cart span {
+    position: relative;
+    background: crimson;
+    border-radius: 20px;
+    color: white;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 950px) {
+  .moving-cart {
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  .moving-cart span {
+    position: relative;
+    background: crimson;
+    border-radius: 20px;
+    color: white;
+    font-size: 10px;
+  }
+  .cult {
+    margin-left: 0px;
+    margin-right: 25px;
+  }
+}
+.moving-cart {
+  font-size: 24px !important;
+  margin-right: 30px;
+}
+
+.moving-cart span {
+  background: crimson;
+  border-radius: 20px;
+  color: white;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  padding: 5px 7px;
+  font-size: 10px;
+}
+
+.cult {
+  margin-left: 15px;
 }
