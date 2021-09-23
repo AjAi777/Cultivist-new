@@ -2,6 +2,7 @@ import React from 'react';
 import products from '../../products';
 import Filter from './Filter';
 import './Shop.css';
+import Rating from './Rating';
 
 const Shop = () => {
   return (
@@ -49,11 +50,16 @@ const Shop = () => {
                 </div>
                 <div className='col mb-1'>
                   <div className='row d-flex justify-content-center'>
-                    {product.rating} {product.numReviews}
+                    <Rating
+                      value={product.rating}
+                      text={` ${product.numReviews}`}
+                    />
                   </div>
                 </div>
                 <div className='col mb-1'>
-                  <h6 className='fw-bold'>₹ {product.price}</h6>
+                  <h6 className='fw-bold mt-1' style={{ fontSize: '18px'}}>
+                    ₹ {product.price}
+                  </h6>
                 </div>
                 <div className='text-center'>
                   <button
