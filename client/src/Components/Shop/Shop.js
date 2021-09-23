@@ -15,10 +15,10 @@ const Shop = () => {
           background: '#fff',
         }}
       >
-        <div className='px-4 mb-4 bg-light rounded-3 backk'>
+        <div className='px-4 bg-light rounded-3 backk'>
           <div className='jadoo pb-4 text-start'>
             <div className='jab'>
-              <h4 className='fs-2 fw-bold pt-3'>Not a Member Yet?</h4>
+              <h4 className='fs-2 fw-bold pt-4'>Not a Member Yet?</h4>
               <p className='col-md-5 fs-6 pt-2'>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
                 quisquam, impedit numquam eligendi quod deserunt eaque dolor
@@ -57,18 +57,14 @@ const Shop = () => {
                   </div>
                 </div>
                 <div className='col mb-1'>
-                  <h6 className='fw-bold mt-1' style={{ fontSize: '18px'}}>
-                    ₹ {product.price}
-                  </h6>
+                  <h6 className='fw-bold mt-1'>₹ {product.price}</h6>
                 </div>
                 <div className='text-center'>
                   <button
                     className='btn btn-outline-success mb-2'
                     style={{
-                      width: '5rem',
-                      backgroundColor: 'green',
-                      color: 'white',
                       margin: '0',
+                      border: '1px solid green',
                     }}
                   >
                     Add

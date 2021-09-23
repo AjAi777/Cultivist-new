@@ -82,6 +82,15 @@
   .filter_menu .col {
     flex: 0;
   }
+  .card h5 {
+    font-size: 13px;
+  }
+  .card h6 {
+    font-size: 13px;
+  }
+  .card button {
+    width: 8rem;
+  }
 }
 
 .filter_menu {

@@ -2,15 +2,26 @@
   margin-left: 5rem;
 }
 
-/* .backk {
-  background-color: lawngreen;
-  background-size: cover;
-  background-position: center, center;
-  width: 100%;
-} */
-
 @media only screen and (max-width: 600px) {
   .jab {
     margin-left: 0rem;
   }
+}
+
+@media (min-width: 900px) {
+  .card h5 {
+    font-size: 18px;
+  }
+  .card h6 {
+    font-size: 17px;
+  }
+  .card button {
+    width: 8rem;
+  }
+}
+
+input[type='search']:focus {
+  box-shadow: none;
+  transition: none;
+  border-color: lightgray;
 }

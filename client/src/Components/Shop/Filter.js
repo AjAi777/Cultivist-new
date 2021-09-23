@@ -1,4 +1,5 @@
 import React from 'react';
+import './Shop.css';
 
 export default function Filter() {
   return (
@@ -9,7 +10,7 @@ export default function Filter() {
             <div className='input-group zoom d-flex'>
               <input
                 type='search'
-                className='form-control'
+                className='form-control rounded'
                 placeholder='Enter your search'
                 aria-label='Search'
                 aria-describedby='search-addon'
@@ -22,7 +23,7 @@ export default function Filter() {
 
           <div className='d-flex zack col gap-2'>
             <span>Filters: </span>
-            <select style={{ fontSize: '14px' }}>
+            <select style={{ fontSize: '14px', backgroundColor: "white" }}>
               <option value='1'>All Products</option>
               <option value='2'>Teas</option>
               <option value='3'>Essential Oils</option>
@@ -32,7 +33,7 @@ export default function Filter() {
 
           <div className='col sort d-flex zack gap-2'>
             <span>Sort By: </span>
-            <select style={{ fontSize: '14px' }}>
+            <select style={{ fontSize: '14px', backgroundColor: "white" }}>
               <option value='1'>Newest</option>
               <option value='2'>Oldest</option>
               <option value='3'>Best Seller</option>

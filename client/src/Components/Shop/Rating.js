@@ -11,7 +11,7 @@ const Rating = ({ value, text, color }) => {
               ? "bi bi-star-fill"
               : value >= 0.5
               ? "bi bi-star-half"
-              : "bi bi-star-fill"
+              : "bi bi-star"
           }
         ></i>
       </span>
@@ -23,7 +23,7 @@ const Rating = ({ value, text, color }) => {
               ? "bi bi-star-fill"
               : value >= 1.5
               ? "bi bi-star-half"
-              : "bi bi-star-fill"
+              : "bi bi-star"
           }
         ></i>
       </span>
@@ -35,7 +35,7 @@ const Rating = ({ value, text, color }) => {
               ? "bi bi-star-fill"
               : value >= 2.5
               ? "bi bi-star-half"
-              : "bi bi-star-fill"
+              : "bi bi-star"
           }
         ></i>
       </span>
@@ -47,7 +47,7 @@ const Rating = ({ value, text, color }) => {
               ? "bi bi-star-fill"
               : value >= 3.5
               ? "bi bi-star-half"
-              : "bi bi-star-fill"
+              : "bi bi-star"
           }
         ></i>
       </span>
@@ -59,7 +59,7 @@ const Rating = ({ value, text, color }) => {
               ? "bi bi-star-fill"
               : value >= 4.5
               ? "bi bi-star-half"
-              : "bi bi-star-fill"
+              : "bi bi-star"
           }
         ></i>
       </span>
