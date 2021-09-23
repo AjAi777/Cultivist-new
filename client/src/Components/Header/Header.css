@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 html,
 body {
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 15px;
   line-height: 1.5;
   color: rgb(94, 93, 93);
@@ -40,7 +40,7 @@ ul {
 
 .navbar-brand {
   margin-left: 1rem;
-  color: "green";
+  color: 'green';
 }
 
 .navbar Link {
@@ -119,4 +119,9 @@ ul {
 
 .cult {
   margin-left: 15px;
+}
+
+.drop:hover {
+  color: rgb(3, 158, 3);
+  background: white;
 }

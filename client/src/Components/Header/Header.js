@@ -1,215 +1,224 @@
-import React from "react";
-import { Link, useHistory } from "react-router-dom";
-import logo from "../../Images/logo.png";
-import "./Header.css";
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import logo from '../../Images/logo.png';
+import './Header.css';
 
 export default function Header() {
   let history = useHistory();
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    history.push("/signin");
+    localStorage.removeItem('token');
+    history.push('/signin');
     window.location.reload(false);
   };
   return (
     <>
       <nav
-        className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm"
-        style={{ width: "100%" }}
+        className='navbar navbar-expand-lg navbar-light fixed-top shadow-sm'
+        style={{ width: '100%' }}
       >
-        <div className="container-fluid">
+        <div className='container-fluid'>
           <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            style={{ marginLeft: "15px" }}
+            className='navbar-toggler'
+            type='button'
+            data-bs-toggle='collapse'
+            data-bs-target='#navbarSupportedContent'
+            aria-controls='navbarSupportedContent'
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+            style={{ marginLeft: '15px' }}
           >
-            <i className="bi bi-list" style={{ color: "white" }}></i>
+            <i className='bi bi-list' style={{ color: 'white' }}></i>
           </button>
-          <Link className="navbar-brand ms-auto" to="/">
+          <Link className='navbar-brand ms-auto' to='/'>
             <img
               src={logo}
-              alt="logo"
-              width="120"
-              height="38"
-              className="cult"
+              alt='logo'
+              width='120'
+              height='38'
+              className='cult'
             />
           </Link>
-          <Link to="#" className="ms-auto" style={{ color: "green" }}>
-            <div className="moving-cart">
-              <i class="bi bi-cart-fill "></i>
+          <Link to='#' className='ms-auto' style={{ color: 'green' }}>
+            <div className='moving-cart'>
+              <i className='bi bi-cart-fill '></i>
               <span
-                class="badge rounded-pill badge-notification bg-danger"
-                id="#lblCartCount"
+                className='badge rounded-pill badge-notification bg-danger'
+                id='#lblCartCount'
               >
                 1
               </span>
             </div>
           </Link>
           <div
-            className="navbar-collapse collapse text-center justify-content-between"
-            id="navbarSupportedContent"
+            className='navbar-collapse collapse text-center justify-content-between'
+            id='navbarSupportedContent'
           >
             <ul
-              className="navbar-nav ml-auto mb-2 mb-lg-0 text-center"
-              style={{ marginLeft: "0.5rem" }}
+              className='navbar-nav ml-auto mb-2 mb-lg-0 text-center'
+              style={{ marginLeft: '0.5rem' }}
             >
-              <li className="nav-item head">
+              <li className='nav-item head'>
                 <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  className='nav-link active'
+                  aria-current='page'
+                  to='#'
+                  data-bs-toggle='modal'
+                  data-bs-target='#staticBackdrop'
                   style={{
-                    margin: "1rem 0rem 1rem 0rem",
-                    fontSize: "1rem",
-                    fontWeight: "600",
-                    color: "green",
+                    margin: '1rem 0rem 1rem 0rem',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: 'green',
                   }}
                 >
                   Get Started
                 </Link>
               </li>
-              <li className="nav-item dropdown head">
+              <li className='nav-item dropdown head'>
                 <Link
-                  className="nav-link dropdown-toggle"
-                  to="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+                  className='nav-link dropdown-toggle'
+                  to='#'
+                  id='navbarDropdown'
+                  role='button'
+                  data-toggle='dropdown'
+                  aria-haspopup='true'
+                  aria-expanded='false'
                   style={{
-                    margin: "1rem 0rem 1rem 0rem",
-                    fontSize: "1rem",
-                    fontWeight: "600",
-                    color: "lightblack",
+                    margin: '1rem 0rem 1rem 0rem',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: 'lightblack',
                   }}
                 >
                   Shop
                 </Link>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Action
+                <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
+                  <li className='p-1'>
+                    <Link
+                      className='dropdown-item drop'
+                      to='/shop'
+                      style={{ fontWeight: '600' }}
+                    >
+                      Main Shop
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="#">
-                      Another action
+                    <hr className='dropdown-divider' />
+                  </li>
+                  <li className='p-1'>
+                    <Link className='dropdown-item drop' to='#'>
+                      Teas
                     </Link>
                   </li>
-                  <li>
-                    <hr className="dropdown-divider" />
+                  <li className='p-1'>
+                    <Link className='dropdown-item drop' to='#'>
+                      Essential Oils
+                    </Link>
                   </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Something else here
+                  <li className='p-1'>
+                    <Link className='dropdown-item drop' to='#'>
+                      Air Purifing Plants
                     </Link>
                   </li>
                 </ul>
               </li>
-              <li className="nav-item dropdown head">
+              <li className='nav-item dropdown head'>
                 <Link
-                  className="nav-link dropdown-toggle"
-                  to="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+                  className='nav-link dropdown-toggle'
+                  to='#'
+                  id='navbarDropdown'
+                  role='button'
+                  data-toggle='dropdown'
+                  aria-haspopup='true'
+                  aria-expanded='false'
                   style={{
-                    margin: "1rem 0rem 1rem 0rem",
-                    fontSize: "1rem",
-                    fontWeight: "600",
-                    color: "lightblack",
+                    margin: '1rem 0rem 1rem 0rem',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: 'lightblack',
                   }}
                 >
                   Gifting
                 </Link>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
                   <li>
-                    <Link className="dropdown-item" to="#">
+                    <Link className='dropdown-item' to='#'>
                       Action
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="#">
+                    <Link className='dropdown-item' to='#'>
                       Another action
                     </Link>
                   </li>
                   <li>
-                    <hr className="dropdown-divider" />
+                    <hr className='dropdown-divider' />
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="#">
+                    <Link className='dropdown-item' to='#'>
                       Something else here
                     </Link>
                   </li>
                 </ul>
               </li>
-              <li className="nav-item head">
+              <li className='nav-item head'>
                 <Link
-                  className="nav-link "
-                  aria-current="page"
-                  to="#"
+                  className='nav-link '
+                  aria-current='page'
+                  to='#'
                   style={{
-                    margin: "1rem 0rem 1rem 0rem",
-                    fontSize: "1rem",
-                    fontWeight: "600",
-                    color: "lightblack",
+                    margin: '1rem 0rem 1rem 0rem',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: 'lightblack',
                   }}
                 >
                   Curated Content
                 </Link>
               </li>
-              <li className="nav-item head">
+              <li className='nav-item head'>
                 <Link
-                  className="nav-link"
-                  aria-current="page"
-                  to="#"
+                  className='nav-link'
+                  aria-current='page'
+                  to='#'
                   style={{
-                    margin: "1rem 0rem 1rem 0rem",
-                    fontSize: "1rem",
-                    fontWeight: "600",
-                    color: "lightblack",
+                    margin: '1rem 0rem 1rem 0rem',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: 'lightblack',
                   }}
                 >
                   Send Post Cards
                 </Link>
               </li>
-              <li className="nav-item head raj">
+              <li className='nav-item head raj'>
                 <Link
-                  className="nav-link"
-                  aria-current="page"
-                  to="/contact"
+                  className='nav-link'
+                  aria-current='page'
+                  to='/contact'
                   style={{
-                    margin: "1rem 1.5rem 1rem 0rem",
-                    fontWeight: "600",
-                    fontSize: "1rem",
-                    color: "lightblack",
+                    margin: '1rem 1.5rem 1rem 0rem',
+                    fontWeight: '600',
+                    fontSize: '1rem',
+                    color: 'lightblack',
                   }}
                 >
                   Contact
                 </Link>
               </li>
-              <li className="d-flex align-items-center nav-item">
-                <Link to="/plant">
+              <li className='d-flex align-items-center nav-item'>
+                <Link to='/plant'>
                   <button
-                    className="btn btn-success"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse.show"
+                    className='btn btn-success'
+                    data-bs-toggle='collapse'
+                    data-bs-target='.navbar-collapse.show'
                     style={{
-                      width: "8rem",
-                      margin: "1rem 1rem 1rem 0rem",
-                      fontSize: "1rem",
-                      fontWeight: "600",
-                      marginRight: "1rem",
-                      borderRadius: "0.4rem",
+                      width: '8rem',
+                      margin: '1rem 1rem 1rem 0rem',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      marginRight: '1rem',
+                      borderRadius: '0.4rem',
                     }}
                   >
                     Plant a Tree
@@ -217,21 +226,21 @@ export default function Header() {
                 </Link>
               </li>
 
-              <li className="d-flex align-items-center nav-item abb">
-                {!localStorage.getItem("token") ? (
-                  <Link to="/signin">
+              <li className='d-flex align-items-center nav-item abb'>
+                {!localStorage.getItem('token') ? (
+                  <Link to='/signin'>
                     <button
-                      className="btn btn-outline-success"
-                      data-bs-toggle="collapse"
-                      data-bs-target=".navbar-collapse.show"
+                      className='btn btn-outline-success'
+                      data-bs-toggle='collapse'
+                      data-bs-target='.navbar-collapse.show'
                       style={{
-                        width: "7rem",
-                        marginRight: "1rem",
-                        margin: "1rem 1rem 1rem 0rem",
-                        fontWeight: "600",
-                        fontSize: "1rem",
-                        borderRadius: "0.4rem",
-                        borderColor: "green",
+                        width: '7rem',
+                        marginRight: '1rem',
+                        margin: '1rem 1rem 1rem 0rem',
+                        fontWeight: '600',
+                        fontSize: '1rem',
+                        borderRadius: '0.4rem',
+                        borderColor: 'green',
                       }}
                     >
                       Sign In
@@ -239,17 +248,17 @@ export default function Header() {
                   </Link>
                 ) : (
                   <button
-                    className="btn btn-outline-success"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse.show"
+                    className='btn btn-outline-success'
+                    data-bs-toggle='collapse'
+                    data-bs-target='.navbar-collapse.show'
                     style={{
-                      width: "7rem",
-                      marginRight: "1rem",
-                      margin: "1rem 1rem 1rem 0rem",
-                      fontWeight: "600",
-                      fontSize: "1rem",
-                      borderRadius: "0.4rem",
-                      borderColor: "green",
+                      width: '7rem',
+                      marginRight: '1rem',
+                      margin: '1rem 1rem 1rem 0rem',
+                      fontWeight: '600',
+                      fontSize: '1rem',
+                      borderRadius: '0.4rem',
+                      borderColor: 'green',
                     }}
                     onClick={handleLogout}
                   >
@@ -263,28 +272,28 @@ export default function Header() {
       </nav>
       {/* MODAL */}
       <div
-        className="modal fade"
-        id="staticBackdrop"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabIndex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
+        className='modal fade'
+        id='staticBackdrop'
+        data-bs-backdrop='static'
+        data-bs-keyboard='false'
+        tabIndex='-1'
+        aria-labelledby='staticBackdropLabel'
+        aria-hidden='true'
       >
-        <div className="modal-dialog modal-dialog-scrollable">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title fw-bold" id="staticBackdropLabel">
+        <div className='modal-dialog modal-dialog-scrollable'>
+          <div className='modal-content'>
+            <div className='modal-header'>
+              <h5 className='modal-title fw-bold' id='staticBackdropLabel'>
                 GET STARTED
               </h5>
               <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
+                type='button'
+                className='btn-close'
+                data-bs-dismiss='modal'
+                aria-label='Close'
               ></button>
             </div>
-            <div className="modal-body">
+            <div className='modal-body'>
               <p>
                 This is some placeholder content to show the scrolling behavior
                 for modals. We use repeated line breaks to demonstrate how
@@ -294,11 +303,11 @@ export default function Header() {
                 within the modal.
               </p>
             </div>
-            <div className="modal-footer">
+            <div className='modal-footer'>
               <button
-                type="submit"
-                data-bs-dismiss="modal"
-                className="btn btn-success"
+                type='submit'
+                data-bs-dismiss='modal'
+                className='btn btn-success'
               >
                 Submit
               </button>

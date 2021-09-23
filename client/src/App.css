@@ -72,3 +72,40 @@
     margin-right: 0rem;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .zack span {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
+  .filter_menu .col {
+    flex: 0;
+  }
+}
+
+.filter_menu {
+  width: 100%;
+  min-height: 40px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 15px 0;
+  flex-direction: row;
+}
+
+.filter_menu select,
+input {
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 0 5px;
+  width: 10rem;
+  height: 40px;
+  display: flex;
+}
+
+.zack span {
+  padding: 7px 5px;
+}

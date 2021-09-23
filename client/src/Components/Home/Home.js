@@ -1,12 +1,12 @@
-import React from "react";
-import Banner from "./Banner";
-import Testimonial from "./Testimonial/Testimonial";
-import Video from "./Video";
-import RoutineOne from "./RoutineOne";
-import RoutineTwo from "./RoutineTwo";
-import RoutineThree from "./RoutineThree";
-import Image from "./Image";
-import Picture from "./Picture";
+import React from 'react';
+import Banner from './Banner/Banner';
+import Testimonial from './Testimonial/Testimonial';
+import Video from './Other/Video';
+import RoutineOne from './Routines/RoutineOne';
+import RoutineTwo from './Routines/RoutineTwo';
+import RoutineThree from './Routines/RoutineThree';
+import Image from './Other/Image';
+import Shop from './Other/Shop';
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       <div>
         <Banner />
         <Video />
-        <Picture />
+        <Shop />
         <Testimonial />
         <RoutineOne />
         <RoutineTwo />

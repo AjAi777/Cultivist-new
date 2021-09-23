@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 const Signup = (props) => {
   let history = useHistory();
 
   const [credentials, setCredentials] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    password: "",
-    cpassword: "",
+    name: '',
+    phone: '',
+    email: '',
+    password: '',
+    cpassword: '',
   });
 
   const [passwordShown, setPasswordShown] = useState(false);
@@ -27,14 +27,14 @@ const Signup = (props) => {
     const { name, phone, email, password } = credentials;
 
     if (credentials.cpassword !== credentials.password) {
-      window.alert("Password Not Match, Please Try Again", "danger");
+      window.alert('Password Not Match, Please Try Again', 'danger');
       return false;
     }
 
-    const response = await fetch("http://localhost:4000/api/auth/signup", {
-      method: "POST",
+    const response = await fetch('http://localhost:4000/api/auth/signup', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         name,
@@ -46,11 +46,11 @@ const Signup = (props) => {
     const json = await response.json();
     if (json.success) {
       // Save the auth token and redirect
-      localStorage.setItem("token", json.authtoken);
-      props.showAlert("Account Created Successfully", "success");
-      history.push("/signin");
+      localStorage.setItem('token', json.authtoken);
+      props.showAlert('Account Created Successfully', 'success');
+      history.push('/signin');
     } else {
-      props.showAlert("Invalid Details", "danger");
+      props.showAlert('Invalid Details', 'danger');
     }
   };
 
@@ -61,167 +61,168 @@ const Signup = (props) => {
   return (
     <>
       <div
-        className="modal modal-signin position-static d-block pt-5 pb-5"
-        tabIndex="-1"
-        role="dialog"
-        id="modalSignin"
+        className='modal modal-signin position-static d-block pt-5 pb-5'
+        tabIndex='-1'
+        role='dialog'
+        id='modalSignin'
       >
-        <div className="modal-dialog mb-5" role="document">
-          <div className="modal-content rounded-5 shadow">
-            <div className="modal-header p-5 pb-4 border-bottom-0">
-              <h2 className="fw-bold mb-0 ">Sign up</h2>
+        <div className='modal-dialog mb-5' role='document'>
+          <div className='modal-content rounded-5 shadow'>
+            <div className='modal-header p-5 pb-4 border-bottom-0'>
+              <h2 className='fw-bold mb-0 '>Sign up</h2>
             </div>
 
-            <div className="modal-body p-5 pt-0">
+            <div className='modal-body p-5 pt-0'>
               <form
-                method="POST"
-                className="signup-form"
+                method='POST'
+                className='signup-form'
                 onSubmit={handleSubmit}
               >
-                <div className="form-floating mb-3">
+                <div className='form-floating mb-3'>
                   <input
-                    type="text"
-                    name="name"
-                    className="form-control rounded-4"
-                    id="name"
-                    placeholder="name"
-                    autoComplete="off"
+                    type='text'
+                    name='name'
+                    className='form-control rounded-4'
+                    id='name'
+                    placeholder='name'
+                    autoComplete='off'
                     value={credentials.name}
                     onChange={onChange}
                     required
                   />
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor='name'>Name</label>
                 </div>
-                <div className="form-floating mb-3">
+                <div className='form-floating mb-3'>
                   <input
-                    type="phone"
-                    name="phone"
-                    className="form-control rounded-4"
-                    id="phone"
-                    placeholder="phone"
-                    autoComplete="off"
+                    type='phone'
+                    name='phone'
+                    className='form-control rounded-4'
+                    id='phone'
+                    placeholder='phone'
+                    autoComplete='off'
                     value={credentials.phone}
                     onChange={onChange}
-                    minLength="5"
+                    minLength='5'
                     required
                   />
-                  <label htmlFor="phone">Phone no</label>
+                  <label htmlFor='phone'>Phone no</label>
                 </div>
-                <div className="form-floating mb-3">
+                <div className='form-floating mb-3'>
                   <input
-                    type="email"
-                    name="email"
-                    className="form-control rounded-4"
-                    id="email"
-                    autoComplete="off"
-                    placeholder="email"
+                    type='email'
+                    name='email'
+                    className='form-control rounded-4'
+                    id='email'
+                    autoComplete='off'
+                    placeholder='email'
                     value={credentials.email}
                     onChange={onChange}
                     required
                   />
-                  <label htmlFor="email">Email address</label>
+                  <label htmlFor='email'>Email address</label>
                 </div>
-                <div className="form-floating input-group mb-1">
+                <div className='form-floating input-group mb-1'>
                   <input
-                    type={passwordShown ? "text" : "password"}
-                    className="form-control rounded-4"
-                    name="password"
-                    id="password"
-                    placeholder="password"
-                    aria-describedby="passwordHelp"
+                    type={passwordShown ? 'text' : 'password'}
+                    className='form-control rounded-4'
+                    name='password'
+                    id='password'
+                    placeholder='password'
+                    aria-describedby='passwordHelp'
                     value={credentials.password}
-                    autoComplete="off"
+                    autoComplete='off'
                     onChange={onChange}
-                    minLength="8"
+                    minLength='8'
                     required
                   />
-                  <label htmlFor="password">Password</label>
-                  <div className="input-group-text bg-white">
+                  <label htmlFor='password'>Password</label>
+                  <div className='input-group-text bg-white'>
                     <i
                       className={
                         passwordShown
-                          ? "bi bi-eye-fill"
-                          : "bi bi-eye-slash-fill"
+                          ? 'bi bi-eye-fill'
+                          : 'bi bi-eye-slash-fill'
                       }
                       onClick={togglePasswordVisiblity}
-                      style={{ cursor: "pointer" }}
+                      style={{ cursor: 'pointer' }}
                     />
                   </div>
                 </div>
                 <div
-                  id="passwordHelp"
-                  className="form-text mb-3"
-                  style={{ marginLeft: "10px" }}
+                  id='passwordHelp'
+                  className='form-text mb-3'
+                  style={{ marginLeft: '10px' }}
                 >
                   *Minimum 8 Characters
                 </div>
 
-                <div className="form-floating input-group mb-3">
+                <div className='form-floating input-group mb-3'>
                   <input
-                    type={passwordCShown ? "text" : "password"}
-                    className="form-control rounded-4"
-                    name="cpassword"
-                    id="cpassword"
-                    placeholder="cpassword"
-                    aria-describedby="passwordHelp"
+                    type={passwordCShown ? 'text' : 'password'}
+                    className='form-control rounded-4'
+                    name='cpassword'
+                    id='cpassword'
+                    placeholder='cpassword'
+                    aria-describedby='passwordHelp'
                     value={credentials.cpassword}
-                    autoComplete="off"
+                    autoComplete='off'
                     onChange={onChange}
                     required
                   />
-                  <label htmlFor="cpassword">Confirm Password</label>
-                  <div className="input-group-text bg-white">
+                  <label htmlFor='cpassword'>Confirm Password</label>
+                  <div className='input-group-text bg-white'>
                     <i
                       className={
                         passwordCShown
-                          ? "bi bi-eye-fill"
-                          : "bi bi-eye-slash-fill"
+                          ? 'bi bi-eye-fill'
+                          : 'bi bi-eye-slash-fill'
                       }
                       onClick={togglePasswordCVisiblity}
-                      style={{ cursor: "pointer" }}
+                      style={{ cursor: 'pointer' }}
                     />
                   </div>
                 </div>
-                <div className="col-12 mb-4">
-                  <div className="form-check">
+                <div className='col-12 mb-4'>
+                  <div className='form-check'>
                     <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value=""
-                      id="invalidCheck"
+                      className='form-check-input'
+                      type='checkbox'
+                      value=''
+                      id='invalidCheck'
                       required
                     />
                     <label
-                      className="form-check-label ml-2"
-                      htmlFor="invalidCheck"
+                      className='form-check-label ml-2'
+                      htmlFor='invalidCheck'
                     >
                       Agree to the Terms and Conditions
                     </label>
-                    <div className="invalid-feedback">
+                    <div className='invalid-feedback'>
                       You must agree before submitting.
                     </div>
                   </div>
                 </div>
 
-                <div className="form-floating form-button">
+                <div className='form-floating form-button'>
                   <input
-                    type="submit"
-                    name="signup"
-                    className="form-submit w-100 mb-2 btn btn-lg rounded-4 btn-success"
-                    id="signup"
-                    value="Sign up"
+                    type='submit'
+                    name='signup'
+                    className='form-submit w-100 mb-2 btn btn-lg rounded-4 btn-success'
+                    id='signup'
+                    value='Sign up'
+                    style={{ padding: '0px 0px 5px 0px' }}
                   />
                 </div>
 
-                <hr className="my-4" />
+                <hr className='my-4' />
 
-                <h2 className="fs-5 fw-bold mt-2 mb-4">
+                <h2 className='fs-5 fw-bold mt-2 mb-4'>
                   Dont have an Account?
                 </h2>
-                <Link to="/signin">
+                <Link to='/signin'>
                   <button
-                    className="w-100 py-2 mb-2 btn btn-outline-success rounded-4"
-                    type="submit"
+                    className='w-100 py-2 mb-2 btn btn-outline-success rounded-4'
+                    type='submit'
                   >
                     Sign in
                   </button>
