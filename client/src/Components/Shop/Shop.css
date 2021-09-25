@@ -8,16 +8,26 @@
   }
 }
 
-@media (min-width: 900px) {
-  .card h5 {
+@media (min-width: 600px) {
+  .card-title h5 {
     font-size: 18px;
   }
-  .card h6 {
-    font-size: 17px;
+  .card-text h6 {
+    font-size: 18px;
   }
   .card button {
     width: 8rem;
   }
+  .pro {
+    margin: 0px 20px;
+  }
+}
+
+.pro .card-img {
+  transition: transform 0.1s;
+}
+.pro .card-img:hover {
+  transform: scale(1.05);
 }
 
 input[type='search']:focus {

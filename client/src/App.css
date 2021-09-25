@@ -82,15 +82,23 @@
   .filter_menu .col {
     flex: 0;
   }
-  .card h5 {
-    font-size: 13px;
+  .card-title h5 {
+    font-size: 15px;
   }
-  .card h6 {
-    font-size: 13px;
+  .card-text h6 {
+    font-size: 15px;
   }
   .card button {
     width: 8rem;
   }
+  .zoo {
+    visibility: hidden;
+    display: none;
+  }
+  .pro {
+    margin: 0px 0px;
+  }
+  
 }
 
 .filter_menu {
@@ -118,3 +126,22 @@ input {
 .zack span {
   padding: 7px 5px;
 }
+
+.map-container-section {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.map-container-section iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.shadow-sm {
+  box-shadow: 1px solid rgba(0, 0, 0, 0.075);
+}
+

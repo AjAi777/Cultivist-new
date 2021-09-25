@@ -23,7 +23,13 @@ export default function Filter() {
 
           <div className='d-flex zack col gap-2'>
             <span>Filters: </span>
-            <select style={{ fontSize: '14px', backgroundColor: "white" }}>
+            <select
+              style={{
+                fontSize: '14px',
+                backgroundColor: 'white',
+                borderRadius: '1rem',
+              }}
+            >
               <option value='1'>All Products</option>
               <option value='2'>Teas</option>
               <option value='3'>Essential Oils</option>
@@ -33,12 +39,19 @@ export default function Filter() {
 
           <div className='col sort d-flex zack gap-2'>
             <span>Sort By: </span>
-            <select style={{ fontSize: '14px', backgroundColor: "white" }}>
-              <option value='1'>Newest</option>
-              <option value='2'>Oldest</option>
-              <option value='3'>Best Seller</option>
-              <option value='4'>Price: High-Low</option>
-              <option value='5'>Price: Low-High</option>
+            <select
+              style={{
+                fontSize: '14px',
+                backgroundColor: 'white',
+                borderRadius: '1rem',
+              }}
+            >
+              <option value='1'>Featured</option>
+              <option value='2'>Newest</option>
+              <option value='3'>Oldest</option>
+              <option value='4'>Best Seller</option>
+              <option value='5'>Price: High-Low</option>
+              <option value='6'>Price: Low-High</option>
             </select>
           </div>
         </div>

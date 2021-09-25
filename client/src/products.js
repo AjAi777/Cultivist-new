@@ -2,7 +2,7 @@ const products = [
   {
     _id: '1',
     name: 'Eucalyptus Oil',
-    image: '/images/Untitled.png',
+    image: '/images/Eucalyptus.png',
     description:
       'Eucalyptus Oil is a Essential Oil for Hair and Skin with net value of 15 ml /  Net 0.50 fl oz ',
     ingredients: 'abcd',
@@ -29,7 +29,7 @@ const products = [
     price: 259,
     countInStock: 5,
     rating: 4.9,
-    numReviews: 5,
+    numReviews: 15,
   },
   {
     _id: '3',
@@ -45,7 +45,7 @@ const products = [
     price: 359,
     countInStock: 5,
     rating: 3.7,
-    numReviews: 7,
+    numReviews: 17,
   },
   {
     _id: '4',
@@ -61,7 +61,7 @@ const products = [
     price: 199,
     countInStock: 5,
     rating: 4.2,
-    numReviews: 9,
+    numReviews: 19,
   },
   {
     _id: '5',
@@ -93,7 +93,7 @@ const products = [
     price: 399,
     countInStock: 5,
     rating: 4.4,
-    numReviews: 4,
+    numReviews: 23,
   },
 ];
 

@@ -1,15 +1,15 @@
 import './App.css';
 import Header from './Components/Header/Header';
-import Home from './Components/Home/Home';
+import Home from './Screens/HomeScreen';
 import Footer from './Components/Footer/Footer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Plant from './Components/Plant/Plant';
-import Signin from './Components/Signin/Signin';
-import Signup from './Components/Signup/Signup';
-import Contact from './Components/Contact/Contact';
-import ErrorPage from './Components/ErrorPage/ErrorPage';
+import Plant from './Screens/PlantScreen';
+import Signin from './Screens/SigninScreen';
+import Signup from './Screens/SignupScreen';
+import Contact from './Screens/ContactScreen';
+import ErrorPage from './Screens/ErrorScreen';
 import Alert from './Components/Alert/Alert';
-import Shop from './Components/Shop/Shop';
+import Shop from './Screens/ShopScreen';
 import { useState } from 'react';
 
 function App() {
