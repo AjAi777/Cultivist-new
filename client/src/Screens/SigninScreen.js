@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-const Signin = (props) => {
+const SigninScreen = (props) => {
   let history = useHistory();
 
   const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -141,4 +141,4 @@ const Signin = (props) => {
   );
 };
 
-export default Signin;
+export default SigninScreen;

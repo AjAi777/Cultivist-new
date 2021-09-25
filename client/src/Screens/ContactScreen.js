@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Contact = () => {
+const ContactScreen = () => {
   const [credentials, setCredentials] = useState({
     name: '',
     phone: '',
@@ -216,4 +216,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactScreen;

@@ -4,7 +4,7 @@ import FAQ from '../Components/Plant/FAQ';
 import Logo from '../Components/Plant/Logo';
 import Occasion from '../Components/Plant/Occasion';
 
-export default function Plant() {
+export default function PlantScreen() {
   return (
     <>
       <Logo />

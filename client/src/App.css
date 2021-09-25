@@ -98,7 +98,6 @@
   .pro {
     margin: 0px 0px;
   }
-  
 }
 
 .filter_menu {
@@ -123,8 +122,21 @@ input {
   display: flex;
 }
 
+.data .row {
+  --bs-gutter-x: 0 rem;
+}
+
 .zack span {
   padding: 7px 5px;
+}
+
+.nav-item Link {
+  text-decoration: none;
+}
+
+.nav-link h6 {
+  font-size: 14px;
+  color: #1b4944;
 }
 
 .map-container-section {
@@ -145,3 +157,8 @@ input {
   box-shadow: 1px solid rgba(0, 0, 0, 0.075);
 }
 
+@media only screen and (max-width: 600px) {
+  .nav-link h6 {
+    font-size: 12px;
+  }
+}

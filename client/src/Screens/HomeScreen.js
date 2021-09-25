@@ -8,7 +8,7 @@ import RoutineThree from '../Components/Home/Routines/RoutineThree';
 import Image from '../Components/Home/Other/Image';
 import Shop from '../Components/Home/Other/Shop';
 
-export default function Home() {
+export default function HomeScreen() {
   return (
     <>
       <div>

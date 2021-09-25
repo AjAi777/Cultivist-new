@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import ReactOwlCarousel from "react-owl-carousel";
-import { Link } from "react-router-dom";
-import Person from "../../../Images/Person.png";
-import Quote from "../../../Images/Quote.png";
-import "./Testimonial.css";
+import React, { Component } from 'react';
+import ReactOwlCarousel from 'react-owl-carousel';
+import { Link } from 'react-router-dom';
+import Person from '../../../Images/Person.png';
+import Quote from '../../../Images/Quote.png';
+import './Testimonial.css';
 
 class Testimonial extends Component {
   state = {
@@ -29,13 +29,13 @@ class Testimonial extends Component {
   render() {
     return (
       <>
-        <div className="jadoo px-4 text-center py-4 bg-light">
-          <div className="row">
-            <div className="col-lg-6 col-md-8 mx-auto ">
-              <h1 className="fw-bold mb-3" style={{ marginTop: "30px" }}>
+        <div className='jadoo px-4 text-center py-4 bg-light'>
+          <div className='row'>
+            <div className='col-lg-6 col-md-8 mx-auto '>
+              <h1 className='fw-bold mb-3' style={{ marginTop: '30px' }}>
                 Testimonials
               </h1>
-              <p className="lead text-muted">
+              <p className='lead text-muted'>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Delectus officia accusamus, architecto temporibus fugiat natus
                 aliquid necessitatibus deserunt maiores quod! Obcaecati, sed
@@ -45,7 +45,7 @@ class Testimonial extends Component {
           </div>
 
           <ReactOwlCarousel
-            className="owl-carousel mt-5 owl-theme"
+            className='owl-carousel mt-5 owl-theme'
             margin={10}
             nav={true}
             items={3}
@@ -61,59 +61,58 @@ class Testimonial extends Component {
             ]}
             responsive={this.state.responsive}
           >
-            <div className="card item shadow-sm mt-4 active">
-              <div className="content px-4 py-4">
-                <div className="row">
-                  <div className="col-3">
-                    <div className="img-area">
+            <div className='card item shadow-sm mt-4 active'>
+              <div className='content px-4 py-4'>
+                <div className='row'>
+                  <div className='col-3'>
+                    <div className='img-area'>
                       <img
                         src={Person}
-                        className="ima rounded-circle"
-                        alt=""
+                        className='ima rounded-circle'
+                        alt=''
                         style={{
-                          width: "50px",
-                          height: "60px",
-                          margin: "0 20px 0 0",
-                          marginRadius: "100%",
+                          width: '50px',
+                          height: '60px',
+                          margin: '0 20px 0 0',
                         }}
                       />
                     </div>
                   </div>
-                  <div className="col mt-2">
+                  <div className='col mt-2'>
                     <img
                       src={Quote}
-                      alt=""
+                      alt=''
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: '20px',
+                        height: '20px',
                       }}
                     />
                     <p
-                      className="mt-2 text-start"
-                      style={{ fontSize: "11px", lineHeight: "2" }}
+                      className='mt-2 text-start'
+                      style={{ fontSize: '11px', lineHeight: '2' }}
                     >
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Laboriosam nisi quidem cupiditate tempora sunt nesciunt.
                     </p>
 
-                    <div className="row justify-content-between">
-                      <div className="col-8 text-start">
-                        <strong style={{ fontSize: "13px" }}>
+                    <div className='row justify-content-between'>
+                      <div className='col-8 text-start'>
+                        <strong style={{ fontSize: '13px' }}>
                           Someone Famous 1
                         </strong>
                       </div>
-                      <div className="col-4 text-end">
-                        <Link to="#">
+                      <div className='col-4 text-end'>
+                        <Link to='#'>
                           <i
-                            style={{ color: "gray", marginRight: "1px" }}
-                            className="bi bi-facebook"
+                            style={{ color: 'gray', marginRight: '1px' }}
+                            className='bi bi-facebook'
                           ></i>
                         </Link>
                         <span> </span>
-                        <Link to="#">
+                        <Link to='#'>
                           <i
-                            style={{ color: "gray" }}
-                            className="bi bi-twitter"
+                            style={{ color: 'gray' }}
+                            className='bi bi-twitter'
                           ></i>
                         </Link>
                       </div>
@@ -122,59 +121,58 @@ class Testimonial extends Component {
                 </div>
               </div>
             </div>
-            <div className="card shadow-sm mt-4">
-              <div className="content px-4 py-4">
-                <div className="row">
-                  <div className="col-3">
-                    <div className="img-area">
+            <div className='card shadow-sm mt-4'>
+              <div className='content px-4 py-4'>
+                <div className='row'>
+                  <div className='col-3'>
+                    <div className='img-area'>
                       <img
                         src={Person}
-                        className="rounded-circle"
-                        alt=""
+                        className='rounded-circle'
+                        alt=''
                         style={{
-                          width: "50px",
-                          height: "60px",
-                          margin: "0 20px 0 0",
-                          marginRadius: "100%",
+                          width: '50px',
+                          height: '60px',
+                          margin: '0 20px 0 0',
                         }}
                       />
                     </div>
                   </div>
-                  <div className="col mt-2">
+                  <div className='col mt-2'>
                     <img
                       src={Quote}
-                      alt=""
+                      alt=''
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: '20px',
+                        height: '20px',
                       }}
                     />
                     <p
-                      className="mt-2 text-start"
-                      style={{ fontSize: "11px", lineHeight: "2" }}
+                      className='mt-2 text-start'
+                      style={{ fontSize: '11px', lineHeight: '2' }}
                     >
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Laboriosam nisi quidem cupiditate tempora sunt nesciunt.
                     </p>
 
-                    <div className="row justify-content-between">
-                      <div className="col-8 text-start">
-                        <strong style={{ fontSize: "13px" }}>
+                    <div className='row justify-content-between'>
+                      <div className='col-8 text-start'>
+                        <strong style={{ fontSize: '13px' }}>
                           Someone Famous 2
                         </strong>
                       </div>
-                      <div className="col-4 text-end">
-                        <Link to="#">
+                      <div className='col-4 text-end'>
+                        <Link to='#'>
                           <i
-                            style={{ color: "gray", marginRight: "1px" }}
-                            className="bi bi-facebook"
+                            style={{ color: 'gray', marginRight: '1px' }}
+                            className='bi bi-facebook'
                           ></i>
                         </Link>
                         <span> </span>
-                        <Link to="#">
+                        <Link to='#'>
                           <i
-                            style={{ color: "gray" }}
-                            className="bi bi-twitter"
+                            style={{ color: 'gray' }}
+                            className='bi bi-twitter'
                           ></i>
                         </Link>
                       </div>
@@ -183,59 +181,58 @@ class Testimonial extends Component {
                 </div>
               </div>
             </div>
-            <div className="card shadow-sm mt-4">
-              <div className="content px-4 py-4">
-                <div className="row">
-                  <div className="col-3">
-                    <div className="img-area">
+            <div className='card shadow-sm mt-4'>
+              <div className='content px-4 py-4'>
+                <div className='row'>
+                  <div className='col-3'>
+                    <div className='img-area'>
                       <img
                         src={Person}
-                        className="rounded-circle"
-                        alt=""
+                        className='rounded-circle'
+                        alt=''
                         style={{
-                          width: "50px",
-                          height: "60px",
-                          margin: "0 20px 0 0",
-                          marginRadius: "100%",
+                          width: '50px',
+                          height: '60px',
+                          margin: '0 20px 0 0',
                         }}
                       />
                     </div>
                   </div>
-                  <div className="col mt-2">
+                  <div className='col mt-2'>
                     <img
                       src={Quote}
-                      alt=""
+                      alt=''
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: '20px',
+                        height: '20px',
                       }}
                     />
                     <p
-                      className="mt-2 text-start"
-                      style={{ fontSize: "11px", lineHeight: "2" }}
+                      className='mt-2 text-start'
+                      style={{ fontSize: '11px', lineHeight: '2' }}
                     >
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Laboriosam nisi quidem cupiditate tempora sunt nesciunt.
                     </p>
 
-                    <div className="row justify-content-between">
-                      <div className="col-8 text-start">
-                        <strong style={{ fontSize: "13px" }}>
+                    <div className='row justify-content-between'>
+                      <div className='col-8 text-start'>
+                        <strong style={{ fontSize: '13px' }}>
                           Someone Famous 3
                         </strong>
                       </div>
-                      <div className="col-4 text-end">
-                        <Link to="#">
+                      <div className='col-4 text-end'>
+                        <Link to='#'>
                           <i
-                            style={{ color: "gray", marginRight: "1px" }}
-                            className="bi bi-facebook"
+                            style={{ color: 'gray', marginRight: '1px' }}
+                            className='bi bi-facebook'
                           ></i>
                         </Link>
                         <span> </span>
-                        <Link to="#">
+                        <Link to='#'>
                           <i
-                            style={{ color: "gray" }}
-                            className="bi bi-twitter"
+                            style={{ color: 'gray' }}
+                            className='bi bi-twitter'
                           ></i>
                         </Link>
                       </div>
@@ -244,59 +241,58 @@ class Testimonial extends Component {
                 </div>
               </div>
             </div>
-            <div className="card shadow-sm mt-4">
-              <div className="content px-4 py-4">
-                <div className="row">
-                  <div className="col-3">
-                    <div className="img-area">
+            <div className='card shadow-sm mt-4'>
+              <div className='content px-4 py-4'>
+                <div className='row'>
+                  <div className='col-3'>
+                    <div className='img-area'>
                       <img
                         src={Person}
-                        className="rounded-circle"
-                        alt=""
+                        className='rounded-circle'
+                        alt=''
                         style={{
-                          width: "50px",
-                          height: "60px",
-                          margin: "0 20px 0 0",
-                          marginRadius: "100%",
+                          width: '50px',
+                          height: '60px',
+                          margin: '0 20px 0 0',
                         }}
                       />
                     </div>
                   </div>
-                  <div className="col mt-2">
+                  <div className='col mt-2'>
                     <img
                       src={Quote}
-                      alt=""
+                      alt=''
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: '20px',
+                        height: '20px',
                       }}
                     />
                     <p
-                      className="mt-2 text-start"
-                      style={{ fontSize: "11px", lineHeight: "2" }}
+                      className='mt-2 text-start'
+                      style={{ fontSize: '11px', lineHeight: '2' }}
                     >
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Laboriosam nisi quidem cupiditate tempora sunt nesciunt.
                     </p>
 
-                    <div className="row justify-content-between">
-                      <div className="col-8 text-start">
-                        <strong style={{ fontSize: "13px" }}>
+                    <div className='row justify-content-between'>
+                      <div className='col-8 text-start'>
+                        <strong style={{ fontSize: '13px' }}>
                           Someone Famous 4
                         </strong>
                       </div>
-                      <div className="col-4 text-end">
-                        <Link to="#">
+                      <div className='col-4 text-end'>
+                        <Link to='#'>
                           <i
-                            style={{ color: "gray", marginRight: "1px" }}
-                            className="bi bi-facebook"
+                            style={{ color: 'gray', marginRight: '1px' }}
+                            className='bi bi-facebook'
                           ></i>
                         </Link>
                         <span> </span>
-                        <Link to="#">
+                        <Link to='#'>
                           <i
-                            style={{ color: "gray" }}
-                            className="bi bi-twitter"
+                            style={{ color: 'gray' }}
+                            className='bi bi-twitter'
                           ></i>
                         </Link>
                       </div>
@@ -305,59 +301,58 @@ class Testimonial extends Component {
                 </div>
               </div>
             </div>
-            <div className="card shadow-sm mt-4">
-              <div className="content px-4 py-4">
-                <div className="row">
-                  <div className="col-3">
-                    <div className="img-area">
+            <div className='card shadow-sm mt-4'>
+              <div className='content px-4 py-4'>
+                <div className='row'>
+                  <div className='col-3'>
+                    <div className='img-area'>
                       <img
                         src={Person}
-                        className="rounded-circle"
-                        alt=""
+                        className='rounded-circle'
+                        alt=''
                         style={{
-                          width: "50px",
-                          height: "60px",
-                          margin: "0 20px 0 0",
-                          marginRadius: "100%",
+                          width: '50px',
+                          height: '60px',
+                          margin: '0 20px 0 0',
                         }}
                       />
                     </div>
                   </div>
-                  <div className="col mt-2">
+                  <div className='col mt-2'>
                     <img
                       src={Quote}
-                      alt=""
+                      alt=''
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: '20px',
+                        height: '20px',
                       }}
                     />
                     <p
-                      className="mt-2 text-start"
-                      style={{ fontSize: "11px", lineHeight: "2" }}
+                      className='mt-2 text-start'
+                      style={{ fontSize: '11px', lineHeight: '2' }}
                     >
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Laboriosam nisi quidem cupiditate tempora sunt nesciunt.
                     </p>
 
-                    <div className="row justify-content-between">
-                      <div className="col-8 text-start">
-                        <strong style={{ fontSize: "13px" }}>
+                    <div className='row justify-content-between'>
+                      <div className='col-8 text-start'>
+                        <strong style={{ fontSize: '13px' }}>
                           Someone Famous 5
                         </strong>
                       </div>
-                      <div className="col-4 text-end">
-                        <Link to="#">
+                      <div className='col-4 text-end'>
+                        <Link to='#'>
                           <i
-                            style={{ color: "gray", marginRight: "1px" }}
-                            className="bi bi-facebook"
+                            style={{ color: 'gray', marginRight: '1px' }}
+                            className='bi bi-facebook'
                           ></i>
                         </Link>
                         <span> </span>
-                        <Link to="#">
+                        <Link to='#'>
                           <i
-                            style={{ color: "gray" }}
-                            className="bi bi-twitter"
+                            style={{ color: 'gray' }}
+                            className='bi bi-twitter'
                           ></i>
                         </Link>
                       </div>

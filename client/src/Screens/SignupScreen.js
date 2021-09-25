@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-const Signup = (props) => {
+const SignupScreen = (props) => {
   let history = useHistory();
 
   const [credentials, setCredentials] = useState({
@@ -236,4 +236,4 @@ const Signup = (props) => {
   );
 };
 
-export default Signup;
+export default SignupScreen;

@@ -1,5 +1,5 @@
-@import "~owl.carousel/dist/assets/owl.carousel.css";
-@import "~owl.carousel/dist/assets/owl.theme.default.css";
+@import '~owl.carousel/dist/assets/owl.carousel.css';
+@import '~owl.carousel/dist/assets/owl.theme.default.css';
 
 .nav-btn {
   height: 47px;
@@ -11,27 +11,28 @@
   background-color: black;
 }
 
-.owl-theme .owl-nav [class*="owl-"] {
+.owl-theme .owl-nav [class*='owl-'] {
   position: absolute;
   top: 33%;
 }
 
 .owl-carousel .owl-nav button.owl-prev {
   left: -27px;
-  height: 60px;
-  width: 22px;
+  height: 63px;
+  width: 24.5px;
   background: lightgray;
   color: white;
-  border-radius: 2px;
+  border-radius: 0px 5px 5px 0px;
 }
 .owl-carousel .owl-nav button.owl-next {
   right: -27px;
-  height: 60px;
-  width: 22px;
+  height: 63px;
+  width: 24.5px;
   background: lightgray;
   color: white;
-  border-radius: 2px;
+  border-radius: 5px 0px 0px 5px;
 }
+
 .owl-carousel .owl-prev:hover {
   background-position: 0px -53px;
 }
@@ -39,6 +40,12 @@
   background-position: -24px -53px;
 }
 
-.card {
+.owl-carousel .card {
   border-color: black;
+  transition: transform 0.1s;
+  margin: 5px 5px;
+}
+
+.owl-carousel .card:hover {
+  transform: scale(1.03);
 }

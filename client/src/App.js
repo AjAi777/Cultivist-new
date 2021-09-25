@@ -1,16 +1,17 @@
+import { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
-import Home from './Screens/HomeScreen';
-import Footer from './Components/Footer/Footer';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Plant from './Screens/PlantScreen';
-import Signin from './Screens/SigninScreen';
-import Signup from './Screens/SignupScreen';
-import Contact from './Screens/ContactScreen';
-import ErrorPage from './Screens/ErrorScreen';
 import Alert from './Components/Alert/Alert';
-import Shop from './Screens/ShopScreen';
-import { useState } from 'react';
+import HomeScreen from './Screens/HomeScreen';
+import ShopScreen from './Screens/ShopScreen';
+import ContactScreen from './Screens/ContactScreen';
+import PlantScreen from './Screens/PlantScreen';
+import SigninScreen from './Screens/SigninScreen';
+import SignupScreen from './Screens/SignupScreen';
+import ProductScreen from './Screens/ProductScreen';
+import ErrorScreen from './Screens/ErrorScreen';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -30,25 +31,28 @@ function App() {
         <Alert alert={alert} />
         <Switch>
           <Route exact path='/'>
-            <Home />
+            <HomeScreen />
           </Route>
           <Route exact path='/shop'>
-            <Shop />
+            <ShopScreen />
           </Route>
           <Route exact path='/plant'>
-            <Plant />
+            <PlantScreen />
           </Route>
           <Route exact path='/contact'>
-            <Contact />
+            <ContactScreen />
+          </Route>
+          <Route path='/product/:id'>
+            <ProductScreen />
           </Route>
           <Route exact path='/signin'>
-            <Signin showAlert={showAlert} />
+            <SigninScreen showAlert={showAlert} />
           </Route>
           <Route exact path='/signup'>
-            <Signup showAlert={showAlert} />
+            <SignupScreen showAlert={showAlert} />
           </Route>
           <Route>
-            <ErrorPage />
+            <ErrorScreen />
           </Route>
         </Switch>
         <Footer />

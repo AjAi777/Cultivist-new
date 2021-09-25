@@ -1,8 +1,9 @@
 import React from 'react';
+import products from '../products';
 import Filter from '../Components/Shop/Filter';
 import ProductItem from '../Components/Shop/ProductItem';
 
-const Shop = () => {
+const ShopScreen = () => {
   return (
     <>
       <Filter />
@@ -32,10 +33,17 @@ const Shop = () => {
             </div>
           </div>
         </div>
-        <ProductItem />
+
+        <div className='row row-cols-1 row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-3 g-3'>
+          {products.map((product) => (
+            <div className='col' key={product._id}>
+              <ProductItem product={product} />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
 };
 
-export default Shop;
+export default ShopScreen;
