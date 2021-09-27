@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Quantity from '../Components/Product/Quantity';
 import Rating from '../Components/Shop/Rating';
 import products from '../products';
 
 const ProductScreen = ({ match }) => {
   const product = products.find((p) => p._id === match.params.id);
+
+  const [qty, setQty] = useState(1);
+
+  const plus = () => {
+    setQty(qty + 1);
+  };
+
+  const minus = () => {
+    if (qty > 1) {
+      setQty(qty - 1);
+    } else {
+      setQty(1);
+    }
+  };
+
   return (
     <>
       <div
@@ -73,7 +87,7 @@ const ProductScreen = ({ match }) => {
                 </div>
                 <button
                   type='button'
-                  className='p-2 m-2'
+                  className='p-2 mt-2'
                   style={{
                     border: '1px solid black',
                     fontSize: '14px',
@@ -109,8 +123,47 @@ const ProductScreen = ({ match }) => {
                   QTY
                 </div>
                 <div className='row'>
-                  <Quantity />
-                  <div className='col-lg-6 mt-2' style={{ paddingLeft: '5px' }}>
+                  <div className='col-lg-6 d-flex mt-2 dag'>
+                    <button
+                      type='button'
+                      className='btn-outline-light p-2'
+                      onClick={minus}
+                      style={{
+                        border: '1px solid #ccc',
+                        boxShadow: 'unset',
+                        width: '3rem',
+                        height: '3rem',
+                        color: 'gray',
+                      }}
+                    >
+                      <i class='bi bi-dash-lg' />
+                    </button>
+                    <input
+                      className='quantity text-center'
+                      name='quantity'
+                      value={qty}
+                      onChange={(e) => setQty(e.target.value)}
+                      style={{
+                        width: '100%',
+                        height: '3rem',
+                      }}
+                    ></input>
+                    <button
+                      type='button'
+                      className='btn-outline-light p-2'
+                      onClick={plus}
+                      style={{
+                        border: '1px solid #ccc',
+                        boxShadow: 'unset',
+                        width: '3rem',
+                        height: '3rem',
+                        color: 'gray',
+                      }}
+                    >
+                      <i class='bi bi-plus-lg' />
+                    </button>
+                  </div>
+                  <div className='col-lg-6 mt-2 dug'>
                     <button
                       type='button'
                       className='btn-success p-2 fw-bold'
