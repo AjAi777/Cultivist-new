@@ -14,7 +14,9 @@ dotenv.config({
 require('./db/conn');
 
 // Logger Middleware
-app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
 // Use JSON
 app.use(express.json());
