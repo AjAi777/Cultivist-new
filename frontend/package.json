@@ -1,14 +1,16 @@
 {
-  "name": "cultivist",
-  "proxy": "https://127.0.0.1:4000",
+  "name": "frontend",
+  "proxy": "http://127.0.0.1:4000/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.4",
     "bootstrap": "^5.1.0",
     "bootstrap-icons": "^1.5.0",
+    "browserslist": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-owl-carousel": "^2.3.3",

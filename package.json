@@ -1,17 +1,16 @@
 {
-  "name": "server",
+  "name": "cultivist",
   "version": "1.0.0",
   "description": "Cultivist Website",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "clientinstall": "npm install --prefix client",
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "clientinstall": "npm install --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "keywords": [],
   "author": "Cultivist",
   "license": "ISC",
   "repository": {
@@ -20,7 +19,6 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "ejs": "^2.7.4",
     "express": "^4.17.1",

@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Rating from '../Components/Shop/Rating';
-import products from '../products';
+import axios from 'axios';
 
 const ProductScreen = ({ match }) => {
-  const product = products.find((p) => p._id === match.params.id);
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get(`/api/products/${match.params.id}`);
+      setProduct(data);
+    };
+
+    fetchProduct();
+  }, [match]);
 
   const [qty, setQty] = useState(1);
 
@@ -136,7 +145,7 @@ const ProductScreen = ({ match }) => {
                         color: 'gray',
                       }}
                     >
-                      <i class='bi bi-dash-lg' />
+                      <i className='bi bi-dash-lg' />
                     </button>
                     <input
                       className='quantity text-center'
@@ -160,7 +169,7 @@ const ProductScreen = ({ match }) => {
                         color: 'gray',
                       }}
                     >
-                      <i class='bi bi-plus-lg' />
+                      <i className='bi bi-plus-lg' />
                     </button>
                   </div>
                   <div className='col-lg-6 mt-2 dug'>
@@ -189,9 +198,9 @@ const ProductScreen = ({ match }) => {
                   role='tablist'
                   style={{ borderBottom: '1px solid #ccc', overflow: 'hidden' }}
                 >
-                  <li class='nav-item' role='presentation'>
+                  <li className='nav-item' role='presentation'>
                     <Link
-                      class='nav-link active'
+                      className='nav-link active'
                       id='info-tab-1'
                       data-bs-toggle='tab'
                       to='#info-tabs-1'
@@ -202,9 +211,9 @@ const ProductScreen = ({ match }) => {
                       <h6>DESCRIPTION</h6>
                     </Link>
                   </li>
-                  <li class='nav-item' role='presentation'>
+                  <li className='nav-item' role='presentation'>
                     <Link
-                      class='nav-link'
+                      className='nav-link'
                       id='info-tab-2'
                       data-bs-toggle='tab'
                       to='#info-tabs-2'
@@ -215,9 +224,9 @@ const ProductScreen = ({ match }) => {
                       <h6>INGREDIENTS</h6>
                     </Link>
                   </li>
-                  <li class='nav-item' role='presentation'>
+                  <li className='nav-item' role='presentation'>
                     <Link
-                      class='nav-link'
+                      className='nav-link'
                       id='info-tab-3'
                       data-bs-toggle='tab'
                       to='#info-tabs-3'
@@ -228,9 +237,9 @@ const ProductScreen = ({ match }) => {
                       <h6>HOW TO USE</h6>
                     </Link>
                   </li>
-                  <li class='nav-item' role='presentation'>
+                  <li className='nav-item' role='presentation'>
                     <Link
-                      class='nav-link'
+                      className='nav-link'
                       id='info-tab-4'
                       data-bs-toggle='tab'
                       to='#info-tabs-4'
@@ -243,9 +252,9 @@ const ProductScreen = ({ match }) => {
                   </li>
                 </ul>
 
-                <div class='tab-content' id='info-content'>
+                <div className='tab-content' id='info-content'>
                   <div
-                    class='tab-pane show active'
+                    className='tab-pane show active'
                     id='info-tabs-1'
                     role='tabpanel'
                     aria-labelledby='info-tabs-1'
@@ -253,7 +262,7 @@ const ProductScreen = ({ match }) => {
                     {product.description}
                   </div>
                   <div
-                    class='tab-pane'
+                    className='tab-pane'
                     id='info-tabs-2'
                     role='tabpanel'
                     aria-labelledby='info-tab-2'
@@ -261,7 +270,7 @@ const ProductScreen = ({ match }) => {
                     {product.ingredients}
                   </div>
                   <div
-                    class='tab-pane'
+                    className='tab-pane'
                     id='info-tabs-3'
                     role='tabpanel'
                     aria-labelledby='info-tab-3'
@@ -269,7 +278,7 @@ const ProductScreen = ({ match }) => {
                     {product.howtouse}
                   </div>
                   <div
-                    class='tab-pane'
+                    className='tab-pane'
                     id='info-tabs-4'
                     role='tabpanel'
                     aria-labelledby='info-tab-4'

@@ -1,9 +1,10 @@
 /node_modules
-/config
+/backend/config
+/backend/config.env
 
-/client/build
-/client/node_modules/
-/config/default.json
-/config/production.json
+/frontend/build
+/frontend/node_modules/
+/backend/config/default.json
+/backend/config/production.json
 
 npm-debug.log*
