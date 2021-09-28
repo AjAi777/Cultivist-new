@@ -13,10 +13,6 @@
   },
   "author": "Cultivist",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/PrajwalTikhe1/Cultivist.git"
-  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
