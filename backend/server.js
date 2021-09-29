@@ -26,6 +26,8 @@ app.use(express.json());
 // Routes
 app.use('/api/products', productRoutes);
 
+const __dirname = path.resolve();
+
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   //set static folder
