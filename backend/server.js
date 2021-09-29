@@ -1,17 +1,19 @@
-const dotenv = require('dotenv');
-const express = require('express');
-const app = express();
-const products = require('./data/products');
-const path = require('path');
-const morgan = require('morgan');
+import dotenv from 'dotenv';
+import express from 'express';
+import connectDB from './config/db.js';
+import path from 'path';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
+import colors from 'colors';
+import morgan from 'morgan';
+import productRoutes from './routes/productRoutes.js';
 
 // Server
-dotenv.config({
-  path: __dirname + '/config/config.env',
-});
+dotenv.config();
+
+const app = express();
 
 // DB Connect
-require('./db/conn');
+connectDB();
 
 // Logger Middleware
 if (process.env.NODE_ENV === 'development') {
@@ -22,24 +24,14 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.json());
 
 // Routes
-app.get('/api/products', (req, res) => {
-  res.json(products);
-});
-
-app.get('/api/products/:id', (req, res) => {
-  const product = products.find((p) => p._id === req.params.id);
-  res.json(product);
-});
-
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/help', require('./routes/help'));
+app.use('/api/products', productRoutes);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   //set static folder
   app.use(express.static(path.join(__dirname, '/frontend/build')));
   app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+    res.sendFile(resolve(__dirname, 'frontend', 'build', 'index.html'))
   );
 } else {
   app.get('/', (req, res) => {
@@ -47,9 +39,16 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+//Custom Error Handling
+app.use(notFound);
+app.use(errorHandler);
+
 const PORT = process.env.PORT || 4000;
+
 // Port Listen
 app.listen(
   PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`)
+  console.log(
+    `Server running in ${process.env.NODE_ENV} on port ${PORT}`.yellow.bold
+  )
 );
