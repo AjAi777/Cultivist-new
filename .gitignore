@@ -1,6 +1,4 @@
 /node_modules
-/backend/config
-
 
 /frontend/build
 /frontend/node_modules/
