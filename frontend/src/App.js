@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
-import Alert from './Components/Alert/Alert';
+import Alert from './Components/Utils/Alert';
 import HomeScreen from './Screens/HomeScreen';
 import ShopScreen from './Screens/ShopScreen';
 import ContactScreen from './Screens/ContactScreen';
