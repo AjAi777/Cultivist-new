@@ -26,7 +26,9 @@ const ProductItem = ({ product }) => {
             style={{ textDecoration: 'none', color: '#444' }}
           >
             <div className='card-title'>
-              <h5 className='fw-bold'> {product.name}</h5>
+              <h5 className='fw-bold' style={{ color: '#1b4944' }}>
+                {product.name}
+              </h5>
             </div>
           </Link>
 
@@ -37,7 +39,15 @@ const ProductItem = ({ product }) => {
 
           <div className='card-text mt-1 d-flex justify-content-center'>
             <h6 className='fw-bold'>
-              <span style={{ marginRight: '4px', fontSize: '19px' }}>₹</span>
+              <span
+                style={{
+                  marginRight: '4px',
+                  fontSize: '19px',
+                  color: '#1b4944',
+                }}
+              >
+                ₹
+              </span>
               {product.price}
             </h6>
           </div>

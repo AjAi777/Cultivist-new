@@ -53,8 +53,9 @@ const ProductScreen = ({ match }) => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <div className='row mt-2'>
-            <div className='col-md-5'>
+            <div className='col-md-5 faf'>
               <img
+              className="csk"
                 src={product.image}
                 alt={product.name}
                 width='100%'
