@@ -1,15 +1,32 @@
-import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useHistory, withRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import logo from '../../Images/logo.png';
 import './Header.css';
+import { addToCart } from '../../Actions/cartActions';
 
-export default function Header() {
+function Header({ match, location }) {
   let history = useHistory();
   const handleLogout = () => {
     localStorage.removeItem('token');
     history.push('/signin');
     window.location.reload(false);
   };
+
+  const productId = match.params.id;
+  const qty = location.search ? Number(location.search.split('=')[1]) : 1;
+
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+
+  const { cartItems } = cart;
+
+  useEffect(() => {
+    if (productId) {
+      dispatch(addToCart(productId, qty));
+    }
+  }, [dispatch, productId, qty]);
+
   return (
     <>
       <nav
@@ -38,14 +55,14 @@ export default function Header() {
               className='cult'
             />
           </Link>
-          <Link to='#' className='ms-auto' style={{ color: 'green' }}>
+          <Link to='/cart' className='ms-auto' style={{ color: 'green' }}>
             <div className='moving-cart'>
               <i className='bi bi-cart-fill '></i>
               <span
                 className='badge rounded-pill badge-notification bg-danger'
                 id='#lblCartCount'
               >
-                1
+                {cartItems.reduce((acc, item) => acc + item.qty, 0)}
               </span>
             </div>
           </Link>
@@ -318,3 +335,5 @@ export default function Header() {
     </>
   );
 }
+
+export default withRouter(Header);

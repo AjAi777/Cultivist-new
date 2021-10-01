@@ -12,6 +12,7 @@ import SignupScreen from './Screens/SignupScreen';
 import ProductScreen from './Screens/ProductScreen';
 import ErrorScreen from './Screens/ErrorScreen';
 import Footer from './Components/Footer/Footer';
+import CartScreen from './Screens/CartScreen';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -50,6 +51,9 @@ function App() {
           </Route>
           <Route exact path='/signup'>
             <SignupScreen showAlert={showAlert} />
+          </Route>
+          <Route exact path='/cart/:id?'>
+            <CartScreen />
           </Route>
           <Route>
             <ErrorScreen />

@@ -6,16 +6,7 @@ import { listProductDetails } from '../Actions/productActions';
 import Loader from '../Components/Utils/Loader';
 import Message from '../Components/Utils/Message';
 
-const ProductScreen = ({ match }) => {
-  const dispatch = useDispatch();
-
-  const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetails;
-
-  useEffect(() => {
-    dispatch(listProductDetails(match.params.id));
-  }, [dispatch, match]);
-
+const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
 
   const plus = () => {
@@ -28,6 +19,19 @@ const ProductScreen = ({ match }) => {
     } else {
       setQty(1);
     }
+  };
+
+  const dispatch = useDispatch();
+
+  const productDetails = useSelector((state) => state.productDetails);
+  const { loading, error, product } = productDetails;
+
+  useEffect(() => {
+    dispatch(listProductDetails(match.params.id));
+  }, [dispatch, match]);
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
 
   return (
@@ -50,12 +54,12 @@ const ProductScreen = ({ match }) => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant='danger'>{error}</Message>
+          <Message variant='danger jadoo'>{error}</Message>
         ) : (
           <div className='row mt-2'>
             <div className='col-md-5 faf'>
               <img
-              className="csk"
+                className='csk'
                 src={product.image}
                 alt={product.name}
                 width='100%'
@@ -122,7 +126,7 @@ const ProductScreen = ({ match }) => {
                       color: '#1b4944',
                     }}
                   >
-                    STATUS:{' '}
+                    STATUS:
                     {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
                   </div>
                 </div>
@@ -138,49 +142,55 @@ const ProductScreen = ({ match }) => {
                     QTY
                   </div>
                   <div className='row'>
-                    <div className='col-lg-6 d-flex mt-2 dag'>
-                      <button
-                        type='button'
-                        className='btn-outline-light p-2'
-                        onClick={minus}
-                        style={{
-                          border: '1px solid #ccc',
-                          boxShadow: 'unset',
-                          width: '3rem',
-                          height: '3rem',
-                          color: 'gray',
-                        }}
-                      >
-                        <i className='bi bi-dash-lg' />
-                      </button>
-                      <input
-                        className='quantity text-center'
-                        name='quantity'
-                        value={qty}
-                        onChange={(e) => setQty(e.target.value)}
-                        style={{
-                          width: '100%',
-                          height: '3rem',
-                        }}
-                      ></input>
-                      <button
-                        type='button'
-                        className='btn-outline-light p-2'
-                        onClick={plus}
-                        style={{
-                          border: '1px solid #ccc',
-                          boxShadow: 'unset',
-                          width: '3rem',
-                          height: '3rem',
-                          color: 'gray',
-                        }}
-                      >
-                        <i className='bi bi-plus-lg' />
-                      </button>
-                    </div>
+                    {product.countInStock > 0 && (
+                      <div className='col-lg-6 d-flex mt-2 dag'>
+                        <button
+                          type='button'
+                          className='btn-outline-light p-2'
+                          onClick={minus}
+                          style={{
+                            border: '1px solid #ccc',
+                            boxShadow: 'unset',
+                            width: '3rem',
+                            height: '3rem',
+                            color: 'gray',
+                          }}
+                        >
+                          <i className='bi bi-dash-lg' />
+                        </button>
+
+                        <input
+                          className='quantity text-center'
+                          name='quantity'
+                          value={qty}
+                          onChange={(e) => setQty(e.target.value)}
+                          style={{
+                            width: '100%',
+                            height: '3rem',
+                          }}
+                        ></input>
+
+                        <button
+                          type='button'
+                          className='btn-outline-light p-2'
+                          onClick={plus}
+                          style={{
+                            border: '1px solid #ccc',
+                            boxShadow: 'unset',
+                            width: '3rem',
+                            height: '3rem',
+                            color: 'gray',
+                          }}
+                          disabled={qty + 1 > product.countInStock}
+                        >
+                          <i className='bi bi-plus-lg' />
+                        </button>
+                      </div>
+                    )}
                     <div className='col-lg-6 mt-2 dug'>
                       <button
                         type='button'
+                        onClick={addToCartHandler}
                         className='btn-success p-2 fw-bold'
                         style={{
                           fontSize: '14px',
