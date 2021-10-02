@@ -1,43 +1,38 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Message from '../Components/Utils/Message';
+import Loader from '../Components/Utils/Loader';
+import { Signin } from '../Actions/userActions';
 
-const SigninScreen = (props) => {
-  let history = useHistory();
-
+const SigninScreen = ({ location, history }) => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
 
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
+  const dispatch = useDispatch();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await fetch('/api/auth/signin', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: credentials.email,
-        password: credentials.password,
-      }),
-    });
-    const json = await response.json();
-    if (json.success) {
-      // Save the auth token and redirect
-      localStorage.setItem('token', json.authtoken);
-      props.showAlert('Logged In Successfully', 'success');
-      history.push('/');
-    } else {
-      props.showAlert('Invalid Credentials', 'danger');
+  const userSignin = useSelector((state) => state.userSignin);
+  const { loading, error, userInfo } = userSignin;
+
+  const redirect = location.search ? location.search.split('=')[1] : '/';
+
+  useEffect(() => {
+    if (userInfo) {
+      history.push(redirect);
     }
+  }, [history, userInfo, redirect]);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(Signin(credentials.email, credentials.password));
   };
 
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
-
   return (
     <>
       <div
@@ -45,18 +40,20 @@ const SigninScreen = (props) => {
         tabIndex='-1'
         role='dialog'
         id='modalSignin'
+        style={{ marginTop: '12vh' }}
       >
-        <div className='modal-dialog mb-5' role='document'>
-          <div className='modal-content rounded-5 shadow'>
-            <div className='modal-header p-5 pb-4 border-bottom-0'>
+        <div className='modal-dialog' role='document'>
+          {error && <Message variant='danger jadoo'>{error}</Message>}
+          {loading && <Loader />}
+          <div className='modal-content rounded-5 mb-4 shadow'>
+            <div className='modal-header p-5 pb-2 border-bottom-0'>
               <h2 className='fw-bold mb-0 '>Sign in</h2>
             </div>
-
-            <div className='modal-body p-5 pt-0'>
+            <div className='modal-body p-5 pt-4'>
               <form
                 method='POST'
                 className='signin-form'
-                onSubmit={handleSubmit}
+                onSubmit={submitHandler}
               >
                 <div className='form-floating mb-3'>
                   <input
@@ -118,13 +115,15 @@ const SigninScreen = (props) => {
                 </div>
 
                 <small className='text-muted'>
-                  By clicking Sign up, you agree to the terms of use.
+                  By clicking Sign in, you agree to the terms of use.
                 </small>
                 <hr className='mt-4' />
                 <h2 className='fs-5 fw-bold mt-4 mb-4'>
-                  Already have an Account?
+                  Don't have an account?
                 </h2>
-                <Link to='/signup'>
+                <Link
+                  to={redirect ? `/signup?redirect=${redirect}` : '/signup'}
+                >
                   <button
                     className='w-100 py-2 mb-2 btn btn-outline-success rounded-4'
                     type='submit'
@@ -141,4 +140,4 @@ const SigninScreen = (props) => {
   );
 };
 
-export default SigninScreen;
+export default withRouter(SigninScreen);

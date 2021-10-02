@@ -38,7 +38,7 @@ const ProductScreen = ({ history, match }) => {
     <>
       <div
         className='jadoo'
-        style={{ marginTop: '12vh', marginBottom: '12vh' }}
+        style={{ marginTop: '18vh', marginBottom: '15vh' }}
       >
         <Link
           className='btn btn-outline-light'
@@ -54,7 +54,7 @@ const ProductScreen = ({ history, match }) => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant='danger jadoo'>{error}</Message>
+          <Message variant='danger jadoo' style={{ marginBottom: '70vh' }}>{error}</Message>
         ) : (
           <div className='row mt-2'>
             <div className='col-md-5 faf'>

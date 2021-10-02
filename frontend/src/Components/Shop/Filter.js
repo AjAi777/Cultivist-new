@@ -4,7 +4,7 @@ import './Shop.css';
 export default function Filter() {
   return (
     <>
-      <div className='jadoo' style={{ marginTop: '12vh' }}>
+      <div className='jadoo' style={{ marginTop: '17vh' }}>
         <div className='filter_menu gap-2'>
           <form style={{ width: '50rem' }}>
             <div className='input-group zoom d-flex'>

@@ -31,7 +31,7 @@ const CartScreen = ({ match, location, history }) => {
     <>
       <div
         className='row jadoo'
-        style={{ marginTop: '15vh', marginBottom: '15vh' }}
+        style={{ marginTop: '20vh', marginBottom: '30vh' }}
       >
         <h3
           className='text-uppercase fw-bold'
@@ -41,7 +41,7 @@ const CartScreen = ({ match, location, history }) => {
         </h3>
         <div className='col-md-9' style={{ padding: 'unset' }}>
           {cartItems.length === 0 ? (
-            <Message variant='mt-4 text-center'>
+            <Message variant='mt-4 text-center cartmsg'>
               {
                 <div>
                   <h6 className='fw-bold mt-5'>
@@ -50,11 +50,10 @@ const CartScreen = ({ match, location, history }) => {
                   <Link to='/shop'>
                     <button
                       type='button'
-                      className='btn btn-outline-success mt-4 p-2'
+                      className='btn btn-outline-success mt-4 p-2 cartbut'
                       style={{
                         border: '1px solid black',
                         borderRadius: '0',
-                        width: '20rem',
                         boxShadow: 'unset',
                       }}
                     >

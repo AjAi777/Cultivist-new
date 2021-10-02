@@ -1,31 +1,21 @@
-import React, { useEffect } from 'react';
-import { Link, useHistory, withRouter } from 'react-router-dom';
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import logo from '../../Images/logo.png';
 import './Header.css';
-import { addToCart } from '../../Actions/cartActions';
+import { Signout } from '../../Actions/userActions';
 
-function Header({ match, location }) {
-  let history = useHistory();
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    history.push('/signin');
-    window.location.reload(false);
+function Header() {
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+
+  const signoutHandler = () => {
+    dispatch(Signout());
   };
-
-  const productId = match.params.id;
-  const qty = location.search ? Number(location.search.split('=')[1]) : 1;
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-
   const { cartItems } = cart;
-
-  useEffect(() => {
-    if (productId) {
-      dispatch(addToCart(productId, qty));
-    }
-  }, [dispatch, productId, qty]);
 
   return (
     <>
@@ -42,7 +32,7 @@ function Header({ match, location }) {
             aria-controls='navbarSupportedContent'
             aria-expanded='false'
             aria-label='Toggle navigation'
-            style={{ marginLeft: '15px' }}
+            style={{ marginLeft: '15px', boxShadow: 'unset' }}
           >
             <i className='bi bi-list' style={{ color: 'white' }}></i>
           </button>
@@ -111,11 +101,7 @@ function Header({ match, location }) {
                 </Link>
                 <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
                   <li className='p-1'>
-                    <Link
-                      className='dropdown-item drop'
-                      to='/shop'
-                      style={{ fontWeight: '600' }}
-                    >
+                    <Link className='dropdown-item drop' to='/shop'>
                       Main Shop
                     </Link>
                   </li>
@@ -139,7 +125,7 @@ function Header({ match, location }) {
                   </li>
                 </ul>
               </li>
-              <li className='nav-item dropdown head'>
+              <li className='nav-item dropdown head' aria-disabled>
                 <Link
                   className='nav-link dropdown-toggle'
                   to='#'
@@ -157,26 +143,6 @@ function Header({ match, location }) {
                 >
                   Gifting
                 </Link>
-                <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
-                  <li>
-                    <Link className='dropdown-item' to='#'>
-                      Action
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className='dropdown-item' to='#'>
-                      Another action
-                    </Link>
-                  </li>
-                  <li>
-                    <hr className='dropdown-divider' />
-                  </li>
-                  <li>
-                    <Link className='dropdown-item' to='#'>
-                      Something else here
-                    </Link>
-                  </li>
-                </ul>
               </li>
               <li className='nav-item head'>
                 <Link
@@ -208,22 +174,7 @@ function Header({ match, location }) {
                   Send Post Cards
                 </Link>
               </li>
-              <li className='nav-item head raj'>
-                <Link
-                  className='nav-link'
-                  aria-current='page'
-                  to='/contact'
-                  style={{
-                    margin: '1rem 1.5rem 1rem 0rem',
-                    fontWeight: '600',
-                    fontSize: '1rem',
-                    color: 'lightblack',
-                  }}
-                >
-                  Contact
-                </Link>
-              </li>
-              <li className='d-flex align-items-center nav-item'>
+              <li className='d-flex align-items-center nav-item raj'>
                 <Link to='/plant'>
                   <button
                     className='btn btn-success'
@@ -231,11 +182,12 @@ function Header({ match, location }) {
                     data-bs-target='.navbar-collapse.show'
                     style={{
                       width: '8rem',
-                      margin: '1rem 1rem 1rem 0rem',
+                      margin: '1rem 0rem 1rem 0rem',
                       fontSize: '1rem',
                       fontWeight: '600',
                       marginRight: '1rem',
                       borderRadius: '0.4rem',
+                      boxShadow: 'unset',
                     }}
                   >
                     Plant a Tree
@@ -244,7 +196,7 @@ function Header({ match, location }) {
               </li>
 
               <li className='d-flex align-items-center nav-item abb'>
-                {!localStorage.getItem('token') ? (
+                {!userInfo ? (
                   <Link to='/signin'>
                     <button
                       className='btn btn-outline-success'
@@ -258,29 +210,52 @@ function Header({ match, location }) {
                         fontSize: '1rem',
                         borderRadius: '0.4rem',
                         borderColor: 'green',
+                        boxShadow: 'unset',
                       }}
                     >
                       Sign In
                     </button>
                   </Link>
                 ) : (
-                  <button
-                    className='btn btn-outline-success'
-                    data-bs-toggle='collapse'
-                    data-bs-target='.navbar-collapse.show'
-                    style={{
-                      width: '7rem',
-                      marginRight: '1rem',
-                      margin: '1rem 1rem 1rem 0rem',
-                      fontWeight: '600',
-                      fontSize: '1rem',
-                      borderRadius: '0.4rem',
-                      borderColor: 'green',
-                    }}
-                    onClick={handleLogout}
-                  >
-                    Sign Out
-                  </button>
+                  <li className='nav-item dropdown head'>
+                    <Link
+                      className='nav-link dropdown-toggle'
+                      to='#'
+                      id='navbarDropdown'
+                      role='button'
+                      data-toggle='dropdown'
+                      aria-haspopup='true'
+                      aria-expanded='false'
+                      style={{
+                        margin: '1rem 1rem 1rem -0.5rem',
+                        fontSize: '1rem',
+                        fontWeight: '600',
+                        color: 'lightblack',
+                      }}
+                    >
+                      {userInfo.name}
+                    </Link>
+                    <ul
+                      className='dropdown-menu'
+                      aria-labelledby='navbarDropdown'
+                    >
+                      <li className='p-1'>
+                        <Link className='dropdown-item drop' to='/profile'>
+                          Profile
+                        </Link>
+                      </li>
+                      <li className='p-1'>
+                        <Link className='dropdown-item drop' to='/contact'>
+                          Contact us
+                        </Link>
+                      </li>
+                      <li className='p-1' onClick={signoutHandler}>
+                        <Link className='dropdown-item drop' to='/#'>
+                          Signout
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
                 )}
               </li>
             </ul>

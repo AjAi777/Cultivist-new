@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
-import Alert from './Components/Utils/Alert';
 import HomeScreen from './Screens/HomeScreen';
 import ShopScreen from './Screens/ShopScreen';
 import ContactScreen from './Screens/ContactScreen';
@@ -15,21 +13,10 @@ import Footer from './Components/Footer/Footer';
 import CartScreen from './Screens/CartScreen';
 
 function App() {
-  const [alert, setAlert] = useState(null);
-  const showAlert = (message, type) => {
-    setAlert({
-      msg: message,
-      type: type,
-    });
-    setTimeout(() => {
-      setAlert(null);
-    }, 1700);
-  };
   return (
     <>
       <Router className='App'>
         <Header />
-        <Alert alert={alert} />
         <Switch>
           <Route exact path='/'>
             <HomeScreen />
@@ -47,10 +34,10 @@ function App() {
             <ProductScreen />
           </Route>
           <Route exact path='/signin'>
-            <SigninScreen showAlert={showAlert} />
+            <SigninScreen />
           </Route>
           <Route exact path='/signup'>
-            <SignupScreen showAlert={showAlert} />
+            <SignupScreen />
           </Route>
           <Route exact path='/cart/:id?'>
             <CartScreen />

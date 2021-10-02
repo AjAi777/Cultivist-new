@@ -6,14 +6,15 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import colors from 'colors';
 import morgan from 'morgan';
 import productRoutes from './routes/productRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 // Server
 dotenv.config();
 
-const app = express();
-
 // DB Connect
 connectDB();
+
+const app = express();
 
 // Logger Middleware
 if (process.env.NODE_ENV === 'development') {
@@ -25,6 +26,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
 
 const __dirname = path.resolve();
 

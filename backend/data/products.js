@@ -5,7 +5,7 @@ const products = [
     category: 'Essential Oils',
     price: 299,
     size: 15,
-    countInStock: 5,
+    countInStock: 10,
     rating: 4.5,
     numReviews: 10,
     description:
@@ -20,7 +20,7 @@ const products = [
     category: 'Essential Oils',
     price: 259,
     size: 15,
-    countInStock: 5,
+    countInStock: 10,
     rating: 4.9,
     numReviews: 15,
     description:
@@ -35,7 +35,7 @@ const products = [
     category: 'Essential Oils',
     price: 359,
     size: 15,
-    countInStock: 5,
+    countInStock: 10,
     rating: 3.7,
     numReviews: 17,
     description:
@@ -50,7 +50,7 @@ const products = [
     category: 'Essential Oils',
     price: 199,
     size: 15,
-    countInStock: 5,
+    countInStock: 10,
     rating: 4.2,
     numReviews: 19,
     description:
@@ -65,7 +65,7 @@ const products = [
     category: 'Essential Oils',
     price: 279,
     size: 15,
-    countInStock: 5,
+    countInStock: 10,
     rating: 4.6,
     numReviews: 14,
     description:
@@ -80,7 +80,7 @@ const products = [
     category: 'Essential Oils',
     price: 399,
     size: 15,
-    countInStock: 5,
+    countInStock: 10,
     rating: 4.4,
     numReviews: 23,
     description:

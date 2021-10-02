@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Message from '../Components/Utils/Message';
+import Loader from '../Components/Utils/Loader';
+import { Signup } from '../Actions/userActions';
 
-const SignupScreen = (props) => {
-  let history = useHistory();
-
+const SignupScreen = ({ location, history }) => {
   const [credentials, setCredentials] = useState({
     name: '',
     phone: '',
@@ -11,6 +13,8 @@ const SignupScreen = (props) => {
     password: '',
     cpassword: '',
   });
+
+  const [message, setMessage] = useState(null);
 
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => {
@@ -22,35 +26,32 @@ const SignupScreen = (props) => {
     setPasswordCShown(passwordCShown ? false : true);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const { name, phone, email, password } = credentials;
+  const dispatch = useDispatch();
 
-    if (credentials.cpassword !== credentials.password) {
-      window.alert('Password Not Match, Please Try Again', 'danger');
-      return false;
+  const userSignup = useSelector((state) => state.userSignup);
+  const { loading, error, userInfo } = userSignup;
+
+  const redirect = location.search ? location.search.split('=')[1] : '/';
+
+  useEffect(() => {
+    if (userInfo) {
+      history.push(redirect);
     }
+  }, [history, userInfo, redirect]);
 
-    const response = await fetch('/api/auth/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        phone,
-        email,
-        password,
-      }),
-    });
-    const json = await response.json();
-    if (json.success) {
-      // Save the auth token and redirect
-      localStorage.setItem('token', json.authtoken);
-      props.showAlert('Account Created Successfully', 'success');
-      history.push('/signin');
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (credentials.password !== credentials.cpassword) {
+      setMessage('Password do not match');
     } else {
-      props.showAlert('Invalid Details', 'danger');
+      dispatch(
+        Signup(
+          credentials.name,
+          credentials.phone,
+          credentials.email,
+          credentials.password
+        )
+      );
     }
   };
 
@@ -64,19 +65,22 @@ const SignupScreen = (props) => {
         className='modal modal-signin position-static d-block pt-5 pb-5'
         tabIndex='-1'
         role='dialog'
-        id='modalSignin'
+        id='modalSignup'
+        style={{ marginTop: '12vh' }}
       >
-        <div className='modal-dialog mb-5' role='document'>
-          <div className='modal-content rounded-5 shadow'>
-            <div className='modal-header p-5 pb-4 border-bottom-0'>
+        <div className='modal-dialog' role='document'>
+          {message && <Message variant='danger jadoo dismissible'>{message}</Message>}
+          {error && <Message variant='danger jadoo'>{error}</Message>}
+          {loading && <Loader />}
+          <div className='modal-content rounded-5 mb-4 shadow'>
+            <div className='modal-header p-5 pb-2 border-bottom-0'>
               <h2 className='fw-bold mb-0 '>Sign up</h2>
             </div>
-
-            <div className='modal-body p-5 pt-0'>
+            <div className='modal-body p-5 pt-4'>
               <form
                 method='POST'
                 className='signup-form'
-                onSubmit={handleSubmit}
+                onSubmit={submitHandler}
               >
                 <div className='form-floating mb-3'>
                   <input
@@ -217,9 +221,11 @@ const SignupScreen = (props) => {
                 <hr className='my-4' />
 
                 <h2 className='fs-5 fw-bold mt-2 mb-4'>
-                  Dont have an Account?
+                  Already have an account?
                 </h2>
-                <Link to='/signin'>
+                <Link
+                  to={redirect ? `/signin?redirect=${redirect}` : '/signin'}
+                >
                   <button
                     className='w-100 py-2 mb-2 btn btn-outline-success rounded-4'
                     type='submit'
@@ -236,4 +242,4 @@ const SignupScreen = (props) => {
   );
 };
 
-export default SignupScreen;
+export default withRouter(SignupScreen);

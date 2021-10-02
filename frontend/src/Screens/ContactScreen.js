@@ -45,9 +45,9 @@ const ContactScreen = () => {
           <section className='my-5 col-lg-10 offset-lg-1'>
             <h1
               className='h1-responsive fw-bold text-center my-5'
-              style={{ color: 'green' }}
+              style={{ letterSpacing: '2px', color: 'green' }}
             >
-              Contact us
+              CONTACT US
             </h1>
 
             <h5 className='col-lg-7 text-center w-responsive mx-auto pb-5'>

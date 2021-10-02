@@ -21,7 +21,7 @@ const ShopScreen = () => {
       {loading ? (
         <Loader />
       ) : error ? (
-        <Message variant='danger jadoo'>{error}</Message>
+        <Message variant='danger jadoo' style={{ marginBottom: '70vh' }}>{error}</Message>
       ) : (
         <div
           className='jadoo px-4 text-center shop'

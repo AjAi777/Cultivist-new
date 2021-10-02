@@ -11,7 +11,7 @@ import Shop from '../Components/Home/Other/Shop';
 export default function HomeScreen() {
   return (
     <>
-      <div>
+      <div style={{ marginTop: '12vh' }}>
         <Banner />
         <Video />
         <Shop />
