@@ -11,6 +11,7 @@ import ProductScreen from './Screens/ProductScreen';
 import ErrorScreen from './Screens/ErrorScreen';
 import Footer from './Components/Footer/Footer';
 import CartScreen from './Screens/CartScreen';
+import ProfileScreen from './Screens/ProfileScreen';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path='/product/:id'>
             <ProductScreen />
+          </Route>
+          <Route path='/profile'>
+            <ProfileScreen />
           </Route>
           <Route exact path='/signin'>
             <SigninScreen />

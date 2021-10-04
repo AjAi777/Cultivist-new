@@ -1,38 +1,40 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Message from '../Components/Utils/Message';
+import Loader from '../Components/Utils/Loader';
+import { getUserDetails } from '../Actions/userActions';
 
-const ContactScreen = () => {
-  const [credentials, setCredentials] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
-  });
+const ContactScreen = ({ history }) => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const dispatch = useDispatch();
 
-    const response = await fetch('http://localhost:4000/api/help/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: credentials.name,
-        phone: credentials.phone,
-        email: credentials.email,
-        message: credentials.message,
-      }),
-    });
-    const json = await response.json();
-    if (json.success) {
-      // Save the auth token and redirect
-      localStorage.setItem('help', json.contact);
+  const userDetails = useSelector((state) => state.userDetails);
+  const { loading, error, user } = userDetails;
+
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+
+  useEffect(() => {
+    if (!userInfo) {
+    } else {
+      if (!user.name) {
+        dispatch(getUserDetails('profile'));
+      } else {
+        setName(user.name);
+        setPhone(user.phone);
+        setEmail(user.email);
+      }
     }
-  };
+  }, [dispatch, history, userInfo, user]);
 
-  const onChange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  const submitHandler = (e) => {
+    e.preventDefault();
+    //Dispatch
   };
 
   return (
@@ -42,6 +44,11 @@ const ContactScreen = () => {
         style={{ marginTop: '25vh', marginBottom: '15vh' }}
       >
         <div className='container'>
+          {message && (
+            <Message variant='danger jadoo dismissible'>{message}</Message>
+          )}
+          {error && <Message variant='danger jadoo'>{error}</Message>}
+          {loading && <Loader />}
           <section className='my-5 col-lg-10 offset-lg-1'>
             <h1
               className='h1-responsive fw-bold text-center my-5'
@@ -109,7 +116,7 @@ const ContactScreen = () => {
                     <form
                       method='POST'
                       className='contact-form'
-                      onSubmit={handleSubmit}
+                      onSubmit={submitHandler}
                     >
                       <div className='form-header '>
                         <h3 className='fw-bold' style={{ color: 'green' }}>
@@ -129,8 +136,8 @@ const ContactScreen = () => {
                           id='name'
                           placeholder='name'
                           autoComplete='off'
-                          onChange={onChange}
-                          value={credentials.name}
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
                           required
                         />
                         <label htmlFor='name'>Your Name</label>
@@ -144,8 +151,8 @@ const ContactScreen = () => {
                           id='phone'
                           placeholder='number'
                           autoComplete='off'
-                          onChange={onChange}
-                          value={credentials.phone}
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
                           required
                         />
                         <label htmlFor='phone'>Your Phone no</label>
@@ -157,9 +164,9 @@ const ContactScreen = () => {
                           className='form-control form-control-sm'
                           id='email'
                           placeholder='name@example.com'
-                          onChange={onChange}
                           autoComplete='off'
-                          value={credentials.email}
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
                           required
                         />
                         <label htmlFor='email'> Your Email address</label>
@@ -172,8 +179,8 @@ const ContactScreen = () => {
                           id='message'
                           name='message'
                           style={{ height: '100px' }}
-                          onChange={onChange}
-                          value={credentials.message}
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
                           required
                         ></textarea>
                         <label htmlFor='floatingTextarea2'>Your Question</label>
@@ -216,4 +223,4 @@ const ContactScreen = () => {
   );
 };
 
-export default ContactScreen;
+export default withRouter(ContactScreen);

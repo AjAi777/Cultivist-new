@@ -154,6 +154,9 @@ input {
 }
 
 @media only screen and (max-width: 600px) {
+  .dad {
+    margin: 0.4rem 0rem 0.4rem 0rem;
+  }
   .nav-link h6 {
     font-size: 12px;
   }
@@ -176,7 +179,7 @@ input {
     display: none;
   }
   .cartquantity {
-    width: 4rem;
+    width: 4.3rem;
     height: 2.5rem;
   }
   .cartprice {
@@ -218,6 +221,9 @@ input {
 }
 
 @media (min-width: 600px) {
+  .dad {
+    margin: 1rem 0rem 1rem 0rem;
+  }
   .dag {
     padding-right: 5px;
   }
@@ -229,7 +235,7 @@ input {
     height: 240px;
   }
   .cartquantity {
-    width: 4rem;
+    width: 4.3rem;
     height: 2.2rem;
   }
   .cartprice {
@@ -262,7 +268,7 @@ input {
     width: 20rem;
   }
   .raj {
-    margin-left: 14rem;
+    margin-left: 8rem;
   }
 }
 
@@ -287,4 +293,108 @@ input {
 }
 .faf .csk:hover {
   transform: scale(1.09);
+}
+
+@media only screen and (max-width: 600px) {
+  .gate {
+    margin-left: 1rem;
+  }
+  .dubai {
+    margin-top: 4.2rem;
+  }
+  .singapore {
+    margin-top: 1.2rem;
+  }
+  .user-pro {
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  .moving-cart {
+    font-size: 24px !important;
+    margin-right: 25px;
+  }
+  .mighty-raju {
+    visibility: hidden;
+  }
+  .mighty-raju2 {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
+  .srh {
+    margin: 0rem 1rem 0rem 1rem;
+  }
+  .rr {
+    margin-top: 1.5rem;
+  }
+  .mi {
+    margin: 0rem 1rem 2rem 1rem;
+  }
+  .dc {
+    margin: 1rem 0 1rem 0;
+  }
+  .karan {
+    font-size: 15px;
+  }
+  .arjun {
+    font-size: 11px;
+  }
+  .userpic {
+    width: 70px;
+  }
+  .usercol {
+    width: 7rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .king {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
+  .dubai {
+    margin-top: 4.08rem;
+  }
+  .user-pro {
+    position: absolute;
+    right: 0;
+    margin-right: 7rem;
+    transform: translateY(-50%);
+  }
+  .moving-cart {
+    font-size: 24px !important;
+    margin-right: 35px;
+  }
+  .basket {
+    margin-right: 5rem;
+  }
+  .signoutt {
+    width: 100%;
+  }
+  .kkr {
+    margin: 7rem 5rem 5rem 5rem;
+  }
+  .srh {
+    margin: 8rem 7rem 5rem 5rem;
+  }
+  .mi {
+    margin: 0rem 3rem 3rem 3rem;
+  }
+  .dc {
+    margin: 1.5rem 0 1.5rem 0;
+  }
+  .karan {
+    font-size: 19px;
+  }
+  .arjun {
+    font-size: 15px;
+  }
+  .userpic {
+    width: 120px;
+  }
+  .usercol {
+    width: 12rem;
+  }
 }
