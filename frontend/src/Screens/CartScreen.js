@@ -31,10 +31,10 @@ const CartScreen = ({ match, location, history }) => {
     <>
       <div
         className='row jadoo'
-        style={{ marginTop: '20vh', marginBottom: '30vh' }}
+        style={{ marginTop: '18vh', marginBottom: '30vh' }}
       >
         <h3
-          className='text-uppercase fw-bold'
+          className='text-uppercase fw-bold ishan'
           style={{ letterSpacing: '3px', color: '#1b4944' }}
         >
           SHOPPING CART
@@ -232,9 +232,9 @@ const CartScreen = ({ match, location, history }) => {
                 >
                   <h6
                     className='fw-bold'
-                    style={{ letterSpacing: '3px', marginTop: '5px' }}
+                    style={{ letterSpacing: '1px', marginTop: '5px' }}
                   >
-                    CHECKOUT
+                    PROCEED TO CHECKOUT
                   </h6>
                 </button>
               </div>

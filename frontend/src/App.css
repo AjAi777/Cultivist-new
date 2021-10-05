@@ -154,6 +154,19 @@ input {
 }
 
 @media only screen and (max-width: 600px) {
+  .jet {
+    padding-bottom: 4.5rem;
+  }
+  .jeet {
+    max-width: 80%;
+  }
+  .haar {
+    width: 120px;
+    height: 40px;
+  }
+  .ishan {
+    margin-bottom: 1rem;
+  }
   .dad {
     margin: 0.4rem 0rem 0.4rem 0rem;
   }
@@ -220,7 +233,25 @@ input {
   }
 }
 
+.jackk {
+  background: url('./Images/bkg-footer-bottom.png');
+  background-size: cover;
+}
+
 @media (min-width: 600px) {
+  .haar {
+    width: 140px;
+    height: 40px;
+  }
+  .jeet {
+    max-width: 65%;
+  }
+  .kishan {
+    margin-top: 9rem;
+  }
+  .ishan {
+    margin-top: 2rem;
+  }
   .dad {
     margin: 1rem 0rem 1rem 0rem;
   }

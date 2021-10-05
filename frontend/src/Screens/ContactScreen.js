@@ -42,9 +42,9 @@ function ContactScreen() {
     <>
       <div
         className='contact_info jadoo pb-5'
-        style={{ marginTop: '25vh', marginBottom: '15vh' }}
+        style={{ marginTop: '20vh', marginBottom: '15vh' }}
       >
-        <div className='container'>
+        <div className='container kishan'>
           <section className='my-5 col-lg-10 offset-lg-1'>
             <h1
               className='h1-responsive fw-bold text-center my-5'
