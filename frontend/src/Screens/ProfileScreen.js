@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../Components/Utils/Message';
 import Loader from '../Components/Utils/Loader';
-import { getUserDetails } from '../Actions/userActions';
+import { getUserDetails, updateUserProfile } from '../Actions/userActions';
 import userpic from '../Images/user.png';
 
 const ProfileScreen = ({ history }) => {
@@ -32,6 +32,9 @@ const ProfileScreen = ({ history }) => {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
+  const { success } = userUpdateProfile;
+
   useEffect(() => {
     if (!userInfo) {
       history.push('/signin');
@@ -51,7 +54,9 @@ const ProfileScreen = ({ history }) => {
     if (password !== cpassword) {
       setMessage('Password do not match');
     } else {
-      //Dispatch
+      dispatch(
+        updateUserProfile({ id: user._id, name, phone, email, password })
+      );
     }
   };
 
@@ -71,7 +76,17 @@ const ProfileScreen = ({ history }) => {
           {message && (
             <Message variant='danger jadoo dismissible'>{message}</Message>
           )}
-          {error && <Message variant='danger jadoo'>{error}</Message>}
+          {error && (
+            <Message variant='danger jadoo dismissible'>{error}</Message>
+          )}
+          {success && (
+            <Message
+              variant='success jadoo dismissible'
+              style={{ letterSpacing: '2px' }}
+            >
+              PROFILE UPDATED
+            </Message>
+          )}
           {loading && <Loader />}
           <div className='row flex-lg-row-reverse'>
             <div className='col-md-7 rr'>
@@ -82,7 +97,7 @@ const ProfileScreen = ({ history }) => {
                     width: '100%',
                   }}
                 >
-                  <div className='row row-cols-1 row-cols-2 row-cols-sm-1 row-cols-lg-2 d-flex align-items-center dc'>
+                  <div className='row row-cols-1 row-cols-2 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 d-flex align-items-center dc'>
                     <div className='col-md-4 text-center usercol'>
                       <img src={userpic} alt='userpic' className='userpic' />
                     </div>
@@ -124,7 +139,6 @@ const ProfileScreen = ({ history }) => {
                       autoComplete='off'
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      required
                     />
                     <label htmlFor='name'>Name</label>
                   </div>
@@ -139,7 +153,6 @@ const ProfileScreen = ({ history }) => {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       minLength='6'
-                      required
                     />
                     <label htmlFor='phone'>Phone no</label>
                   </div>
@@ -153,7 +166,6 @@ const ProfileScreen = ({ history }) => {
                       placeholder='email'
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      required
                     />
                     <label htmlFor='email'>Email address</label>
                   </div>
@@ -169,9 +181,8 @@ const ProfileScreen = ({ history }) => {
                       autoComplete='off'
                       onChange={(e) => setPassword(e.target.value)}
                       minLength='8'
-                      required
                     />
-                    <label htmlFor='password'>Password</label>
+                    <label htmlFor='password'>New Password</label>
                     <div className='input-group-text bg-white'>
                       <i
                         className={
@@ -186,7 +197,7 @@ const ProfileScreen = ({ history }) => {
                   </div>
                   <div
                     id='passwordHelp'
-                    className='form-text mb-3'
+                    className='form-text mb-2'
                     style={{ marginLeft: '10px' }}
                   >
                     *Minimum 8 Characters
@@ -203,9 +214,8 @@ const ProfileScreen = ({ history }) => {
                       value={cpassword}
                       autoComplete='off'
                       onChange={(e) => setCPassword(e.target.value)}
-                      required
                     />
-                    <label htmlFor='cpassword'>Confirm Password</label>
+                    <label htmlFor='cpassword'>Confirm New Password</label>
                     <div className='input-group-text bg-white'>
                       <i
                         className={
@@ -218,8 +228,11 @@ const ProfileScreen = ({ history }) => {
                       />
                     </div>
                   </div>
-
-                  <div className='form-floating form-button'>
+                  <small className='text-muted'>
+                    By clicking Update, you can change your details. Please
+                    remember your details for next signin.
+                  </small>
+                  <div className='form-floating form-button mt-3'>
                     <input
                       type='submit'
                       name='update'

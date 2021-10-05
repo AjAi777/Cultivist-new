@@ -1,41 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import Message from '../Components/Utils/Message';
-import Loader from '../Components/Utils/Loader';
-import { getUserDetails } from '../Actions/userActions';
+import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import emailjs from 'emailjs-com';
 
-const ContactScreen = ({ history }) => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+const Result = () => {
+  return (
+    <p>Your message has been sent successfully. We will contact you soon.</p>
+  );
+};
 
-  const dispatch = useDispatch();
+function ContactScreen() {
+  const [result, showResult] = useState(false);
+  const form = useRef();
 
-  const userDetails = useSelector((state) => state.userDetails);
-  const { loading, error, user } = userDetails;
-
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
-
-  useEffect(() => {
-    if (!userInfo) {
-    } else {
-      if (!user.name) {
-        dispatch(getUserDetails('profile'));
-      } else {
-        setName(user.name);
-        setPhone(user.phone);
-        setEmail(user.email);
-      }
-    }
-  }, [dispatch, history, userInfo, user]);
-
-  const submitHandler = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    //Dispatch
+
+    emailjs
+      .sendForm(
+        'gmail',
+        'template_7s2t5bc',
+        form.current,
+        'user_wXzQqJqKTYmJBojjK2o6I'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+    showResult(true);
   };
+
+  setTimeout(() => {
+    showResult(false);
+  }, 5000);
 
   return (
     <>
@@ -44,11 +45,6 @@ const ContactScreen = ({ history }) => {
         style={{ marginTop: '25vh', marginBottom: '15vh' }}
       >
         <div className='container'>
-          {message && (
-            <Message variant='danger jadoo dismissible'>{message}</Message>
-          )}
-          {error && <Message variant='danger jadoo'>{error}</Message>}
-          {loading && <Loader />}
           <section className='my-5 col-lg-10 offset-lg-1'>
             <h1
               className='h1-responsive fw-bold text-center my-5'
@@ -114,13 +110,13 @@ const ContactScreen = ({ history }) => {
                 >
                   <div className='card-body'>
                     <form
-                      method='POST'
                       className='contact-form'
-                      onSubmit={submitHandler}
+                      ref={form}
+                      onSubmit={sendEmail}
                     >
                       <div className='form-header '>
                         <h3 className='fw-bold' style={{ color: 'green' }}>
-                          Have a general question?
+                          How can we help you?
                         </h3>
                       </div>
                       <p className='dark-grey-text mt-3 mb-3'>
@@ -136,8 +132,6 @@ const ContactScreen = ({ history }) => {
                           id='name'
                           placeholder='name'
                           autoComplete='off'
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
                           required
                         />
                         <label htmlFor='name'>Your Name</label>
@@ -151,8 +145,6 @@ const ContactScreen = ({ history }) => {
                           id='phone'
                           placeholder='number'
                           autoComplete='off'
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
                           required
                         />
                         <label htmlFor='phone'>Your Phone no</label>
@@ -165,8 +157,6 @@ const ContactScreen = ({ history }) => {
                           id='email'
                           placeholder='name@example.com'
                           autoComplete='off'
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
                           required
                         />
                         <label htmlFor='email'> Your Email address</label>
@@ -175,18 +165,16 @@ const ContactScreen = ({ history }) => {
                       <div className='form-floating mb-2'>
                         <textarea
                           className='form-control form-control-sm'
+                          name='message'
                           placeholder='message'
                           id='message'
-                          name='message'
                           style={{ height: '100px' }}
-                          value={message}
-                          onChange={(e) => setMessage(e.target.value)}
                           required
                         ></textarea>
-                        <label htmlFor='floatingTextarea2'>Your Question</label>
+                        <label htmlFor='floatingTextarea2'>Your Message</label>
                       </div>
 
-                      <div className='text-center mt-5'>
+                      <div className='text-center mt-4 mb-1'>
                         <button
                           className='btn btn-success'
                           style={{ width: '100%' }}
@@ -194,6 +182,9 @@ const ContactScreen = ({ history }) => {
                         >
                           Submit
                         </button>
+                        <div className='row mt-3'>
+                          {result ? <Result /> : null}
+                        </div>
                       </div>
                     </form>
                   </div>
@@ -204,7 +195,7 @@ const ContactScreen = ({ history }) => {
                 <div
                   id='map-container-section'
                   className='z-depth-1-half map-container-section mb-4 shadow-sm'
-                  style={{ height: '504px', border: '1px solid lightgray' }}
+                  style={{ height: '496px', border: '1px solid lightgray' }}
                 >
                   <iframe
                     title='Location'
@@ -221,6 +212,6 @@ const ContactScreen = ({ history }) => {
       </div>
     </>
   );
-};
+}
 
-export default withRouter(ContactScreen);
+export default ContactScreen;
