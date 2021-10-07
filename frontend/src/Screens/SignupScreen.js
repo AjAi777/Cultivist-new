@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../Components/Utils/Message';
@@ -59,6 +59,10 @@ const SignupScreen = ({ location, history }) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <div
@@ -69,7 +73,9 @@ const SignupScreen = ({ location, history }) => {
         style={{ marginTop: '12vh' }}
       >
         <div className='modal-dialog' role='document'>
-          {message && <Message variant='danger jadoo dismissible'>{message}</Message>}
+          {message && (
+            <Message variant='danger jadoo dismissible'>{message}</Message>
+          )}
           {error && <Message variant='danger jadoo'>{error}</Message>}
           {loading && <Loader />}
           <div className='modal-content rounded-5 mb-4 shadow'>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../Components/Utils/Message';
@@ -26,6 +26,10 @@ const CartScreen = ({ match, location, history }) => {
   const checkoutHandler = () => {
     history.push('/signin?redirect=shipping');
   };
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <>

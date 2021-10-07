@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../Actions/cartActions';
@@ -24,6 +24,10 @@ const ShippingScreen = ({ history }) => {
     history.push('/payment');
   };
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <div
@@ -36,7 +40,11 @@ const ShippingScreen = ({ history }) => {
             style={{ border: '0' }}
           >
             <CheckoutSteps step1 step2 />
-            <form className="mt-2" onSubmit={submitHandler} style={{ width: '50%' }}>
+            <form
+              className='mt-2'
+              onSubmit={submitHandler}
+              style={{ width: '50%' }}
+            >
               <div className='form-header'>
                 <h3
                   className='fw-bold mb-2'

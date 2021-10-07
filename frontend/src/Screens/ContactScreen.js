@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 
@@ -37,6 +37,10 @@ function ContactScreen() {
   setTimeout(() => {
     showResult(false);
   }, 5000);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Filter from '../Components/Shop/Filter';
 import Product from '../Components/Shop/ProductItem';
@@ -15,13 +15,18 @@ const ShopScreen = () => {
     dispatch(listProducts());
   }, [dispatch]);
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
       <Filter />
       {loading ? (
         <Loader />
       ) : error ? (
-        <Message variant='danger jadoo' style={{ marginBottom: '70vh' }}>{error}</Message>
+        <Message variant='danger jadoo' style={{ marginBottom: '70vh' }}>
+          {error}
+        </Message>
       ) : (
         <div
           className='jadoo px-4 text-center shop'

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import Banner from '../Components/Home/Banner/Banner';
 import Testimonial from '../Components/Home/Testimonial/Testimonial';
 import Video from '../Components/Home/Other/Video';
@@ -9,6 +9,10 @@ import Image from '../Components/Home/Other/Image';
 import Shop from '../Components/Home/Other/Shop';
 
 export default function HomeScreen() {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <div style={{ marginTop: '12vh' }}>

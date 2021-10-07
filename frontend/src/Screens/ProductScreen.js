@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Rating from '../Components/Shop/Rating';
@@ -34,6 +34,10 @@ const ProductScreen = ({ history, match }) => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <div
@@ -54,7 +58,9 @@ const ProductScreen = ({ history, match }) => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant='danger jadoo' style={{ marginBottom: '70vh' }}>{error}</Message>
+          <Message variant='danger jadoo' style={{ marginBottom: '70vh' }}>
+            {error}
+          </Message>
         ) : (
           <div className='row mt-2'>
             <div className='col-md-5 faf'>
