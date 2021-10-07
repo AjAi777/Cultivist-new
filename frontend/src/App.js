@@ -12,6 +12,9 @@ import ErrorScreen from './Screens/ErrorScreen';
 import Footer from './Components/Footer/Footer';
 import CartScreen from './Screens/CartScreen';
 import ProfileScreen from './Screens/ProfileScreen';
+import ShippingScreen from './Screens/ShippingScreen';
+import PaymentScreen from './Screens/PaymentScreen';
+import PlaceOrderScreen from './Screens/PlaceOrderScreen';
 
 function App() {
   return (
@@ -45,6 +48,15 @@ function App() {
           </Route>
           <Route exact path='/cart/:id?'>
             <CartScreen />
+          </Route>
+          <Route path='/shipping'>
+            <ShippingScreen />
+          </Route>
+          <Route exact path='/payment'>
+            <PaymentScreen />
+          </Route>
+          <Route exact path='/placeorder'>
+            <PlaceOrderScreen />
           </Route>
           <Route>
             <ErrorScreen />

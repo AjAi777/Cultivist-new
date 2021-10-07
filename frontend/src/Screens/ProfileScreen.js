@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Message from '../Components/Utils/Message';
 import Loader from '../Components/Utils/Loader';
 import { getUserDetails, updateUserProfile } from '../Actions/userActions';
-import userpic from '../Images/user.png';
 
 const ProfileScreen = ({ history }) => {
   const [name, setName] = useState('');
@@ -99,7 +98,11 @@ const ProfileScreen = ({ history }) => {
                 >
                   <div className='row row-cols-1 row-cols-2 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 d-flex align-items-center dc'>
                     <div className='col-md-4 text-center usercol'>
-                      <img src={userpic} alt='userpic' className='userpic' />
+                      <img
+                        src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/user_dPHpFPvN32-.png?updatedAt=1633598867399'
+                        alt='userpic'
+                        className='userpic'
+                      />
                     </div>
                     <div className='col-md-8'>
                       <div className='row fw-bold mt-1 karan'>{name}</div>

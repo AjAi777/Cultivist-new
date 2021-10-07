@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ReactOwlCarousel from 'react-owl-carousel';
 import { Link } from 'react-router-dom';
-import Person from '../../../Images/Person.png';
-import Quote from '../../../Images/Quote.png';
 import './Testimonial.css';
 
 class Testimonial extends Component {
@@ -67,9 +65,9 @@ class Testimonial extends Component {
                   <div className='col-3'>
                     <div className='img-area'>
                       <img
-                        src={Person}
+                        src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Person_TZkuLlGtD.png?updatedAt=1633598864888'
                         className='ima rounded-circle'
-                        alt=''
+                        alt='person'
                         style={{
                           width: '50px',
                           height: '60px',
@@ -80,8 +78,8 @@ class Testimonial extends Component {
                   </div>
                   <div className='col mt-2'>
                     <img
-                      src={Quote}
-                      alt=''
+                      src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Quote_UydXO1neygK.png?updatedAt=1633598865668'
+                      alt='Quote'
                       style={{
                         width: '20px',
                         height: '20px',
@@ -127,9 +125,9 @@ class Testimonial extends Component {
                   <div className='col-3'>
                     <div className='img-area'>
                       <img
-                        src={Person}
+                        src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Person_TZkuLlGtD.png?updatedAt=1633598864888'
                         className='rounded-circle'
-                        alt=''
+                        alt='Person'
                         style={{
                           width: '50px',
                           height: '60px',
@@ -140,8 +138,8 @@ class Testimonial extends Component {
                   </div>
                   <div className='col mt-2'>
                     <img
-                      src={Quote}
-                      alt=''
+                      src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Quote_UydXO1neygK.png?updatedAt=1633598865668'
+                      alt='Quote'
                       style={{
                         width: '20px',
                         height: '20px',
@@ -187,9 +185,9 @@ class Testimonial extends Component {
                   <div className='col-3'>
                     <div className='img-area'>
                       <img
-                        src={Person}
+                        src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Person_TZkuLlGtD.png?updatedAt=1633598864888'
                         className='rounded-circle'
-                        alt=''
+                        alt='Person'
                         style={{
                           width: '50px',
                           height: '60px',
@@ -200,8 +198,8 @@ class Testimonial extends Component {
                   </div>
                   <div className='col mt-2'>
                     <img
-                      src={Quote}
-                      alt=''
+                      src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Quote_UydXO1neygK.png?updatedAt=1633598865668'
+                      alt='Ouote'
                       style={{
                         width: '20px',
                         height: '20px',
@@ -247,9 +245,9 @@ class Testimonial extends Component {
                   <div className='col-3'>
                     <div className='img-area'>
                       <img
-                        src={Person}
+                        src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Person_TZkuLlGtD.png?updatedAt=1633598864888'
                         className='rounded-circle'
-                        alt=''
+                        alt='Person'
                         style={{
                           width: '50px',
                           height: '60px',
@@ -260,8 +258,8 @@ class Testimonial extends Component {
                   </div>
                   <div className='col mt-2'>
                     <img
-                      src={Quote}
-                      alt=''
+                      src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Quote_UydXO1neygK.png?updatedAt=1633598865668'
+                      alt='Quote'
                       style={{
                         width: '20px',
                         height: '20px',
@@ -307,9 +305,9 @@ class Testimonial extends Component {
                   <div className='col-3'>
                     <div className='img-area'>
                       <img
-                        src={Person}
+                        src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Person_TZkuLlGtD.png?updatedAt=1633598864888'
                         className='rounded-circle'
-                        alt=''
+                        alt='Person'
                         style={{
                           width: '50px',
                           height: '60px',
@@ -320,8 +318,8 @@ class Testimonial extends Component {
                   </div>
                   <div className='col mt-2'>
                     <img
-                      src={Quote}
-                      alt=''
+                      src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Quote_UydXO1neygK.png?updatedAt=1633598865668'
+                      alt='Quote'
                       style={{
                         width: '20px',
                         height: '20px',

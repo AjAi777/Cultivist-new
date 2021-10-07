@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import logo from '../../Images/logo.png';
 import './Header.css';
 import { Signout } from '../../Actions/userActions';
 
@@ -38,7 +37,7 @@ function Header() {
           </button>
           <Link className='navbar-brand ms-auto' to='/'>
             <img
-              src={logo}
+              src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/logo_sf0_-e168GGI.png?updatedAt=1633598864277'
               alt='logo'
               width='120'
               height='38'

@@ -73,7 +73,6 @@ const CartScreen = ({ match, location, history }) => {
                         className='cartimage'
                         src={item.image}
                         alt={item.name}
-                        rounded
                       />
                     </div>
                     <div className='col-lg-6'>
@@ -153,7 +152,21 @@ const CartScreen = ({ match, location, history }) => {
                           </select>
                         </ul>
                       </div>
+                      <div className='row mt-2'>
+                        <span>
+                          <strong>Total : </strong>{' '}
+                          <strong>
+                            <span
+                              style={{ marginRight: '4px', fontSize: '16px' }}
+                            >
+                              ₹
+                            </span>
+                            {item.qty * item.price}
+                          </strong>
+                        </span>
+                      </div>
                     </div>
+
                     <div className='col-lg-2 removee'>
                       <ul className='removebtn'>
                         <button

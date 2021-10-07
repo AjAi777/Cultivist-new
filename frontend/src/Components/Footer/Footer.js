@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Image from '../../Images/Image.png';
-import logo from '../../Images/logo.png';
 
 export default function Footer() {
   return (
@@ -16,7 +14,12 @@ export default function Footer() {
             className='image mb-4'
             style={{ width: '150px', margin: 'auto', height: '50px' }}
           >
-            <img src={Image} alt='raj' width='100%' height='100%' />
+            <img
+              src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/Image_j_mSr99p_.png?updatedAt=1633598863238'
+              alt='raj'
+              width='100%'
+              height='100%'
+            />
           </div>
           <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 text-center'>
             <div className='col'>
@@ -136,7 +139,12 @@ export default function Footer() {
               tea!
             </p>
             <div className='image mt-5 mb-4 haar' style={{ margin: 'auto' }}>
-              <img src={logo} alt='raj' width='100%' height='100%' />
+              <img
+                src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/logo_sf0_-e168GGI.png?updatedAt=1633598864277'
+                alt='raj'
+                width='100%'
+                height='100%'
+              />
             </div>
             <div className='d-flex justify-content-center mt-2 pb-4'>
               <p>Copyright &copy; 2021, Cultivist. All rights reserved.</p>
