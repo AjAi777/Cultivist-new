@@ -1,7 +1,7 @@
-import dotenv from 'dotenv';
-import express from 'express';
-import connectDB from './config/db.js';
 import path from 'path';
+import express from 'express';
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import colors from 'colors';
 import morgan from 'morgan';
@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
   //set static folder
   app.use(express.static(path.join(__dirname, '/frontend/build')));
   app.get('*', (req, res) =>
-    res.sendFile(resolve(__dirname, 'frontend', 'build', 'index.html'))
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
   );
 } else {
   app.get('/', (req, res) => {
