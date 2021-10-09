@@ -40,11 +40,7 @@ const ShippingScreen = ({ history }) => {
             style={{ border: '0' }}
           >
             <CheckoutSteps step1 step2 />
-            <form
-              className='mt-2'
-              onSubmit={submitHandler}
-              style={{ width: '50%' }}
-            >
+            <form className='mt-2 shippingform' onSubmit={submitHandler}>
               <div className='form-header'>
                 <h3
                   className='fw-bold mb-2'

@@ -38,11 +38,7 @@ const PaymentScreen = ({ history }) => {
             style={{ border: '0' }}
           >
             <CheckoutSteps step1 step2 step3 />
-            <form
-              className='mt-2'
-              onSubmit={submitHandler}
-              style={{ width: '50%' }}
-            >
+            <form className='mt-2 paymentform' onSubmit={submitHandler}>
               <div className='form-header'>
                 <h3
                   className='fw-bold mb-2'
@@ -71,7 +67,7 @@ const PaymentScreen = ({ history }) => {
                 </div>
               </div>
 
-              <div className='form-floating form-button mt-5'>
+              <div className='form-floating form-button paymentbutton'>
                 <input
                   type='submit'
                   name='continue'

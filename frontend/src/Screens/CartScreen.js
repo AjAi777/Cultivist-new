@@ -165,7 +165,7 @@ const CartScreen = ({ match, location, history }) => {
                             >
                               ₹
                             </span>
-                            {item.qty * item.price}
+                            {(item.qty * item.price).toFixed(2)}
                           </strong>
                         </span>
                       </div>

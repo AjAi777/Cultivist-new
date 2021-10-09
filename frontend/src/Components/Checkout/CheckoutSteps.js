@@ -5,46 +5,40 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
   return (
     <>
       <div className='nav justify-content-center mb-4'>
-        <div className='nav-item p-3' style={{ marginRight: '20px' }}>
+        <div className='nav-item step1'>
           {step1 ? (
             <Link to='/signin' className='checkoutSteps fw-bold link-success'>
               Sign in
             </Link>
           ) : (
-            <Link disabled className='checkoutSteps link-success'>
+            <Link to='#' disabled className='checkoutSteps link-success'>
               Sign in
             </Link>
           )}
         </div>
-        <div
-          className='nav-item p-3'
-          style={{ marginLeft: '20px', marginRight: '20px' }}
-        >
+        <div className='nav-item step2-3'>
           {step2 ? (
             <Link to='/shipping' className='checkoutSteps fw-bold link-success'>
               Shipping
             </Link>
           ) : (
-            <Link disabled className='checkoutSteps link-success'>
+            <Link to='#' disabled className='checkoutSteps link-success'>
               Shipping
             </Link>
           )}
         </div>
-        <div
-          className='nav-item p-3'
-          style={{ marginLeft: '20px', marginRight: '20px' }}
-        >
+        <div className='nav-item step2-3'>
           {step3 ? (
             <Link to='/payment' className='checkoutSteps fw-bold link-success'>
               Payment
             </Link>
           ) : (
-            <Link disabled className='checkoutSteps link-success'>
+            <Link to='#' disabled className='checkoutSteps link-success'>
               Payment
             </Link>
           )}
         </div>
-        <div className='nav-item p-3' style={{ marginLeft: '20px' }}>
+        <div className='nav-item step4'>
           {step4 ? (
             <Link
               to='/placeorder'
@@ -53,7 +47,7 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
               Place order
             </Link>
           ) : (
-            <Link disabled className='checkoutSteps link-success'>
+            <Link to='#' disabled className='checkoutSteps link-success'>
               Place order
             </Link>
           )}

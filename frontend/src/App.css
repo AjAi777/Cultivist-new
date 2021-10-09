@@ -439,3 +439,131 @@ input {
     width: 12rem;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .step1 {
+    padding: 1.5rem 0.4rem 1rem 0rem;
+  }
+  .step2-3 {
+    padding: 1.5rem 0.4rem 1rem 0.4rem;
+  }
+  .step4 {
+    padding: 1.5rem 0rem 1rem 0.4rem;
+  }
+  .checkoutSteps {
+    text-decoration: none;
+  }
+  .shippingform {
+    width: 100%;
+  }
+  .paymentform {
+    width: 100%;
+  }
+  .paymentbutton {
+    margin-top: 2rem;
+  }
+  .avergersimg {
+    width: 100px;
+    height: 150px;
+  }
+  .garaj {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .jhol .row > * {
+    padding-right: unset;
+    padding-left: unset;
+  }
+  .trade .row > * {
+    padding-right: unset;
+    padding-left: unset;
+  }
+  .bazooka .row > * {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .viru {
+    margin-top: 1.2rem;
+  }
+  .america {
+    padding: 5px 0px 5px 0px;
+  }
+  .kapil {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+  }
+  .placement {
+    font-size: 12px;
+  }
+  .placement1 {
+    font-size: 13px;
+  }
+  .bravo {
+    margin-top: 1.2rem;
+  }
+  .xty {
+    margin-right: 1.7rem;
+  }
+  .paisa {
+    font-size: 13px;
+  }
+  .paisa1 {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 600px) {
+  .step1 {
+    margin-right: 20px;
+    padding: 1.5rem 0.5rem 1rem 0rem;
+  }
+  .step2-3 {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+  }
+  .step4 {
+    margin-left: 20px;
+    padding: 1.5rem 0rem 1rem 0.5rem;
+  }
+  .shippingform {
+    width: 50%;
+  }
+  .paymentform {
+    width: 50%;
+  }
+  .paymentbutton {
+    margin-top: 3rem;
+  }
+  .orderitem .row > * {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .avergersimg {
+    width: 200px;
+    height: 170px;
+  }
+  .jhol .row > * {
+    padding-right: unset;
+    padding-left: unset;
+  }
+  .viru {
+    margin-bottom: 6rem;
+  }
+  .placement {
+    font-size: 15px;
+  }
+  .placement1 {
+    font-size: 17px;
+    margin-bottom: 2.5rem;
+  }
+  .paisa {
+    font-size: 17px;
+  }
+  .paisa1 {
+    font-size: 15px;
+  }
+  .bravo {
+    margin-bottom: 1rem;
+  }
+}
