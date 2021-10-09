@@ -155,7 +155,7 @@ input {
 
 @media only screen and (max-width: 600px) {
   .jet {
-    padding-bottom: 4.5rem;
+    padding-bottom: 5.5rem;
   }
   .jeet {
     max-width: 80%;
@@ -508,6 +508,12 @@ input {
     font-size: 13px;
   }
   .paisa1 {
+    font-size: 12px;
+  }
+  .resonate {
+    margin-top: 1rem;
+  }
+  .digisol {
     font-size: 12px;
   }
 }

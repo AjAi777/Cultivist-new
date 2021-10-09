@@ -7,11 +7,11 @@ export default function Footer() {
     <>
       <footer
         className='footer mt-auto py-3 text-light'
-        style={{ backgroundColor: '#181b29' }}
+        style={{ backgroundColor: '#1b1658' }}
       >
         <div className='container'>
           <div
-            className='image mb-4'
+            className='image mb-4 mt-2'
             style={{ width: '150px', margin: 'auto', height: '50px' }}
           >
             <img
@@ -21,79 +21,176 @@ export default function Footer() {
               height='100%'
             />
           </div>
-          <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 text-center'>
-            <div className='col'>
-              <h6>ABOUT</h6>
+          <div className='row row-cols-sm-2 row-cols-md-5 row-cols-lg-5 mt-4 pt-3 mb-3 text-center'>
+            <div className='col-md-3'>
+              <h6
+                className='fw-bold'
+                style={{
+                  color: '#ffc107',
+                  fontSize: '17px',
+                  marginBottom: '1rem',
+                }}
+              >
+                SHOP
+              </h6>
               <ul className='nav flex-column'>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0'>
-                    Home
+                  <Link to='#' className='nav-link link-light p-0'>
+                    Explore Our Shop
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0 '>
-                    About us
+                  <Link to='#' className='nav-link link-light p-0 '>
+                    Tea Collections
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0'>
-                    Contact us
+                  <Link to='#' className='nav-link link-light p-0'>
+                    Essential Oils
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='/faq' className='nav-link p-0 '>
-                    FAQs
+                  <Link to='/faq' className='nav-link link-light p-0 '>
+                    Air Purifying Plants
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div className='col'>
-              <h6>COMPANY</h6>
+            <div className='col-md-3 resonate'>
+              <h6
+                className='fw-bold'
+                style={{
+                  color: '#ffc107',
+                  fontSize: '17px',
+                  marginBottom: '1rem',
+                }}
+              >
+                ABOUT
+              </h6>
+              <ul className='nav flex-column'>
+                <li className='nav-item mb-2'>
+                  <Link to='#' className='nav-link link-light p-0'>
+                    About Us
+                  </Link>
+                </li>
+                <li className='nav-item mb-2'>
+                  <Link to='#' className='nav-link link-light p-0 '>
+                    Curated Content
+                  </Link>
+                </li>
+                <li className='nav-item mb-2'>
+                  <Link to='#' className='nav-link link-light p-0'>
+                    Plant a Tree
+                  </Link>
+                </li>
+                <li className='nav-item mb-2'>
+                  <Link to='/faq' className='nav-link link-light p-0 '>
+                    Send Post Cards
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className='col-md-3 resonate'>
+              <h6
+                className='fw-bold'
+                style={{
+                  color: '#ffc107',
+                  fontSize: '17px',
+                  marginBottom: '1rem',
+                }}
+              >
+                COMPANY
+              </h6>
               <ul className='nav mt-2 flex-column'>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0'>
-                    hello@thecompany.com
+                  <Link to='#' className='nav-link link-light p-0'>
+                    cultivistwebsite@gmail.com
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0 '>
-                    +1 800 000000
+                  <Link to='#' className='nav-link link-light p-0 '>
+                    +1 8000 888 888
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0 '>
+                  <Link to='#' className='nav-link link-light p-0 '>
                     Show on map
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0 '>
+                  <Link to='#' className='nav-link link-light p-0 '>
                     Terms &amp; Conditions
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div className='col'>
-              <h6>SOCIAL</h6>
+            <div className='col-md-3 resonate'>
+              <h6
+                className='fw-bold'
+                style={{
+                  color: '#ffc107',
+                  fontSize: '17px',
+                  marginBottom: '1rem',
+                }}
+              >
+                GET IN TOUCH
+              </h6>
               <ul className='nav flex-column'>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0 '>
+                  <Link to='#' className='nav-link link-light p-0'>
+                    Contact Us
+                  </Link>
+                </li>
+                <li className='nav-item mb-2'>
+                  <Link to='#' className='nav-link link-light p-0 '>
+                    FAQs
+                  </Link>
+                </li>
+                <li className='nav-item mb-2'>
+                  <Link to='#' className='nav-link link-light p-0'>
+                    Shipping Information
+                  </Link>
+                </li>
+                <li className='nav-item mb-2'>
+                  <Link to='/faq' className='nav-link link-light p-0 '>
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className='col-md-3 resonate'>
+              <h6
+                className='fw-bold'
+                style={{
+                  color: '#ffc107',
+                  fontSize: '17px',
+                  marginBottom: '1rem',
+                }}
+              >
+                SOCIAL
+              </h6>
+              <ul className='nav flex-column'>
+                <li className='nav-item mb-2'>
+                  <Link to='#' className='nav-link link-light p-0 '>
                     <i className='bi bi-linkedin' /> <span>Linkedin</span>
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0'>
+                  <Link to='#' className='nav-link link-light p-0'>
                     <i className='bi bi-facebook' /> <span>Facebook</span>
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0 '>
+                  <Link to='#' className='nav-link link-light p-0 '>
                     <i className='bi bi-instagram' /> <span>Instagram</span>
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link p-0 '>
+                  <Link to='#' className='nav-link link-light p-0 '>
                     <i className='bi bi-twitter' /> <span>Twitter</span>
                   </Link>
                 </li>
@@ -101,9 +198,13 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <hr></hr>
-        <div className='d-flex justify-content-center mt-2'>
-          <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+      </footer>
+      <footer
+        className='footer mt-auto py-3'
+        style={{ backgroundColor: '#181b29' }}
+      >
+        <div className='text-center text-light'>
+          &copy; 2021 Company, Inc. All rights reserved.
         </div>
       </footer>
       <footer
@@ -112,7 +213,9 @@ export default function Footer() {
       >
         <div className='container mb-5 d-flex justify-content-center align-items-center'>
           <section className='mt-4 mb-5 jeet jet'>
-            <p className='fw-bold'>Namaste</p>
+            <p className='fw-bold' style={{ fontSize: '17px', color: 'black' }}>
+              Namaste
+            </p>
             <p>
               Every journey decides its adventures, much like every tea unravels
               its unique flavor, aroma, and texture. A combined affinity for
@@ -147,7 +250,9 @@ export default function Footer() {
               />
             </div>
             <div className='d-flex justify-content-center mt-2 pb-4'>
-              <p>Copyright &copy; 2021, Cultivist. All rights reserved.</p>
+              <p className='digisol'>
+                Copyright &copy; 2021, Cultivist. All rights reserved.
+              </p>
             </div>
           </section>
         </div>
