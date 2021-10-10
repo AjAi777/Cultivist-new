@@ -1,14 +1,15 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../Components/Utils/Message';
 import CheckoutSteps from '../Components/Checkout/CheckoutSteps';
+import { createOrder } from '../Actions/orderActions';
 
-const PlaceOrderScreen = () => {
+const PlaceOrderScreen = ({ history }) => {
+  const dispatch = useDispatch();
+
   const cart = useSelector((state) => state.cart);
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
 
   const addDecimals = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2);
@@ -31,8 +32,29 @@ const PlaceOrderScreen = () => {
     Number(cart.totalPrice) - Number(cart.promotionPrice)
   );
 
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { order, success, error } = orderCreate;
+
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${order._id}`);
+    }
+    // eslint-disable-next-line
+  }, [history, success]);
+
   const placeOrderHandler = () => {
-    console.log('order');
+    dispatch(
+      createOrder({
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        deliveryCharge: cart.deliveryCharge,
+        totalPrice: cart.totalPrice,
+        promotionPrice: cart.promotionPrice,
+        orderTotalPrice: cart.orderTotalPrice,
+      })
+    );
   };
 
   useLayoutEffect(() => {
@@ -66,8 +88,6 @@ const PlaceOrderScreen = () => {
                       </span>
                     </span>
                     <p className='mt-1'>
-                      {userInfo.name}
-                      <br />
                       {cart.shippingAddress.address}
                       <br />
                       {cart.shippingAddress.city} -{' '}
@@ -75,8 +95,6 @@ const PlaceOrderScreen = () => {
                       <br />
                       {cart.shippingAddress.state},{' '}
                       {cart.shippingAddress.country}
-                      <br />
-                      Phone: {userInfo.phone}
                     </p>
                   </div>
                 </div>
@@ -295,6 +313,11 @@ const PlaceOrderScreen = () => {
                       </div>
                     </div>
                   </div>
+                  {error && (
+                    <Message variant='danger jadoo dismissible'>
+                      {error}
+                    </Message>
+                  )}
                   <div className='list-group-item bazooka'>
                     <div className='row px-2 py-2'>
                       <button

@@ -35,22 +35,22 @@ export default function Footer() {
               </h6>
               <ul className='nav flex-column'>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0'>
+                  <Link to='/shop' className='nav-link link-light p-0'>
                     Explore Our Shop
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0 '>
+                  <Link to='/shop' className='nav-link link-light p-0 '>
                     Tea Collections
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0'>
+                  <Link to='/shop' className='nav-link link-light p-0'>
                     Essential Oils
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='/faq' className='nav-link link-light p-0 '>
+                  <Link to='/shop' className='nav-link link-light p-0 '>
                     Air Purifying Plants
                   </Link>
                 </li>
@@ -80,12 +80,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0'>
+                  <Link to='/plant' className='nav-link link-light p-0'>
                     Plant a Tree
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='/faq' className='nav-link link-light p-0 '>
+                  <Link to='#' className='nav-link link-light p-0 '>
                     Send Post Cards
                   </Link>
                 </li>
@@ -140,12 +140,12 @@ export default function Footer() {
               </h6>
               <ul className='nav flex-column'>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0'>
+                  <Link to='/contact' className='nav-link link-light p-0'>
                     Contact Us
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0 '>
+                  <Link to='/faq' className='nav-link link-light p-0 '>
                     FAQs
                   </Link>
                 </li>
@@ -155,7 +155,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='/faq' className='nav-link link-light p-0 '>
+                  <Link to='#' className='nav-link link-light p-0 '>
                     Terms of Service
                   </Link>
                 </li>

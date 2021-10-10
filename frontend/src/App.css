@@ -231,6 +231,9 @@ input {
   .raj {
     margin-left: 0rem;
   }
+  .stocks {
+    font-size: 16px;
+  }
 }
 
 .jackk {
@@ -571,5 +574,8 @@ input {
   }
   .bravo {
     margin-bottom: 1rem;
+  }
+  .stocks {
+    margin-bottom: 2.5rem;
   }
 }
