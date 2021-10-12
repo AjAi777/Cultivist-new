@@ -7,6 +7,10 @@ import Loader from '../Components/Utils/Loader';
 import Message from '../Components/Utils/Message';
 
 const ShopScreen = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
@@ -15,9 +19,6 @@ const ShopScreen = () => {
     dispatch(listProducts());
   }, [dispatch]);
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
   return (
     <>
       <Filter />

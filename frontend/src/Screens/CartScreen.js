@@ -5,6 +5,10 @@ import Message from '../Components/Utils/Message';
 import { addToCart, removeFromCart } from '../Actions/cartActions';
 
 const CartScreen = ({ match, location, history }) => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const productId = match.params.id;
   const qty = location.search ? Number(location.search.split('=')[1]) : 1;
 
@@ -24,12 +28,8 @@ const CartScreen = ({ match, location, history }) => {
   };
 
   const checkoutHandler = () => {
-    history.push('/signin?redirect=shipping');
+    history.push('/signin?/shipping?redirect=payment');
   };
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   return (
     <>
@@ -39,7 +39,7 @@ const CartScreen = ({ match, location, history }) => {
       >
         <h3
           className='text-uppercase fw-bold ishan'
-          style={{ letterSpacing: '3px', color: '#1b4944' }}
+          style={{ letterSpacing: '3px', color: 'green' }}
         >
           SHOPPING CART
         </h3>
@@ -87,7 +87,7 @@ const CartScreen = ({ match, location, history }) => {
                         >
                           <h5
                             className='text-uppercase fw-bold cartname'
-                            style={{ letterSpacing: '3px', color: '#1b4944' }}
+                            style={{ letterSpacing: '2px', color: 'green' }}
                           >
                             {item.name}
                           </h5>

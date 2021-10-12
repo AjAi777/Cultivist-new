@@ -6,6 +6,10 @@ import Loader from '../Components/Utils/Loader';
 import { getUserDetails, updateUserProfile } from '../Actions/userActions';
 
 const ProfileScreen = ({ history }) => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -58,10 +62,6 @@ const ProfileScreen = ({ history }) => {
       );
     }
   };
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   return (
     <>

@@ -7,6 +7,10 @@ import Loader from '../Components/Utils/Loader';
 import Message from '../Components/Utils/Message';
 
 const ProductScreen = ({ history, match }) => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const [qty, setQty] = useState(1);
 
   const plus = () => {
@@ -33,10 +37,6 @@ const ProductScreen = ({ history, match }) => {
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   return (
     <>

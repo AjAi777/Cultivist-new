@@ -9,6 +9,10 @@ const Result = () => {
 };
 
 function ContactScreen() {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const [result, showResult] = useState(false);
   const form = useRef();
 
@@ -37,10 +41,6 @@ function ContactScreen() {
   setTimeout(() => {
     showResult(false);
   }, 5000);
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   return (
     <>

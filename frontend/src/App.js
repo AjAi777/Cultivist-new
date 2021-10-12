@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
@@ -15,9 +16,12 @@ import ProfileScreen from './Screens/ProfileScreen';
 import ShippingScreen from './Screens/ShippingScreen';
 import PaymentScreen from './Screens/PaymentScreen';
 import PlaceOrderScreen from './Screens/PlaceOrderScreen';
-import OrderScreen from "./Screens/OrderScreen";
+import OrderScreen from './Screens/OrderScreen';
 
 function App() {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
       <Router className='App'>

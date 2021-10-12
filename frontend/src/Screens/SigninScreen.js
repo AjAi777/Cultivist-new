@@ -6,6 +6,10 @@ import Loader from '../Components/Utils/Loader';
 import { Signin } from '../Actions/userActions';
 
 const SigninScreen = ({ location, history }) => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const [credentials, setCredentials] = useState({ email: '', password: '' });
 
   const [passwordShown, setPasswordShown] = useState(false);
@@ -34,9 +38,6 @@ const SigninScreen = ({ location, history }) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
   return (
     <>
       <div

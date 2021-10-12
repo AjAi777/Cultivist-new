@@ -5,6 +5,10 @@ import { savePaymentMethod } from '../Actions/cartActions';
 import CheckoutSteps from '../Components/Checkout/CheckoutSteps';
 
 const PaymentScreen = ({ history }) => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
 
@@ -21,10 +25,6 @@ const PaymentScreen = ({ history }) => {
     dispatch(savePaymentMethod(paymentMethod));
     history.push('/placeorder');
   };
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   return (
     <>
@@ -58,6 +58,7 @@ const PaymentScreen = ({ history }) => {
                       name='paymentMethod'
                       value='RazorPay'
                       required
+                      checked
                       onChange={(e) => setPaymentMethod(e.target.value)}
                     />
                     <label className='form-check-label' htmlFor='RazorPay'>

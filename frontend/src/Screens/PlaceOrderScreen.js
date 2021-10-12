@@ -7,6 +7,10 @@ import CheckoutSteps from '../Components/Checkout/CheckoutSteps';
 import { createOrder } from '../Actions/orderActions';
 
 const PlaceOrderScreen = ({ history }) => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+  
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
@@ -57,9 +61,6 @@ const PlaceOrderScreen = ({ history }) => {
     );
   };
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
   return (
     <>
       <div

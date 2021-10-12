@@ -6,13 +6,25 @@ import Message from '../Components/Utils/Message';
 import Loader from '../Components/Utils/Loader';
 import { getOrderDetails } from '../Actions/orderActions';
 
-const OrderScreen = ({ match }) => {
+const OrderScreen = ({ match, history }) => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const orderId = match.params.id;
+
+  // const [sdkReady, setSdkReady] = useState(false);
 
   const dispatch = useDispatch();
 
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
+
+  // const orderPay = useSelector((state) => state.orderPay);
+  // const { loading: loadingPay, success: successPay } = orderPay;
+
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
 
   if (!loading) {
     //Calculating prices
@@ -22,15 +34,19 @@ const OrderScreen = ({ match }) => {
   }
 
   useEffect(() => {
-    dispatch(getOrderDetails(orderId));
-  }, []);
+    if (!userInfo) {
+      history.push('/signin');
+    }
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
+    // TRYING TO ADD RAZORPAY SCRIPT AND OPTIONS HERE
+
+    dispatch(getOrderDetails(orderId));
+  }, [dispatch, orderId]);
+
   return loading ? (
     <Loader />
   ) : error ? (
+    // jadoo is just a funny word that means margin on both end of pages
     <Message variant='jadoo danger'>{error}</Message>
   ) : (
     <>
