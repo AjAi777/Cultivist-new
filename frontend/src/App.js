@@ -6,6 +6,7 @@ import HomeScreen from './Screens/HomeScreen';
 import ShopScreen from './Screens/ShopScreen';
 import ContactScreen from './Screens/ContactScreen';
 import PlantScreen from './Screens/PlantScreen';
+import TreeScreen from './Screens/TreeScreen';
 import SigninScreen from './Screens/SigninScreen';
 import SignupScreen from './Screens/SignupScreen';
 import ProductScreen from './Screens/ProductScreen';
@@ -33,7 +34,7 @@ function App() {
           <Route exact path='/shop'>
             <ShopScreen />
           </Route>
-          <Route exact path='/plant'>
+          <Route exact path='/tree'>
             <PlantScreen />
           </Route>
           <Route exact path='/contact'>
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route path='/product/:id'>
             <ProductScreen />
+          </Route>
+          <Route path='/tree/:id'>
+            <TreeScreen />
           </Route>
           <Route path='/profile'>
             <ProfileScreen />

@@ -369,7 +369,7 @@ function Header() {
                 </Link>
               </li>
               <li className='d-flex align-items-center nav-item'>
-                <Link to='/plant'>
+                <Link to='/tree'>
                   <button
                     className='btn btn-outline-success gate dad'
                     data-bs-toggle='collapse'

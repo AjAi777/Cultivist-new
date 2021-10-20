@@ -1,6 +1,5 @@
 import React, { useLayoutEffect } from 'react';
 import TreeCard from '../Components/Plant/TreeCard';
-import Certificate from '../Components/Plant/Certificate';
 import FAQ from '../Components/Plant/FAQ';
 import Logo from '../Components/Plant/Logo';
 import Occasion from '../Components/Plant/Occasion';
@@ -28,8 +27,7 @@ export default function PlantScreen() {
             ))}
           </div>
         </div>
-      </div>
-      <Certificate />
+      </div>      
       <FAQ />
       <br />
       <br />
