@@ -76,19 +76,22 @@ const TreeScreen = ({ history, match }) => {
                   : <span> -{tree.CO2} kg</span>
                 </h6>
               </div>
-              <div className='row d-flex'>
-                <h5
-                  className='mt-3'
-                  style={{ color: '#1b4944', fontWeight: '550' }}
+              <div className='row d-flex mt-2'>
+                <div
+                  className='fw-bold'
+                  style={{
+                    fontSize: '15.5px',
+                    letterSpacing: '1px',
+                    color: '#1b4944',
+                  }}
                 >
-                  <span style={{ fontSize: '17px' }}>Contribution: </span>
-                  <span style={{ marginRight: '4px', fontSize: '19px' }}>
+                  CONTRIBUTION: {' '}
+                  <span style={{ marginRight: '4px', fontSize: '17px' }}>
                     ₹
                   </span>
                   {tree.contribution}
-                </h5>
+                </div>
               </div>
-
               <div className='row mt-3'>
                 <div
                   className='fw-bold'
