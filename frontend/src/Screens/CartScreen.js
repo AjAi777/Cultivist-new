@@ -136,7 +136,7 @@ const CartScreen = ({ match, location, history }) => {
                             Qty:
                           </span>
                           <select
-                            class='form-select cartquantity'
+                            className='form-select cartquantity'
                             style={{
                               boxShadow: 'unset',
                               border: '1px solid #ccc',

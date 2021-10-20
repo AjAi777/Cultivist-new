@@ -1,5 +1,11 @@
+import dotenv from 'dotenv';
 import asyncHandler from 'express-async-handler';
 import Order from '../models/orderModel.js';
+import Razorpay from 'razorpay';
+import Crypto from 'crypto-js';
+import uniqid from 'uniqid';
+
+dotenv.config();
 
 // @desc    Create new order
 // @route   POST /api/orders
@@ -60,16 +66,30 @@ const getOrderById = asyncHandler(async (req, res) => {
 const updateOrderToPaid = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
 
+  const instance = new Razorpay({
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_SECRET,
+  });
+
+  const options = {
+    amount: req.body.amount,
+    currency: 'INR',
+    receipt: uniqid(),
+  };
+
+  await instance.orders.create(options);
+  
   if (order) {
     order.isPaid = true;
     order.paidAt = Date.now();
     order.paymentResult = {
       id: req.body.id,
       status: req.body.status,
-      update_time: req.body.update_time,
-      email_address: req.body.payer.email_address,
+      email_address: req.body.email,
+      paymentId: req.body.paymentId,
+      signature: req.body.signature,
     };
-    
+
     const updatedOrder = await order.save();
 
     res.json(updatedOrder);

@@ -390,6 +390,12 @@ input {
   .usercol {
     width: 7rem;
   }
+  .iball {
+    margin-bottom: 0.5rem;
+  }
+  .speak {
+    row-gap: 0.5rem;
+  }
 }
 
 @media (min-width: 600px) {
@@ -440,6 +446,21 @@ input {
   }
   .usercol {
     width: 12rem;
+  }
+  .iball {
+    transition: transform 0.1s;
+  }
+  .iball:hover {
+    transform: scale(1.04);
+  }
+  .speak {
+    row-gap: 1rem;
+  }
+  .wire {
+    margin-top: 2rem;
+  }
+  .born {
+    margin-bottom: 2rem;
   }
 }
 
@@ -519,6 +540,40 @@ input {
   .digisol {
     font-size: 12px;
   }
+  .england {
+    width: 100%;
+    height: 300px;
+  }
+  .planet {
+    word-spacing: 5px;
+    max-width: 100%;
+    font-size: 14px;
+  }
+  .mickey {
+    font-size: 15px;
+  }
+  .mouse {
+    font-size: 16px;
+    margin-top: 2.5rem;
+  }
+  .tarak {
+    display: none;
+  }
+  .kanish {
+    width: 135px;
+    font-size: 12.5px;
+  }
+  .minnie {
+    font-size: 16px;
+  }
+  .wire {
+    margin-top: 1rem;
+  }
+  .warner {
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 @media (min-width: 600px) {
@@ -577,5 +632,26 @@ input {
   }
   .stocks {
     margin-bottom: 2.5rem;
+  }
+  .england {
+    width: 1000px;
+    height: 600px;
+  }
+  .planet {
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    max-width: 80%;
+    font-size: 15px;
+  }
+  .core {
+    margin-top: 0.5rem;
+  }
+  .kanish {
+    width: 180px;
+  }
+  .warner {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
   }
 }

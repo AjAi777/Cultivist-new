@@ -133,7 +133,7 @@ const ProductScreen = ({ history, match }) => {
                     }}
                   >
                     STATUS:
-                    {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+                    {product.countInStock > 0 ? ' In Stock ' : ' Out of Stock '}
                   </div>
                 </div>
                 <div className='row mt-4 justify-content-center'>

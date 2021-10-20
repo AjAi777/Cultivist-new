@@ -1,10 +1,12 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../Components/Utils/Message';
 import Loader from '../Components/Utils/Loader';
 import { getOrderDetails } from '../Actions/orderActions';
+import { ORDER_PAY_RESET } from '../Constants/orderConstants';
 
 const OrderScreen = ({ match, history }) => {
   useLayoutEffect(() => {
@@ -13,15 +15,15 @@ const OrderScreen = ({ match, history }) => {
 
   const orderId = match.params.id;
 
-  // const [sdkReady, setSdkReady] = useState(false);
+  const [sdkReady, setSdkReady] = useState(false);
 
   const dispatch = useDispatch();
 
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
 
-  // const orderPay = useSelector((state) => state.orderPay);
-  // const { loading: loadingPay, success: successPay } = orderPay;
+  const orderPay = useSelector((state) => state.orderPay);
+  const { loading: loadingPay, success: successPay } = orderPay;
 
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -33,15 +35,68 @@ const OrderScreen = ({ match, history }) => {
       .toFixed(2);
   }
 
+  const displayRazorPay = async () => {
+    const script = document.createElement('script');
+    // script.type = 'text/javascript';
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.async = true;
+    script.onload = () => {
+      setSdkReady(true);
+    };
+    script.onerror = () => {
+      setSdkReady(false);
+    };
+    document.body.appendChild(script);
+
+    const options = {
+      key: process.env.RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
+      amount: order.orderTotalPrice,
+      currency: 'INR',
+      name: 'Cultivist',
+      description: 'Payment',
+      image:
+        'https://ik.imagekit.io/cz92t2phsuf/Cultivist/logo_sf0_-e168GGI.png?updatedAt=1633598864277',
+      order_id: orderId,
+      handler: async function (response) {
+        const paymentResult = {
+          id: response.razorpay_order_id,
+          paymentId: response.razorpay_payment_id,
+          signature: response.razorpay_signature,
+        };
+
+        const result = await axios.put(
+          `/api/orders/${orderId}/pay`,
+          paymentResult
+        );
+
+        alert(result.paymentResult.msg);
+      },
+      prefill: {
+        name: userInfo.name,
+        email: userInfo.email,
+        contact: userInfo.phone,
+      },
+      theme: {
+        color: '#61dafb',
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
+
   useEffect(() => {
     if (!userInfo) {
       history.push('/signin');
     }
 
-    // TRYING TO ADD RAZORPAY SCRIPT AND OPTIONS HERE
-
-    dispatch(getOrderDetails(orderId));
-  }, [dispatch, orderId]);
+    if (!order || successPay) {
+      dispatch({ type: ORDER_PAY_RESET });
+      dispatch(getOrderDetails(orderId));
+    } else if (!order.isPaid) {
+      setSdkReady(true);
+    }
+  }, [dispatch, orderId, order, successPay]);
 
   return loading ? (
     <Loader />
@@ -348,6 +403,23 @@ const OrderScreen = ({ match, history }) => {
                         </div>
                       </div>
                     </div>
+                    {!order.isPaid && (
+                      <div className='list-group-item bazooka'>
+                        {loadingPay && <Loader />}
+                        {!sdkReady ? (
+                          <Loader />
+                        ) : (
+                          <button
+                            type='button'
+                            className='btn btn-success w-100 p-2'
+                            onClick={displayRazorPay}
+                            style={{ margin: '0', letterSpacing: '2px' }}
+                          >
+                            BUY NOW
+                          </button>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
