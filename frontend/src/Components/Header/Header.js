@@ -321,7 +321,7 @@ function Header() {
                 <Link
                   className='nav-link dad king'
                   aria-current='page'
-                  to='#'
+                  to='/contact'
                   style={{
                     fontSize: '1rem',
                     fontWeight: '600',

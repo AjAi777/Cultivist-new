@@ -64,7 +64,7 @@ const getOrderById = asyncHandler(async (req, res) => {
 // @route   GET /api/order/:id/pay
 // @access  Private
 const updateOrderToPaid = asyncHandler(async (req, res) => {
-  const order = await Order.findById(req.params.id);
+  let order = await Order.findById(req.params.id);
 
   const instance = new Razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
@@ -77,8 +77,8 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
     receipt: uniqid(),
   };
 
-  await instance.orders.create(options);
-  
+  order = await instance.orders.create(options);
+
   if (order) {
     order.isPaid = true;
     order.paidAt = Date.now();
