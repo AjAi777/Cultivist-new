@@ -1,12 +1,28 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import dotenv from 'dotenv';
+import { Link, withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../Components/Utils/Message';
 import Loader from '../Components/Utils/Loader';
 import { getOrderDetails } from '../Actions/orderActions';
 import { ORDER_PAY_RESET } from '../Constants/orderConstants';
+
+dotenv.config();
+
+function loadScript(src) {
+  return new Promise((resolve) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = () => {
+      resolve(true);
+    };
+    script.onerror = () => {
+      resolve(false);
+    };
+    document.body.appendChild(script);
+  });
+}
 
 const OrderScreen = ({ match, history }) => {
   useLayoutEffect(() => {
@@ -35,62 +51,71 @@ const OrderScreen = ({ match, history }) => {
       .toFixed(2);
   }
 
-  const displayRazorPay = async () => {
-    const script = document.createElement('script');
-    // script.type = 'text/javascript';
-    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-    script.async = true;
-    script.onload = () => {
+  async function displayRazorpay() {
+    const res = await loadScript(
+      'https://checkout.razorpay.com/v1/checkout.js'
+    );
+
+    if (res) {
       setSdkReady(true);
-    };
-    script.onerror = () => {
+    } else {
       setSdkReady(false);
-    };
-    document.body.appendChild(script);
+      alert('Razorpay SDK failed to load. Are you online?');
+      return;
+    }
+
+    const result = await axios.post(`/api/orders/${orderId}/payment/orders`);
+    if (!result) {
+      alert('Server error. Are you online?');
+      return;
+    }
+
+    const { amount, id: order_id, currency } = result.data;
 
     const options = {
-      key: process.env.RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
-      amount: order.orderTotalPrice,
-      currency: 'INR',
+      key: process.env.RAZORPAY_KEY_ID,
+      amount: amount.toString(),
+      currency: currency,
+      order_id: order_id,
       name: 'Cultivist',
-      description: 'Payment',
+      description: 'Order Payment',
       image:
-        'https://ik.imagekit.io/cz92t2phsuf/Cultivist/logo_sf0_-e168GGI.png?updatedAt=1633598864277',
-      order_id: orderId,
+        'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Razorpay_S6Woz5xoY.png?updatedAt=1635864063423',
       handler: async function (response) {
         const paymentResult = {
-          id: response.razorpay_order_id,
-          paymentId: response.razorpay_payment_id,
-          signature: response.razorpay_signature,
+          orderCreationId: order_id,
+          razorpayPaymentId: response.razorpay_payment_id,
+          razorpayOrderId: response.razorpay_order_id,
+          razorpaySignature: response.razorpay_signature,
         };
-
         const result = await axios.put(
-          `/api/orders/${orderId}/pay`,
+          `/api/orders/${orderId}/payment/success`,
           paymentResult
         );
-
-        alert(result.paymentResult.msg);
+        alert(result.data.msg);
       },
       prefill: {
-        name: userInfo.name,
-        email: userInfo.email,
-        contact: userInfo.phone,
+        name: order.user.name,
+        email: order.user.email,
+        contact: order.user.phone,
+      },
+      notes: {
+        address: order.shippingAddress.address,
       },
       theme: {
-        color: '#61dafb',
+        color: '#3399cc',
       },
     };
-
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
-  };
+  }
 
   useEffect(() => {
     if (!userInfo) {
       history.push('/signin');
     }
 
-    if (!order || successPay) {
+    if (!order || successPay || order._id !== orderId) {
       dispatch({ type: ORDER_PAY_RESET });
       dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
@@ -101,7 +126,6 @@ const OrderScreen = ({ match, history }) => {
   return loading ? (
     <Loader />
   ) : error ? (
-    // jadoo is just a funny word that means margin on both end of pages
     <Message variant='jadoo danger'>{error}</Message>
   ) : (
     <>
@@ -412,7 +436,7 @@ const OrderScreen = ({ match, history }) => {
                           <button
                             type='button'
                             className='btn btn-success w-100 p-2'
-                            onClick={displayRazorPay}
+                            onClick={displayRazorpay}
                             style={{ margin: '0', letterSpacing: '2px' }}
                           >
                             BUY NOW

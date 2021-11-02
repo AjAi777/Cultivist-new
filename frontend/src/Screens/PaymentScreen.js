@@ -50,7 +50,7 @@ const PaymentScreen = ({ history }) => {
               <div className='form-group mb-2'>
                 <h5 className='dark-grey-text mt-4 mb-2'>Select Method</h5>
                 <div className='col mt-4 mb-2'>
-                  <div class='form-check'>
+                  <div className='form-check'>
                     <input
                       className='form-check-input'
                       type='radio'
