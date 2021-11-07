@@ -50,7 +50,7 @@ const tree = [
   {
     _id: '4',
     name: 'Mango',
-    meaning: 'Sweetness',
+    meaning: 'Sweet',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Untitled_design__15__4Clsw84QRrm.png?updatedAt=1634726918240',
     contribution: 300,

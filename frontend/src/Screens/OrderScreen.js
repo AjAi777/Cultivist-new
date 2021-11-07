@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../Components/Utils/Message';
 import Loader from '../Components/Utils/Loader';
-import { getOrderDetails } from '../Actions/orderActions';
+import { getOrderDetails, payOrder } from '../Actions/orderActions';
 import { ORDER_PAY_RESET } from '../Constants/orderConstants';
 
 dotenv.config();
@@ -92,6 +92,10 @@ const OrderScreen = ({ match, history }) => {
           `/api/orders/${orderId}/payment/success`,
           paymentResult
         );
+        if (result) {
+          console.log(paymentResult);
+          dispatch(payOrder(orderId, paymentResult));
+        }
         alert(result.data.msg);
       },
       prefill: {

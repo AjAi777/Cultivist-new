@@ -18,6 +18,7 @@ import ShippingScreen from './Screens/ShippingScreen';
 import PaymentScreen from './Screens/PaymentScreen';
 import PlaceOrderScreen from './Screens/PlaceOrderScreen';
 import OrderScreen from './Screens/OrderScreen';
+import MyOrdersScreen from './Screens/MyOrdersScreen';
 
 function App() {
   useLayoutEffect(() => {
@@ -48,6 +49,9 @@ function App() {
           </Route>
           <Route path='/profile'>
             <ProfileScreen />
+          </Route>
+          <Route exact path='/orders'>
+            <MyOrdersScreen />
           </Route>
           <Route exact path='/signin'>
             <SigninScreen />

@@ -3,7 +3,7 @@ import React from 'react';
 export default function FAQ() {
   return (
     <>
-      <div className='jadoo px-4 text-center py-4 bg-light mb-5'>
+      <div className='jadoo px-4 text-center py-4 mb-5'>
         <div
           className='accordion accordion-flush mb-3 faq'
           id='accordionFlushExample'
@@ -20,7 +20,11 @@ export default function FAQ() {
                 data-bs-target='#flush-collapseOne'
                 aria-expanded='false'
                 aria-controls='flush-collapseOne'
-                style={{ boxShadow: 'unset' }}
+                style={{
+                  boxShadow: 'unset',
+                  color: 'green',
+                  fontWeight: 'bold',
+                }}
               >
                 FAQ 1
               </button>
@@ -47,7 +51,11 @@ export default function FAQ() {
                 data-bs-target='#flush-collapseTwo'
                 aria-expanded='false'
                 aria-controls='flush-collapseTwo'
-                style={{ boxShadow: 'unset' }}
+                style={{
+                  boxShadow: 'unset',
+                  color: 'green',
+                  fontWeight: 'bold',
+                }}
               >
                 FAQ 2
               </button>
@@ -74,7 +82,11 @@ export default function FAQ() {
                 data-bs-target='#flush-collapseThree'
                 aria-expanded='false'
                 aria-controls='flush-collapseThree'
-                style={{ boxShadow: 'unset' }}
+                style={{
+                  boxShadow: 'unset',
+                  color: 'green',
+                  fontWeight: 'bold',
+                }}
               >
                 FAQ 3
               </button>
@@ -102,7 +114,11 @@ export default function FAQ() {
                 data-bs-target='#flush-collapseFour'
                 aria-expanded='false'
                 aria-controls='flush-collapseFour'
-                style={{ boxShadow: 'unset' }}
+                style={{
+                  boxShadow: 'unset',
+                  color: 'green',
+                  fontWeight: 'bold',
+                }}
               >
                 FAQ 4
               </button>

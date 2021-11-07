@@ -212,6 +212,11 @@ input {
     padding-right: 0px;
     padding-left: 0px;
   }
+  .shahrukh {
+    font-weight: 600;
+    font-size: 14px;
+    color: green;
+  }
   .virat .list-group-item {
     padding: unset;
     padding-bottom: 1rem;
@@ -251,6 +256,15 @@ input {
     text-decoration: none;
     font-size: 18px;
     color: green;
+  }
+  .shahrukh {
+    font-weight: 600;
+    font-size: 15px;
+    color: green;
+    cursor: pointer;
+  }
+  .shahrukh:hover {
+    text-decoration: underline;
   }
   .haar {
     width: 140px;
@@ -369,6 +383,9 @@ input {
   .srh {
     margin: 0rem 1rem 0rem 1rem;
   }
+  .kkr2 {
+    margin: 1rem 1rem 1rem 1rem;
+  }
   .rr {
     margin-top: 1.5rem;
   }
@@ -396,9 +413,48 @@ input {
   .speak {
     row-gap: 0.5rem;
   }
+  .cloud {
+    width: 5rem;
+  }
+  .most {
+    margin-left: 2rem;
+  }
+  .qualify {
+    width: 40%;
+  }
+  .qualify2 {
+    width: 60%;
+  }
+  .pollution {
+    font-size: 12px;
+  }
+  .dhaka {
+    margin-top: 0.5rem;
+  }
+  .mujeeb .btn {
+    width: 7.5rem;
+    border-radius: 0.4rem;
+  }
 }
 
 @media (min-width: 600px) {
+  .pollution {
+    font-size: 14px;
+  }
+  .unit {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .qualify {
+    width: 115%;
+  }
+  .qualify2 {
+    width: 125%;
+  }
+  .cloud {
+    max-width: 70%;
+  }
   .king {
     visibility: hidden;
     clear: both;
@@ -425,6 +481,9 @@ input {
   }
   .kkr {
     margin: 7rem 5rem 5rem 5rem;
+  }
+  .kkr2 {
+    margin: 1rem 5rem 1rem 5rem;
   }
   .srh {
     margin: 8rem 7rem 5rem 5rem;
@@ -564,7 +623,10 @@ input {
     font-size: 12.5px;
   }
   .minnie {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  .sahej {
+    font-size: 22px;
   }
   .wire {
     margin-top: 1rem;
@@ -579,6 +641,9 @@ input {
   }
   .tizum2 {
     padding: 0 1.4rem;
+  }
+  .warner2 {
+    font-size: 16.5px;
   }
 }
 
@@ -660,10 +725,17 @@ input {
     margin: 0;
     padding: 0;
   }
+  .warner2 {
+    font-size: 20px;
+    cursor: pointer;
+  }
   .tizum1 {
     padding: 0 3rem 0 1.5rem;
   }
   .tizum2 {
     padding: 0 1.5rem 0 3rem;
+  }
+  .alankar:hover {
+    text-decoration: underline;
   }
 }

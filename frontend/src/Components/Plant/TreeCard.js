@@ -44,11 +44,11 @@ const TreeCard = ({ tree }) => {
                 <span className='fw-bold mx-1'> ₹ {tree.contribution}</span>
               </h6>
             </div>
-            <div className='col d-flex justify-content-center'>
+            <div className='col d-flex justify-content-center mujeeb'>
               <button
                 type='button'
                 className='btn btn-sm btn-success p-2'
-                style={{ boxShadow: 'unset', border: 'unset' }}
+                style={{ boxShadow: 'unset', border: 'unset'}}
               >
                 <span className="fw-bold">Plant Now</span>
               </button>
