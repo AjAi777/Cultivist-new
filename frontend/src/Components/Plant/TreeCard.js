@@ -4,17 +4,34 @@ import { Link } from 'react-router-dom';
 const TreeCard = ({ tree }) => {
   return (
     <>
-      <div className='card shadow-sm'>
+      <div
+        className='card shadow-sm'
+        style={{ borderRadius: '15px', border: '1px solid #ccc' }}
+      >
         <Link to={`/tree/${tree._id}`}>
-          <img src={tree.image} alt={tree.name} width='100%' />
+          <img
+            src={tree.image}
+            alt={tree.name}
+            width='100%'
+            style={{
+              borderTopRightRadius: '15px',
+              borderTopLeftRadius: '15px',
+            }}
+          />
         </Link>
 
-        <div className='card-body' style={{ padding: '0.5rem 0.1rem 0.7rem 0.1rem' }}>
+        <div
+          className='card-body'
+          style={{ padding: '0.5rem 0.1rem 0.7rem 0.1rem' }}
+        >
           <Link
             to={`/tree/${tree._id}`}
             style={{ textDecoration: 'none', color: '#444' }}
           >
-            <div className='card-title text-center' style={{ margin: '0 0 2px 0' }}>
+            <div
+              className='card-title text-center'
+              style={{ margin: '0 0 2px 0' }}
+            >
               <span className='fw-bold warner' style={{ color: '#1b4944' }}>
                 {tree.name}
               </span>
@@ -48,9 +65,9 @@ const TreeCard = ({ tree }) => {
               <button
                 type='button'
                 className='btn btn-sm btn-success p-2'
-                style={{ boxShadow: 'unset', border: 'unset'}}
+                style={{ boxShadow: 'unset', border: 'unset' }}
               >
-                <span className="fw-bold">Plant Now</span>
+                <span className='fw-bold'>Plant Now</span>
               </button>
             </div>
           </div>

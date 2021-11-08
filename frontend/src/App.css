@@ -603,6 +603,10 @@ input {
     width: 100%;
     height: 300px;
   }
+  .england2 {
+    width: 100%;
+    height: 300px;
+  }
   .planet {
     word-spacing: 5px;
     max-width: 100%;
@@ -645,9 +649,23 @@ input {
   .warner2 {
     font-size: 16.5px;
   }
+  .githubpack {
+    width: 14px;
+    height: 14px;
+  }
+  .plantimage {
+    width: auto;
+  }
 }
 
 @media (min-width: 600px) {
+  .githubpack {
+    width: 20px;
+    height: 20px;
+  }
+  .carousel .slide {
+    height: 65vh;
+  }
   .step1 {
     margin-right: 20px;
     padding: 1.5rem 0.5rem 1rem 0rem;
@@ -738,4 +756,39 @@ input {
   .alankar:hover {
     text-decoration: underline;
   }
+  .plantimage {
+    width: 80%;
+  }
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel .slide img {
+  max-height: 100%;
+  width: auto;
+}
+
+.treebutton {
+  background-color: transparent;
+  background: transparent;
+  border: unset;
+  box-shadow: unset;
+}
+
+.carousel.carousel-slider .control-arrow {
+  background: white;
+}
+
+.treeimage {
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+.plantimage {
+  margin: 0 auto;
+  height: 100%;
 }

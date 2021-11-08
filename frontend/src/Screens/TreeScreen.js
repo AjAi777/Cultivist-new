@@ -2,6 +2,8 @@ import React, { useState, useLayoutEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Certificate from '../Components/Plant/Certificate';
 import trees from '../trees';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
 const TreeScreen = ({ history, match }) => {
   useLayoutEffect(() => {
@@ -30,7 +32,7 @@ const TreeScreen = ({ history, match }) => {
   return (
     <>
       <div
-        className='jadoo'
+        className='jadoo jevan'
         style={{ marginTop: '18vh', marginBottom: '15vh' }}
       >
         <Link
@@ -47,7 +49,57 @@ const TreeScreen = ({ history, match }) => {
 
         <div className='row mt-2'>
           <div className='col-md-6 faf'>
-            <img src={tree.image} alt={tree.name} width='95%' height='95%' />
+            <Carousel
+              infiniteLoop
+              autoPlay={true}
+              autoPlaySpeed={1000}
+              infinite={true}
+              showArrows={true}
+              navButtonsAlwaysVisible={true}
+              showIndicators={false}
+              showStatus={false}
+              renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
+                hasPrev && (
+                  <button onClick={clickHandler} className='treebutton'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='black'
+                      className='bi bi-chevron-left githubpack'
+                      viewBox='0 0 16 16'
+                    >
+                      <path
+                        fill-rule='evenodd'
+                        d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'
+                      />
+                    </svg>
+                  </button>
+                )
+              }
+              renderArrowNext={(clickHandler, hasNext, labelNext) =>
+                hasNext && (
+                  <button onClick={clickHandler} className='treebutton'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='black'
+                      className='bi bi-chevron-right githubpack'
+                      viewBox='0 0 16 16'
+                    >
+                      <path
+                        fill-rule='evenodd'
+                        d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'
+                      />
+                    </svg>
+                  </button>
+                )
+              }
+            >
+              <div className='treeimage'>
+                <img src={tree.image} alt={tree.name}></img>
+              </div>
+              <div className='treeimage'>
+                <img src={tree.image2} alt={tree.name}></img>
+              </div>
+            </Carousel>
           </div>
           <div className='col-md-6 data'>
             <div className='row mt-2 ' style={{ gutter: '0' }}>
@@ -85,7 +137,7 @@ const TreeScreen = ({ history, match }) => {
                     color: '#1b4944',
                   }}
                 >
-                  CONTRIBUTION: {' '}
+                  CONTRIBUTION:{' '}
                   <span style={{ marginRight: '4px', fontSize: '17px' }}>
                     ₹
                   </span>

@@ -5,10 +5,12 @@ import { Link, withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../Components/Utils/Message';
 import Loader from '../Components/Utils/Loader';
-import { getOrderDetails, payOrder } from '../Actions/orderActions';
+import { getOrderDetails } from '../Actions/orderActions';
 import { ORDER_PAY_RESET } from '../Constants/orderConstants';
 
 dotenv.config();
+
+const url = 'http://localhost:4000';
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -64,7 +66,7 @@ const OrderScreen = ({ match, history }) => {
       return;
     }
 
-    const result = await axios.post(`/api/orders/${orderId}/payment/orders`);
+    const result = await axios.post(`${url}/orders/${orderId}/payment/orders`);
     if (!result) {
       alert('Server error. Are you online?');
       return;
@@ -82,20 +84,16 @@ const OrderScreen = ({ match, history }) => {
       image:
         'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Razorpay_S6Woz5xoY.png?updatedAt=1635864063423',
       handler: async function (response) {
-        const paymentResult = {
-          orderCreationId: order_id,
-          razorpayPaymentId: response.razorpay_payment_id,
-          razorpayOrderId: response.razorpay_order_id,
-          razorpaySignature: response.razorpay_signature,
-        };
-        const result = await axios.put(
-          `/api/orders/${orderId}/payment/success`,
-          paymentResult
+        const result = await axios.post(
+          `${url}/orders/${orderId}/payment/success`,
+          {
+            orderCreationId: order_id,
+            razorpayPaymentId: response.razorpay_payment_id,
+            razorpayOrderId: response.razorpay_order_id,
+            razorpaySignature: response.razorpay_signature,
+          }
         );
-        if (result) {
-          console.log(paymentResult);
-          dispatch(payOrder(orderId, paymentResult));
-        }
+        console.log(response);
         alert(result.data.msg);
       },
       prefill: {
@@ -125,6 +123,7 @@ const OrderScreen = ({ match, history }) => {
     } else if (!order.isPaid) {
       setSdkReady(true);
     }
+    // eslint-disable-next-line
   }, [dispatch, orderId, order, successPay]);
 
   return loading ? (

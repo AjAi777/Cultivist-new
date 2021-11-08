@@ -24,6 +24,7 @@ const MyOrdersScreen = ({ history }) => {
     } else {
       dispatch(listMyOrders());
     }
+    // eslint-disable-next-line
   }, [dispatch, history]);
 
   return (
@@ -50,7 +51,7 @@ const MyOrdersScreen = ({ history }) => {
                   className='card border border-success shadow-0 kkr2'
                   key={order._id}
                 >
-                  <Order order={order}/>
+                  <Order order={order} />
                 </div>
               ))}
             </>

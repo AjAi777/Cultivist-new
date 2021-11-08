@@ -5,6 +5,8 @@ const tree = [
     meaning: 'Life',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Untitled_design__12__6gv-o1vDf.png?updatedAt=1634726523579',
+    image2:
+      'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Guava_zztIQpgI6h8.png?updatedAt=1636298322494',
     contribution: 250,
     countInStock: 10,
     CO2: 50,
@@ -21,6 +23,8 @@ const tree = [
     meaning: 'Energy',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Untitled_design__13__1bfylOcAgQu.png?updatedAt=1634726995472',
+    image2:
+      'https://ik.imagekit.io/cz92t2phsuf/Tree/51LhfPJvrAL_ifMeH54i_.jpg?updatedAt=1636356216206',
     contribution: 250,
     countInStock: 10,
     CO2: 60,
@@ -37,6 +41,8 @@ const tree = [
     meaning: 'Relief',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Untitled_design__16__iiSxMUoY1.png?updatedAt=1634726917563',
+    image2:
+      'https://ik.imagekit.io/cz92t2phsuf/Tree/Untitled_design__35__TNU3cSSZQgW.png?updatedAt=1636356497152',
     contribution: 250,
     countInStock: 10,
     CO2: 70,
@@ -53,6 +59,8 @@ const tree = [
     meaning: 'Sweet',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Untitled_design__15__4Clsw84QRrm.png?updatedAt=1634726918240',
+    image2:
+      'https://ik.imagekit.io/cz92t2phsuf/Tree/Untitled_design__37__ebDMLKjem9E.png?updatedAt=1636356930174',
     contribution: 300,
     countInStock: 10,
     CO2: 80,
@@ -69,6 +77,8 @@ const tree = [
     meaning: 'Resilence',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Untitled_design__17__LE_Jkwbrj.png?updatedAt=1634727085673',
+    image2:
+      'https://ik.imagekit.io/cz92t2phsuf/Tree/Untitled_design__38__Qo0ohhGIzks.png?updatedAt=1636357423784',
     contribution: 250,
     countInStock: 10,
     CO2: 90,

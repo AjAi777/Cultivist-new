@@ -140,7 +140,7 @@ export default function PlantScreen() {
           <h2 className='mt-5 fw-bold' style={{ wordSpacing: '7px' }}>
             Planting tree is easy!
           </h2>
-          <div className='mt-2 align-self-center'>
+          <div className='mt-4 align-self-center'>
             <img
               src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/stepp_lgy1ck2gw.png?updatedAt=1634647012738'
               className='img-fluid rounded justify-content-md-center england'

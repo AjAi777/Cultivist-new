@@ -83,8 +83,6 @@ function Header() {
                 <ul
                   className='ms-auto d-flex'
                   data-toggle='dropdown'
-                  aria-haspopup='true'
-                  aria-expanded='false'
                   style={{
                     margin: '1rem 1rem 1rem -0.5rem',
                     fontSize: '1rem',
@@ -235,7 +233,9 @@ function Header() {
                   id='navbarDropdown'
                   role='button'
                   data-toggle='dropdown'
+                  // eslint-disable-next-line
                   aria-haspopup='true'
+                  // eslint-disable-next-line
                   aria-expanded='false'
                   style={{
                     fontSize: '1rem',
@@ -271,14 +271,16 @@ function Header() {
                   </li>
                 </ul>
               </li>
-              <li className='nav-item dropdown head' aria-disabled>
+              <li className='nav-item dropdown head'>
                 <Link
                   className='nav-link dropdown-toggle dad'
                   to='#'
                   id='navbarDropdown'
                   role='button'
                   data-toggle='dropdown'
+                  // eslint-disable-next-line
                   aria-haspopup='true'
+                  // eslint-disable-next-line
                   aria-expanded='false'
                   style={{
                     fontSize: '1rem',
