@@ -73,4 +73,28 @@ const createPaymentVerification = asyncHandler(async (req, res) => {
   }
 });
 
-export { createPaymentOrder, createPaymentVerification };
+// @desc    Update order to paid
+// @route   PUT /api/orders/:id/paid
+// @access  Private
+const updateOrderToPaid = asyncHandler(async (req, res) => {
+  const order = await Order.findById(req.params.id);
+
+  const { razorpayPaymentId, razorpayOrderId, razorpaySignature } = req.body;
+
+  if (order) {
+    order.isPaid = true;
+    order.paidAt = Date.now();
+    order.paymentResult = {
+      orderId: razorpayOrderId,
+      paymentId: razorpayPaymentId,
+      signature: razorpaySignature,
+    };
+    const updatedOrder = await order.save();
+    res.json(updatedOrder);
+  } else {
+    res.status(404);
+    throw new Error('Order not found');
+  }
+});
+
+export { createPaymentOrder, createPaymentVerification, updateOrderToPaid };

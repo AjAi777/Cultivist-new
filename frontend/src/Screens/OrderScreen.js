@@ -95,6 +95,19 @@ const OrderScreen = ({ match, history }) => {
         );
         console.log(response);
         alert(result.data.msg);
+
+        // Update Order data
+        if (result) {
+          const data = await axios.put(`${url}/orders/${orderId}/paid`, {
+            razorpayPaymentId: response.razorpay_payment_id,
+            razorpayOrderId: response.razorpay_order_id,
+            razorpaySignature: response.razorpay_signature,
+          });
+          if (!data) {
+            alert('Order not updated?');
+          }
+          console.log(data);
+        }
       },
       prefill: {
         name: order.user.name,

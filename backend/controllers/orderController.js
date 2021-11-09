@@ -54,27 +54,6 @@ const getOrderById = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Update order to paid
-// @route   PUT /api/orders/:id/paid
-// @access  Private
-const updateOrderToPaid = asyncHandler(async (req, res) => {
-  const order = await Order.findById(req.params.id);
-  if (order) {
-    order.isPaid = true;
-    order.paidAt = Date.now();
-    order.paymentResult = {
-      orderId: req.body.razorpayOrderId,
-      paymentId: req.body.razorpayPaymentId,
-      signature: req.body.razorpaySignature,
-    };
-    const updatedOrder = await order.save();
-    res.json(updatedOrder);
-  } else {
-    res.status(404);
-    throw new Error('Order not found');
-  }
-});
-
 // @desc    Get logged in user orders
 // @route   GET /api/orders/myorders
 // @access  Private
@@ -83,4 +62,4 @@ const getMyOrders = asyncHandler(async (req, res) => {
   res.json(orders);
 });
 
-export { addOrderItems, getOrderById, updateOrderToPaid, getMyOrders };
+export { addOrderItems, getOrderById, getMyOrders };
