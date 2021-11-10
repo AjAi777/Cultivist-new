@@ -75,7 +75,7 @@ const OrderScreen = ({ match, history }) => {
     const { amount, currency } = result.data;
 
     const options = {
-      key: rzp_test_vkC5Shtm5QoG1y,
+      key: 'rzp_test_vkC5Shtm5QoG1y',
       amount: amount.toString(),
       currency: currency,
       // order_id: order_id,
