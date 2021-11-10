@@ -58,7 +58,7 @@ const ProductScreen = ({ history, match }) => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant='danger jadoo' style={{ marginBottom: '70vh' }}>
+          <Message variant='danger  jadoo' style={{ marginBottom: '70vh' }}>
             {error}
           </Message>
         ) : (
