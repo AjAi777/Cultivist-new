@@ -97,4 +97,4 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
   }
 });
 
-export { createPaymentOrder, createPaymentVerification, updateOrderToPaid };
+export { createPaymentOrder, updateOrderToPaid };
