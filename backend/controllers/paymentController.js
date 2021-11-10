@@ -8,8 +8,8 @@ import uniqid from 'uniqid';
 dotenv.config();
 
 const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID, // RAZORPAY KEY
-  key_secret: process.env.RAZORPAY_SECRET, // RAZORPAY SECRET
+  key_id: rzp_test_vkC5Shtm5QoG1y, // RAZORPAY KEY
+  key_secret: bH57qKB96xn7i0iFKefC1YB1, // RAZORPAY SECRET
 });
 
 // @desc    Create payment order
