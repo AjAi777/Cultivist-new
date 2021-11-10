@@ -1,6 +1,7 @@
 import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
+import Razorpay from 'razorpay';
 import cors from 'cors';
 import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
@@ -26,6 +27,11 @@ app.use(cors());
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+new Razorpay({
+  key_id: process.env.RAZORPAY_KEY_ID, // RAZORPAY KEY
+  key_secret: process.env.RAZORPAY_SECRET, // RAZORPAY SECRET
+});
 
 // Use JSON
 app.use(express.json());
