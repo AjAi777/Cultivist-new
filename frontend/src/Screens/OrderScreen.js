@@ -78,7 +78,7 @@ const OrderScreen = ({ match, history }) => {
       key: process.env.RAZORPAY_KEY_ID,
       amount: amount.toString(),
       currency: currency,
-      order_id: order_id,
+      // order_id: order_id,
       name: 'Cultivist',
       description: 'Order Payment',
       image:
@@ -87,7 +87,7 @@ const OrderScreen = ({ match, history }) => {
         const result = await axios.post(
           `${url}/orders/${orderId}/payment/success`,
           {
-            orderCreationId: order_id,
+            // orderCreationId: order_id,
             razorpayPaymentId: response.razorpay_payment_id,
             razorpayOrderId: response.razorpay_order_id,
             razorpaySignature: response.razorpay_signature,
