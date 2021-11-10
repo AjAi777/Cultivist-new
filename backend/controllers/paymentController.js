@@ -42,7 +42,7 @@ const createPaymentOrder = asyncHandler(async (req, res) => {
 // const createPaymentVerification = asyncHandler(async (req, res) => {
 //   try {
 //     const {
-//       orderCreationId,
+//      // orderCreationId,
 //       razorpayPaymentId,
 //       razorpayOrderId,
 //       razorpaySignature,
@@ -50,17 +50,19 @@ const createPaymentOrder = asyncHandler(async (req, res) => {
 
 //     // Creating our own digest, The format should be like this:
 //     // digest = hmac_sha256(orderCreationId + "|" + razorpayPaymentId, secret);
-//     var hmac = CryptoJS.algo.HMAC.create(
-//       CryptoJS.algo.SHA256,
-//       process.env.RAZORPAY_SECRET
-//     );
-//     hmac.update(`${orderCreationId}|${razorpayPaymentId}`);
-//     var hash = hmac.finalize('hex');
+   
+//     // var hmac = CryptoJS.algo.HMAC.create(
+//     //   CryptoJS.algo.SHA256,
+//     //   process.env.RAZORPAY_SECRET
+//     // );
+//     // hmac.update(`${orderCreationId}|${razorpayPaymentId}`);
+//     // var hash = hmac.finalize('hex');
 
-//     // Comparing our digest with the actual signature
-//     if (hash !== razorpaySignature) {
-//       return res.status(400).json({ msg: 'Transaction not legit!' });
-//     }
+//     // // Comparing our digest with the actual signature
+//     // if (hash !== razorpaySignature) {
+//     //   return res.status(400).json({ msg: 'Transaction not legit!' });
+//     // }
+   
 //     // THE PAYMENT IS LEGIT & VERIFIED
 //     // UPDATE ORDER
 //     res.json({
