@@ -72,29 +72,31 @@ const OrderScreen = ({ match, history }) => {
       return;
     }
 
-    const { amount, currency } = result.data;
+    const { amount, id: order_id, currency } = result.data;
 
     const options = {
-      key: 'rzp_test_vkC5Shtm5QoG1y',
+      key: process.env.RAZORPAY_KEY_ID,
       amount: amount.toString(),
       currency: currency,
-      // order_id: order_id,
+      order_id: order_id,
       name: 'Cultivist',
       description: 'Order Payment',
       image:
         'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Razorpay_S6Woz5xoY.png?updatedAt=1635864063423',
       handler: async function (response) {
-        const result = await axios.post(
+        const resData = {
+          orderCreationId: order_id,
+          razorpayPaymentId: response.razorpay_payment_id,
+          razorpayOrderId: response.razorpay_order_id,
+          razorpaySignature: response.razorpay_signature,
+        };
+
+        const result = fetch(
           `${url}/orders/${orderId}/payment/success`,
-          {
-            // orderCreationId: order_id,
-            razorpayPaymentId: response.razorpay_payment_id,
-            razorpayOrderId: response.razorpay_order_id,
-            razorpaySignature: response.razorpay_signature,
-          }
-        );
+          resData
+        ).then((x) => x.json());
+
         console.log(response);
-        alert(result.data.msg);
 
         // Update Order data
         if (result) {

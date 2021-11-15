@@ -8,8 +8,8 @@ import uniqid from 'uniqid';
 dotenv.config();
 
 const razorpay = new Razorpay({
-  key_id: 'rzp_test_vkC5Shtm5QoG1y', // RAZORPAY KEY
-  key_secret: 'bH57qKB96xn7i0iFKefC1YB1', // RAZORPAY SECRET
+  key_id: process.env.RAZORPAY_KEY_ID, // RAZORPAY KEY
+  key_secret: process.env.RAZORPAY_SECRET, // RAZORPAY SECRET
 });
 
 // @desc    Create payment order
@@ -39,41 +39,41 @@ const createPaymentOrder = asyncHandler(async (req, res) => {
 // @desc    Create payment verification
 // @route   POST /orders/:id/payment/success
 // @access  Private with Razorpay Basic Auth
-// const createPaymentVerification = asyncHandler(async (req, res) => {
-//   try {
-//     const {
-//      // orderCreationId,
-//       razorpayPaymentId,
-//       razorpayOrderId,
-//       razorpaySignature,
-//     } = req.body;
+const createPaymentVerification = asyncHandler(async (req, res) => {
+  try {
+    const {
+      orderCreationId,
+      razorpayPaymentId,
+      razorpayOrderId,
+      razorpaySignature,
+    } = req.body;
 
-//     // Creating our own digest, The format should be like this:
-//     // digest = hmac_sha256(orderCreationId + "|" + razorpayPaymentId, secret);
-   
-//     // var hmac = CryptoJS.algo.HMAC.create(
-//     //   CryptoJS.algo.SHA256,
-//     //   process.env.RAZORPAY_SECRET
-//     // );
-//     // hmac.update(`${orderCreationId}|${razorpayPaymentId}`);
-//     // var hash = hmac.finalize('hex');
+    // Creating our own digest, The format should be like this:
+    // digest = hmac_sha256(orderCreationId + "|" + razorpayPaymentId, secret);
 
-//     // // Comparing our digest with the actual signature
-//     // if (hash !== razorpaySignature) {
-//     //   return res.status(400).json({ msg: 'Transaction not legit!' });
-//     // }
-   
-//     // THE PAYMENT IS LEGIT & VERIFIED
-//     // UPDATE ORDER
-//     res.json({
-//       msg: 'success',
-//       orderId: razorpayOrderId,
-//       paymentId: razorpayPaymentId,
-//     });
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
-// });
+    var hmac = CryptoJS.algo.HMAC.create(
+      CryptoJS.algo.SHA256,
+      process.env.RAZORPAY_SECRET
+    );
+    hmac.update(`${orderCreationId}|${razorpayPaymentId}`);
+    var hash = hmac.finalize('hex');
+
+    // Comparing our digest with the actual signature
+    if (hash !== razorpaySignature) {
+      return res.status(400).json({ msg: 'Transaction not legit!' });
+    }
+
+    // THE PAYMENT IS LEGIT & VERIFIED
+    // UPDATE ORDER
+    res.json({
+      msg: 'success',
+      orderId: razorpayOrderId,
+      paymentId: razorpayPaymentId,
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 
 // @desc    Update order to paid
 // @route   PUT /api/orders/:id/paid
@@ -99,4 +99,4 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
   }
 });
 
-export { createPaymentOrder, updateOrderToPaid };
+export { createPaymentOrder, createPaymentVerification, updateOrderToPaid };

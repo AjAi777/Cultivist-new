@@ -175,7 +175,7 @@ export default function PlantScreen() {
           </h5>
           <div className='row row-cols-1 row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 mt-4 speak'>
             <div className='col'>
-              <div className='card shadow-sm d-flex align-items-center iball'>
+              <div className='card shadow-sm d-flex align-items-center iball utsav'>
                 <img
                   src='https://ik.imagekit.io/cz92t2phsuf/Occasions/1_TI-LwjIOPjn.png?updatedAt=1636212407122'
                   alt='Graduation'

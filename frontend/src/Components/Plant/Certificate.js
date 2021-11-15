@@ -4,14 +4,21 @@ const Certificate = () => {
   return (
     <>
       <div className='py-4 pb-4'>
-        <div className='container mt-2 text-center'>
+        <div
+          className='container text-center'
+          style={{
+            border: '1px solid #ccc',
+            padding: '0.5rem 1rem 1rem 1rem',
+            borderRadius: '0.5rem',
+          }}
+        >
           <h3
-            className='fw-bold born'
-            style={{ wordSpacing: '7px', color: '#1b4944' }}
+            className='fw-bold born mt-2'
+            style={{ wordSpacing: '5px', color: '#1b4944' }}
           >
             What will you recieve?
           </h3>
-          <div className='row row-cols-1 row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 mt-4 speak'>
+          <div className='row row-cols-1 row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 mt-2 speak'>
             <div className='col'>
               <div className='card shadow-sm iball' style={{ border: 'unset' }}>
                 <img

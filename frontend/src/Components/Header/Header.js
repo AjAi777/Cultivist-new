@@ -65,7 +65,7 @@ function Header() {
                     width='24'
                     height='24'
                     fill='green '
-                    class='bi bi-person-square'
+                    className='bi bi-person-square'
                     viewBox='0 0 16 16'
                   >
                     <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
