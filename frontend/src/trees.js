@@ -3,6 +3,7 @@ const tree = [
     _id: '1',
     name: 'Guava',
     meaning: 'Life',
+    category: 'tree',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Tree/Guava_cXtFZ9cwuyx.png?updatedAt=1636915348205',
     image2:
@@ -23,6 +24,7 @@ const tree = [
     _id: '2',
     name: 'Neem',
     meaning: 'Energy',
+    category: 'tree',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Tree/Neem_25az4VE9zW.png?updatedAt=1636914980307',
     image2:
@@ -43,6 +45,7 @@ const tree = [
     _id: '3',
     name: 'Green Apple',
     meaning: 'Relief',
+    category: 'tree',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Tree/Green_Apple_2_Zg2vBsEwn.png?updatedAt=1636914978672',
     image2:
@@ -63,13 +66,14 @@ const tree = [
     _id: '4',
     name: 'Mango',
     meaning: 'Sweet',
+    category: 'tree',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Tree/Mango__xSa2RKrCAc7.png?updatedAt=1636914979408',
     image2:
       'https://ik.imagekit.io/cz92t2phsuf/Tree/Mango_2_vTyzbuFFJE.png?updatedAt=1636914979664',
     badge:
       'https://ik.imagekit.io/cz92t2phsuf/Tree_bage/4_uNXnbIEd7.png?updatedAt=1636903129991',
-    contribution: 300,
+    contribution: 250,
     countInStock: 10,
     CO2: 80,
     shortDescription: 'Plant a Mango Tree',
@@ -83,6 +87,7 @@ const tree = [
     _id: '5',
     name: 'Peach',
     meaning: 'Resilence',
+    category: 'tree',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Tree/Untitled_design__43__ptOM0G6Ac.png?updatedAt=1636915790217',
     image2:

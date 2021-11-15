@@ -356,7 +356,6 @@ const TreeScreen = ({ history, match }) => {
                   >
                     What kind of tree is it?
                   </h5>
-
                   <p
                     className=''
                     style={{ wordSpacing: '5px', textAlign: 'justify' }}
@@ -369,14 +368,6 @@ const TreeScreen = ({ history, match }) => {
           </div>
         </div>
         <Certificate />
-        <div className='row mt-3 bg-light'>
-          <h3
-            className='fw-bold born mt-4 text-center'
-            style={{ wordSpacing: '5px', color: '#1b4944' }}
-          >
-            More information on {tree.name}
-          </h3>
-        </div>
       </div>
     </>
   );

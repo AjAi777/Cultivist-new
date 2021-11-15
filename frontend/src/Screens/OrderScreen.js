@@ -90,13 +90,10 @@ const OrderScreen = ({ match, history }) => {
           razorpayOrderId: response.razorpay_order_id,
           razorpaySignature: response.razorpay_signature,
         };
-
-        const result = fetch(
+        const result = await fetch(
           `${url}/orders/${orderId}/payment/success`,
           resData
-        ).then((x) => x.json());
-
-        console.log(response);
+        );
 
         // Update Order data
         if (result) {

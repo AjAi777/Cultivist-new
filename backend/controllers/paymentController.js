@@ -39,7 +39,7 @@ const createPaymentOrder = asyncHandler(async (req, res) => {
 // @desc    Create payment verification
 // @route   POST /orders/:id/payment/success
 // @access  Private with Razorpay Basic Auth
-const createPaymentVerification = asyncHandler(async (req, res) => {
+const createPaymentVerification = async (req, res) => {
   try {
     const {
       orderCreationId,
@@ -50,7 +50,6 @@ const createPaymentVerification = asyncHandler(async (req, res) => {
 
     // Creating our own digest, The format should be like this:
     // digest = hmac_sha256(orderCreationId + "|" + razorpayPaymentId, secret);
-
     var hmac = CryptoJS.algo.HMAC.create(
       CryptoJS.algo.SHA256,
       process.env.RAZORPAY_SECRET
@@ -73,7 +72,7 @@ const createPaymentVerification = asyncHandler(async (req, res) => {
   } catch (error) {
     res.status(500).send(error);
   }
-});
+};
 
 // @desc    Update order to paid
 // @route   PUT /api/orders/:id/paid
