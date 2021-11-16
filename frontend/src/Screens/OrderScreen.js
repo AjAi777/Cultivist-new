@@ -90,22 +90,50 @@ const OrderScreen = ({ match, history }) => {
           razorpayOrderId: response.razorpay_order_id,
           razorpaySignature: response.razorpay_signature,
         };
-        const result = await fetch(
+        const config = {
+          headers: {
+            'Content-Type': 'application/json',
+            auth: {
+              username: process.env.RAZORPAY_KEY_ID,
+              password: process.env.RAZORPAY_SECRET,
+            },
+          },
+        };
+
+        const result = await axios.post(
           `${url}/orders/${orderId}/payment/success`,
-          resData
+          JSON.stringify(resData),
+          config
         );
 
         // Update Order data
-        if (result) {
-          const data = await axios.put(`${url}/orders/${orderId}/paid`, {
+        console.log(result);
+        if (result && result.status && result.status === 200) {
+          const config = {
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${userInfo.token}`,
+            },
+          };
+
+          const resPaid = {
             razorpayPaymentId: response.razorpay_payment_id,
             razorpayOrderId: response.razorpay_order_id,
             razorpaySignature: response.razorpay_signature,
-          });
+          };
+          const data = await axios.put(
+            `${url}/orders/${orderId}/paid`,
+            JSON.stringify(resPaid),
+            config
+          );
           if (!data) {
             alert('Order not updated?');
           }
           console.log(data);
+
+          if (data && data.status && result.status === 200) {
+            window.location.reload();
+          }
         }
       },
       prefill: {
@@ -201,7 +229,8 @@ const OrderScreen = ({ match, history }) => {
                               fontSize: '15px',
                             }}
                           >
-                            Delivery Status: Delivered on {order.deliveredAt}
+                            Delivery Status: Delivered on{' '}
+                            {order.deliveredAt.substring(0, 10)}
                           </Message>
                         ) : (
                           <Message
@@ -228,14 +257,15 @@ const OrderScreen = ({ match, history }) => {
                       <span>{order.paymentMethod}</span>
                     </p>
                     <span>
-                      {order.isPaid ? (
+                      {order.isPaid === true ? (
                         <Message
                           variant='success'
                           style={{
                             fontSize: '15px',
                           }}
                         >
-                          Payment Status: Paid on {order.paidAt}
+                          Payment Status: Paid on{' '}
+                          {order.paidAt.substring(0, 10)}
                         </Message>
                       ) : (
                         <Message
@@ -442,7 +472,7 @@ const OrderScreen = ({ match, history }) => {
                         </div>
                       </div>
                     </div>
-                    {!order.isPaid && (
+                    {order.isPaid === false && (
                       <div className='list-group-item bazooka'>
                         {loadingPay && <Loader />}
                         {!sdkReady ? (

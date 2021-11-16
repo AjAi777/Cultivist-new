@@ -108,7 +108,7 @@ const SignupScreen = ({ location, history }) => {
                     autoComplete='off'
                     value={credentials.phone}
                     onChange={onChange}
-                    minLength='5'
+                    minLength='10'
                     required
                   />
                   <label htmlFor='phone'>Phone no</label>

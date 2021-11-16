@@ -101,7 +101,7 @@ const OrderCard = ({ order }) => {
       </div>
       <div className='card-body text-success'>
         {order.isDelivered ? (
-          <strong> Delivered on order.deliveredAt.substring(0, 10)</strong>
+          <strong> Delivered on {order.deliveredAt.substring(0, 10)}</strong>
         ) : (
           <strong> Delivering soon</strong>
         )}
@@ -132,7 +132,7 @@ const OrderCard = ({ order }) => {
                 </div>
                 <div className='row'>
                   {order.isPaid ? (
-                    <strong> Paid on order.paidAt.substring(0, 10)</strong>
+                    <strong> Paid on {order.paidAt.substring(0, 10)}</strong>
                   ) : (
                     <strong style={{ color: 'red' }}>Not Paid </strong>
                   )}
