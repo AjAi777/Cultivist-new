@@ -26,7 +26,7 @@ const TreeScreen = ({ history, match }) => {
 
   const addToCartHandler = () => {
     history.push(
-      `/cart/${match.params.id}?qty=${qty}?name=${treeName}?occasion=${treeOccasion}`
+      `/treecart/${match.params.id}?qty=${qty}?name=${treeName}?occasion=${treeOccasion}`
     );
   };
 

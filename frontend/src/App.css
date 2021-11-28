@@ -257,6 +257,16 @@ input {
     font-size: 18px;
     color: green;
   }
+  .moving-tree span {
+    background: crimson;
+    border-radius: 20px;
+    color: white;
+    position: absolute;
+    top: -5px;
+    right: -6px;
+    padding: 5px 7px;
+    font-size: 10px;
+  }
   .shahrukh {
     font-weight: 600;
     font-size: 15px;
@@ -326,7 +336,7 @@ input {
     width: 20rem;
   }
   .raj {
-    margin-left: 8rem;
+    margin-left: 4.5rem;
   }
 }
 
@@ -371,6 +381,10 @@ input {
   .moving-cart {
     font-size: 24px !important;
     margin-right: 25px;
+  }
+  .moving-tree {
+    font-size: 24px !important;
+    margin-right: 20px;
   }
   .mighty-raju {
     visibility: hidden;
@@ -438,6 +452,9 @@ input {
 }
 
 @media (min-width: 600px) {
+  .gate {
+    margin-right: 10rem;
+  }
   .pollution {
     font-size: 14px;
   }
@@ -466,15 +483,28 @@ input {
   .user-pro {
     position: absolute;
     right: 0;
-    margin-right: 7rem;
+    margin-right: 5.8rem;
     transform: translateY(-50%);
   }
   .moving-cart {
     font-size: 24px !important;
-    margin-right: 35px;
+    margin-right: 28px;
+  }
+  .moving-tree {
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 24px !important;
+    margin-right: 13.2rem;
   }
   .basket {
-    margin-right: 5rem;
+    margin-right: 4.5rem;
+  }
+  .basket2 {
+    margin-right: 15.7rem;
+  }
+  .joining {
+    margin-left: 1rem;
   }
   .signoutt {
     width: 100%;

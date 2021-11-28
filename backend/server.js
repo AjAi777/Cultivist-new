@@ -7,6 +7,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import colors from 'colors';
 import morgan from 'morgan';
 import productRoutes from './routes/productRoutes.js';
+// import treeRoutes from './routes/treeRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import paymentRoutes from './routes/paymentRoutes.js';
@@ -32,6 +33,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/products', productRoutes);
+// app.use('/api/trees', treeRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/orders', paymentRoutes);

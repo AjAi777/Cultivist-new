@@ -409,7 +409,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal1'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -476,7 +476,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal2'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -545,7 +545,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal3'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -615,7 +615,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal4'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -683,7 +683,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal5'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -751,7 +751,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal6'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -820,7 +820,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal7'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -888,7 +888,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal8'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -956,7 +956,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal9'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -1025,7 +1025,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal10'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -1094,7 +1094,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal11'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
@@ -1161,7 +1161,7 @@ export default function PlantScreen() {
           <div
             className='modal fade'
             id='exampleModal12'
-            tabindex='-1'
+            tabIndex='-1'
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >

@@ -7,7 +7,7 @@ import { Signout } from '../../Actions/userActions';
 function Header() {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
-  
+
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
@@ -36,6 +36,31 @@ function Header() {
           >
             <i className='bi bi-list' style={{ color: 'white' }}></i>
           </button>
+
+          <Link to='/treecart' style={{ color: 'green' }}>
+            <div className='moving-tree basket2'>
+              <i className='bi bi-tree-fill'></i>
+              <span
+                className='badge rounded-pill badge-notification bg-danger'
+                id='#lblCartCount'
+              >
+                {0}
+              </span>
+            </div>
+            <div className='moving-tree joining'>
+              <h3
+                className='mighty-raju fw-bold'
+                style={{
+                  color: 'rgba(0,0,0,.55)',
+                  marginTop: '5px',
+                  fontSize: '15px',
+                }}
+              >
+                Tree
+              </h3>
+            </div>
+          </Link>
+
           <Link className='navbar-brand ms-auto' to='/'>
             <img
               src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/logo_sf0_-e168GGI.png?updatedAt=1633598864277'
@@ -45,6 +70,7 @@ function Header() {
               className='cult'
             />
           </Link>
+
           <span>
             {!userInfo ? (
               <span className='user-pro'>
@@ -348,7 +374,7 @@ function Header() {
               </li>
               <li className='nav-item head raj'>
                 <Link
-                  className='nav-link dad mighty-raju2'
+                  className='nav-link dad mighty-raju2 wipro'
                   aria-current='page'
                   to='/contact'
                   style={{

@@ -118,10 +118,7 @@ const OrderCard = ({ order }) => {
               </div>
               <div className='col-8 mt-2 most'>
                 <div className='row d-flex align-items-center'>
-                  <Link
-                    to={`/product/${orderItems.product}`}
-                    style={{ textDecoration: 'unset' }}
-                  >
+                  <Link to={`/shop`} style={{ textDecoration: 'unset' }}>
                     <small className='alankar' style={{ fontSize: '15px' }}>
                       {orderItems.name}
                     </small>
@@ -139,32 +136,29 @@ const OrderCard = ({ order }) => {
                 </div>
                 <div className='row mt-1' style={{ marginLeft: '0px' }}>
                   {order.isPaid ? (
-                    <Link to={`/product/${orderItems.product}`}>
-                      <button
-                        type='button'
-                        className='btn btn-sm btn-outline-success'
-                        style={{
-                          border: '1px solid green',
-                          boxShadow: 'unset',
-                          width: '6rem',
-                        }}
-                      >
-                        Buy Again
-                      </button>
-                    </Link>
-                  ) : (
-                    <button
-                      type='button'
-                      className='btn btn-sm btn-outline-primary'
+                    <Link
+                      to={`/shop`}
                       style={{
                         border: '1px solid blue',
                         boxShadow: 'unset',
                         width: '6rem',
+                        textDecoration: 'unset',
                       }}
-                      onClick={`/product/${orderItems.product}`}
                     >
-                      Buy Now
-                    </button>
+                      <small>Buy Again</small>
+                    </Link>
+                  ) : (
+                    <Link
+                      to={`/order/${order._id}`}
+                      style={{
+                        border: '1px solid blue',
+                        boxShadow: 'unset',
+                        width: '6rem',
+                        textDecoration: 'unset',
+                      }}
+                    >
+                      <small>Buy Now</small>
+                    </Link>
                   )}
                 </div>
               </div>

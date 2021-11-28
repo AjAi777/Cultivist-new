@@ -46,7 +46,7 @@ const MyOrdersScreen = ({ history }) => {
             <Message variant='danger jadoo dismissible'>{errorOrders}</Message>
           ) : (
             <>
-              {orders.map((order) => (
+              {orders.reverse().map((order) => (
                 <div
                   className='card border border-success shadow-0 kkr2'
                   key={order._id}

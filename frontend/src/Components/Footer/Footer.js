@@ -7,7 +7,8 @@ export default function Footer() {
     <>
       <footer
         className='footer mt-auto py-3 text-light'
-        style={{ backgroundColor: '#1b1658' }}
+        // style={{ backgroundColor: '#1b1658' }}
+        style={{ backgroundColor: '#0096C7' }}
       >
         <div className='container'>
           <div
@@ -201,7 +202,8 @@ export default function Footer() {
       </footer>
       <footer
         className='footer mt-auto py-3'
-        style={{ backgroundColor: '#181b29' }}
+        // style={{ backgroundColor: '#181b29' }}
+        style={{ backgroundColor: '#023E8A' }}
       >
         <div className='text-center text-light'>
           &copy; 2021 Company, Inc. All rights reserved.

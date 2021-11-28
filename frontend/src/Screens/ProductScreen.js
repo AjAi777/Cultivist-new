@@ -38,11 +38,6 @@ const ProductScreen = ({ history, match }) => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
 
-  const [cost, setCost] = useState(`${product.price}`);
-  const toggleProductPrice = () => {
-    setCost(cost ? `${product.price}` : `${product.price * 2}`);
-  };
-
   return (
     <>
       <div
@@ -101,7 +96,7 @@ const ProductScreen = ({ history, match }) => {
                     <span style={{ marginRight: '4px', fontSize: '19px' }}>
                       ₹
                     </span>
-                    {cost ? `${product.price}` : `${product.price * 2}`}
+                    {product.price}
                   </h5>
                 </div>
                 <div className='row mt-3'>
@@ -125,23 +120,8 @@ const ProductScreen = ({ history, match }) => {
                         backgroundColor: 'white',
                         width: '5rem',
                       }}
-                      onClick={toggleProductPrice}
                     >
                       {product.size} ml
-                    </button>
-                    <button
-                      type='button'
-                      className='p-2 mt-2'
-                      style={{
-                        border: '1px solid black',
-                        fontSize: '14px',
-                        backgroundColor: 'white',
-                        width: '5rem',
-                        marginLeft: '0.5rem',
-                      }}
-                      onClick={toggleProductPrice}
-                    >
-                      {product.size * 2} ml
                     </button>
                   </div>
                 </div>
