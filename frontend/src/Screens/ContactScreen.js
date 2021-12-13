@@ -87,8 +87,8 @@ function ContactScreen() {
                 >
                   <i className='bi bi-telephone-fill bi-3x'></i>
                 </Link>
-                <p className='mt-2'>+91 1111 111 111</p>
-                <p className='mb-2'>Mon - Fri, 8:00-22:00</p>
+                <p className='mt-2'>+91 904 735 0494</p>
+                <p className='mb-2'>Mon - Sat, 8:00-22:00</p>
               </div>
               <div
                 className='col-3 card shadow-sm text-center'
@@ -101,8 +101,8 @@ function ContactScreen() {
                 >
                   <i className='bi bi-envelope-fill'></i>
                 </Link>
-                <p className='mt-2'>sales@mail.com</p>
-                <p className='mb-2'>support@mail.com</p>
+                <p className='mt-2'>sales@cultivist.co.in </p>
+                <p className='mb-2'>support@cultivist.co.in </p>
               </div>
             </div>
 

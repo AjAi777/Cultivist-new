@@ -233,10 +233,7 @@ function Header() {
             className='navbar-collapse collapse text-center justify-content-between singapore'
             id='navbarSupportedContent'
           >
-            <ul
-              className='navbar-nav ml-auto mb-2 mb-lg-0 text-center'
-              style={{ marginLeft: '0.5rem' }}
-            >
+            <ul className='navbar-nav ml-auto mb-2 mb-lg-0 text-center'>
               <li className='nav-item head'>
                 <Link
                   className='nav-link active dad'
@@ -343,7 +340,21 @@ function Header() {
                     color: 'lightblack',
                   }}
                 >
-                  Send Post Cards
+                  Post Cards
+                </Link>
+              </li>
+              <li className='nav-item head'>
+                <Link
+                  className='nav-link dad'
+                  aria-current='page'
+                  to='#'
+                  style={{
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: 'lightblack',
+                  }}
+                >
+                  Events
                 </Link>
               </li>
               <li className='nav-item head'>

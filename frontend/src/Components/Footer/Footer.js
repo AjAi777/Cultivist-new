@@ -71,18 +71,18 @@ export default function Footer() {
               </h6>
               <ul className='nav flex-column'>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0'>
+                  <Link to='/about_us' className='nav-link link-light p-0'>
                     About Us
+                  </Link>
+                </li>
+                <li className='nav-item mb-2'>
+                  <Link to='/tree' className='nav-link link-light p-0'>
+                    Plant a Tree
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
                   <Link to='#' className='nav-link link-light p-0 '>
                     Curated Content
-                  </Link>
-                </li>
-                <li className='nav-item mb-2'>
-                  <Link to='/plant' className='nav-link link-light p-0'>
-                    Plant a Tree
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
@@ -106,23 +106,37 @@ export default function Footer() {
               </h6>
               <ul className='nav mt-2 flex-column'>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0'>
-                    cultivistwebsite@gmail.com
-                  </Link>
+                  <a
+                    href='mailto: cultivistwebsite@gmail.com'
+                    className='nav-link link-light p-0'
+                  >
+                    support@cultivist.co.in
+                  </a>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0 '>
-                    +1 8000 888 888
-                  </Link>
-                </li>
-                <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0 '>
+                  <a
+                    href='https://www.google.com/maps/place/Cultivist+(Mukthi+Technologies)/@11.321276,76.774048,16z/data=!4m5!3m4!1s0x0:0x2144352d79828236!8m2!3d11.3212756!4d76.7740475?hl=en'
+                    target='_blank'
+                    rel='noreferrer'
+                    className='nav-link link-light p-0 '
+                  >
                     Show on map
+                  </a>
+                </li>
+                <li className='nav-item mb-2'>
+                  <Link
+                    to='/privacy_policy'
+                    className='nav-link link-light p-0 '
+                  >
+                    Privacy Policy
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0 '>
-                    Terms &amp; Conditions
+                  <Link
+                    to='/terms_and_conditions'
+                    className='nav-link link-light p-0 '
+                  >
+                    Terms and Conditions
                   </Link>
                 </li>
               </ul>
@@ -151,13 +165,19 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0'>
+                  <Link
+                    to='/shipping_information'
+                    className='nav-link link-light p-0'
+                  >
                     Shipping Information
                   </Link>
                 </li>
                 <li className='nav-item mb-2'>
-                  <Link to='#' className='nav-link link-light p-0 '>
-                    Terms of Service
+                  <Link
+                    to='/cancellation_refund'
+                    className='nav-link link-light p-0 '
+                  >
+                    Refund policy
                   </Link>
                 </li>
               </ul>

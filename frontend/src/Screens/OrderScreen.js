@@ -75,7 +75,7 @@ const OrderScreen = ({ match, history }) => {
     const { amount, id: order_id, currency } = result.data;
 
     const options = {
-      key: process.env.RAZORPAY_KEY_ID,
+      // key: process.env.RAZORPAY_KEY_ID,
       amount: amount.toString(),
       currency: currency,
       order_id: order_id,
@@ -83,59 +83,59 @@ const OrderScreen = ({ match, history }) => {
       description: 'Order Payment',
       image:
         'https://ik.imagekit.io/cz92t2phsuf/Cultivist/Razorpay_S6Woz5xoY.png?updatedAt=1635864063423',
-      handler: async function (response) {
-        const resData = {
-          orderCreationId: order_id,
-          razorpayPaymentId: response.razorpay_payment_id,
-          razorpayOrderId: response.razorpay_order_id,
-          razorpaySignature: response.razorpay_signature,
-        };
-        const config = {
-          headers: {
-            'Content-Type': 'application/json',
-            auth: {
-              username: process.env.RAZORPAY_KEY_ID,
-              password: process.env.RAZORPAY_SECRET,
-            },
-          },
-        };
+      // handler: async function (response) {
+        // const resData = {
+        //   orderCreationId: order_id,
+        //   razorpayPaymentId: response.razorpay_payment_id,
+        //   razorpayOrderId: response.razorpay_order_id,
+        //   razorpaySignature: response.razorpay_signature,
+        // };
+        // const config = {
+        //   headers: {
+        //     'Content-Type': 'application/json',
+        //     auth: {
+        //       username: process.env.RAZORPAY_KEY_ID,
+        //       password: process.env.RAZORPAY_SECRET,
+        //     },
+        //   },
+        // };
 
-        const result = await axios.post(
-          `${url}/orders/${orderId}/payment/success`,
-          JSON.stringify(resData),
-          config
-        );
+        // const result = await axios.post(
+        //   `${url}/orders/${orderId}/payment/success`,
+        //   JSON.stringify(resData),
+        //   config
+        // );
 
-        // Update Order data
-        console.log(result);
-        if (result && result.status && result.status === 200) {
-          const config = {
-            headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${userInfo.token}`,
-            },
-          };
+        // // Update Order data
+        // console.log(result);
+        // if (result && result.status && result.status === 200) {
+        //   const config = {
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //       Authorization: `Bearer ${userInfo.token}`,
+        //     },
+        //   };
 
-          const resPaid = {
-            razorpayPaymentId: response.razorpay_payment_id,
-            razorpayOrderId: response.razorpay_order_id,
-            razorpaySignature: response.razorpay_signature,
-          };
-          const data = await axios.put(
-            `${url}/orders/${orderId}/paid`,
-            JSON.stringify(resPaid),
-            config
-          );
-          if (!data) {
-            alert('Order not updated?');
-          }
-          console.log(data);
+        //   const resPaid = {
+        //     razorpayPaymentId: response.razorpay_payment_id,
+        //     razorpayOrderId: response.razorpay_order_id,
+        //     razorpaySignature: response.razorpay_signature,
+        //   };
+        //   const data = await axios.put(
+        //     `${url}/orders/${orderId}/paid`,
+        //     JSON.stringify(resPaid),
+        //     config
+        //   );
+        //   if (!data) {
+        //     alert('Order not updated?');
+        //   }
+        //   console.log(data);
 
-          if (data && data.status && result.status === 200) {
-            window.location.reload();
-          }
-        }
-      },
+        //   if (data && data.status && result.status === 200) {
+        //     window.location.reload();
+        //   }
+        // }
+      // },
       prefill: {
         name: order.user.name,
         email: order.user.email,

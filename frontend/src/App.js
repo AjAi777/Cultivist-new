@@ -19,6 +19,11 @@ import PaymentScreen from './Screens/PaymentScreen';
 import PlaceOrderScreen from './Screens/PlaceOrderScreen';
 import OrderScreen from './Screens/OrderScreen';
 import MyOrdersScreen from './Screens/MyOrdersScreen';
+import AboutUsPage from './Components/Footer/Pages/AboutUsPage';
+import RefundPage from './Components/Footer/Pages/RefundPage';
+import PrivacyPolicyPage from './Components/Footer/Pages/PrivacyPolicyPage';
+import ShippingInfoPage from './Components/Footer/Pages/ShippingInfoPage';
+import TermsAndConditions from './Components/Footer/Pages/TermsAndConditions';
 
 function App() {
   useLayoutEffect(() => {
@@ -73,6 +78,21 @@ function App() {
           </Route>
           <Route exact path='/order/:id'>
             <OrderScreen />
+          </Route>
+          <Route exact path='/about_us'>
+            <AboutUsPage />
+          </Route>
+          <Route exact path='/cancellation_refund'>
+            <RefundPage />
+          </Route>
+          <Route exact path='/privacy_policy'>
+            <PrivacyPolicyPage />
+          </Route>
+          <Route exact path='/shipping_information'>
+            <ShippingInfoPage />
+          </Route>
+          <Route exact path='/terms_and_conditions'>
+            <TermsAndConditions />
           </Route>
           <Route>
             <ErrorScreen />
