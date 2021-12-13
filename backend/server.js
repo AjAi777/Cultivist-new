@@ -10,7 +10,7 @@ import productRoutes from './routes/productRoutes.js';
 // import treeRoutes from './routes/treeRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
-import paymentRoutes from './routes/paymentRoutes.js';
+// import paymentRoutes from './routes/paymentRoutes.js';
 
 // Server
 dotenv.config();
