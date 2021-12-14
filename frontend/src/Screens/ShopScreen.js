@@ -25,7 +25,7 @@ const ShopScreen = () => {
     if (searchProducts === '') {
       return product;
     } else if (
-      product.name.toLowerCase().includes(searchProducts.toLowerCase())
+      product.headline.toLowerCase().includes(searchProducts.toLowerCase())
     ) {
       return product;
     } else {
