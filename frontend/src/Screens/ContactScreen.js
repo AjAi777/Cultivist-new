@@ -101,8 +101,8 @@ function ContactScreen() {
                 >
                   <i className='bi bi-envelope-fill'></i>
                 </Link>
-                <p className='mt-2'>sales@cultivist.co.in </p>
-                <p className='mb-2'>support@cultivist.co.in </p>
+                <p className='mt-2'>support@cultivist.co.in </p>
+                <p className='mb-2'>ajay.ai.kumar2@gmail.com </p>
               </div>
             </div>
 
