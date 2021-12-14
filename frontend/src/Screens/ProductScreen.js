@@ -69,7 +69,6 @@ const ProductScreen = ({ history, match }) => {
                 src={product.image}
                 alt={product.name}
                 width='100%'
-                height='100%'
               />
             </div>
             <div className='col-md-7 data'>
@@ -82,7 +81,10 @@ const ProductScreen = ({ history, match }) => {
                     {product.name}
                   </h3>
                 </div>
-                <div className='row mt-3'>
+                <div className='row mt-2'>
+                  <h5 style={{ color: '#1b4944' }}>{product.headline}</h5>
+                </div>
+                <div className='row mt-2'>
                   <Rating
                     value={product.rating}
                     text={` ${product.numReviews} reviews`}
@@ -264,19 +266,6 @@ const ProductScreen = ({ history, match }) => {
                         <h6>HOW TO USE</h6>
                       </Link>
                     </li>
-                    <li className='nav-item' role='presentation'>
-                      <Link
-                        className='nav-link'
-                        id='info-tab-4'
-                        data-bs-toggle='tab'
-                        to='#info-tabs-4'
-                        role='tab'
-                        aria-controls='info-tabs-4'
-                        aria-selected='false'
-                      >
-                        <h6>SHIPPING</h6>
-                      </Link>
-                    </li>
                   </ul>
 
                   <div className='tab-content' id='info-content'>
@@ -303,14 +292,6 @@ const ProductScreen = ({ history, match }) => {
                       aria-labelledby='info-tab-3'
                     >
                       {product.howtouse}
-                    </div>
-                    <div
-                      className='tab-pane'
-                      id='info-tabs-4'
-                      role='tabpanel'
-                      aria-labelledby='info-tab-4'
-                    >
-                      {product.shipping}
                     </div>
                   </div>
                 </div>

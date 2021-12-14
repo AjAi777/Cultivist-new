@@ -27,6 +27,10 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    headline: {
+      type: String,
+      required: true,
+    },
     image: {
       type: String,
       required: true,
@@ -70,10 +74,6 @@ const productSchema = mongoose.Schema(
       required: true,
     },
     howtouse: {
-      type: String,
-      required: true,
-    },
-    shipping: {
       type: String,
       required: true,
     },
