@@ -24,6 +24,7 @@ const app = express();
 app.use(
   cors({
     origin: [
+      '*',
       'http://localhost:3000',
       'https://www.cultivist.co.in',
       'www.cultivist.co.in',
