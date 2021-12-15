@@ -9,6 +9,7 @@ const getTrees = asyncHandler(async (req, res) => {
   res.json(trees);
 });
 
+
 // @desc    Fetch single products
 // @route   GET /api/trees/:id
 // @access  Public
