@@ -21,7 +21,17 @@ connectDB();
 const app = express();
 
 // Cors Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      'http://localhost:3000',
+      'https://www.cultivist.co.in',
+      'www.cultivist.co.in',
+    ],
+    methods: ['GET', 'POST', 'PUT'],
+    credentials: true,
+  })
+);
 
 // Logger Middleware
 if (process.env.NODE_ENV === 'development') {
