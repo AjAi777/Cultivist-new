@@ -98,7 +98,7 @@ const SignupScreen = ({ location, history }) => {
                   />
                   <label htmlFor='name'>Name</label>
                 </div>
-                <div className='form-floating mb-3'>
+                <div className='form-floating mb-1'>
                   <input
                     type='phone'
                     name='phone'
@@ -112,6 +112,13 @@ const SignupScreen = ({ location, history }) => {
                     required
                   />
                   <label htmlFor='phone'>Phone no</label>
+                </div>
+                <div
+                  id='passwordHelp'
+                  className='form-text mb-3'
+                  style={{ marginLeft: '10px' }}
+                >
+                  *Indian phone numbers only (10 digit)
                 </div>
                 <div className='form-floating mb-3'>
                   <input

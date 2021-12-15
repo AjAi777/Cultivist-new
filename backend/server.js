@@ -10,7 +10,7 @@ import productRoutes from './routes/productRoutes.js';
 // import treeRoutes from './routes/treeRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
-// import paymentRoutes from './routes/paymentRoutes.js';
+import paymentRoutes from './routes/paymentRoutes.js';
 
 // Server
 dotenv.config();
@@ -36,7 +36,7 @@ app.use('/api/products', productRoutes);
 // app.use('/api/trees', treeRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/orders', orderRoutes);
-// app.use('/orders', paymentRoutes);
+app.use('/orders', paymentRoutes);
 
 const __dirname = path.resolve();
 
