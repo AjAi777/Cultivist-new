@@ -90,16 +90,16 @@ const OrderScreen = ({ match, history }) => {
           razorpayOrderId: response.razorpay_order_id,
           razorpaySignature: response.razorpay_signature,
         };
+
         const config = {
           headers: {
             'Content-Type': 'application/json',
-            auth: {
+            Authorization: {
               username: process.env.RAZORPAY_KEY_ID,
               password: process.env.RAZORPAY_SECRET,
             },
           },
         };
-
         const result = await axios.post(
           `${url}/orders/${orderId}/payment/success`,
           JSON.stringify(resData),
