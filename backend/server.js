@@ -20,20 +20,32 @@ connectDB();
 
 const app = express();
 
-// Cors Middleware
-app.use(cors());
-
-app.use(function (req, res, next) {
+const headers = function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, PUT, DELETE, POST');
   res.header('Access-Control-Allow-Headers', 'Content-type');
   next();
-});
+};
+
+// Cors Middleware
+app.use(
+  cors({
+    allowedHeaders: app.use(headers),
+  })
+);
 
 // Logger Middleware
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+// Force SSL
+var forceSSL = function (req, res, next) {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect(['https://', req.get('Host'), req.url].join(''));
+  }
+  return next();
+};
 
 // Use JSON
 app.use(express.json());
@@ -54,6 +66,7 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) =>
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
   );
+  app.use(forceSSL);
 } else {
   app.get('/', (req, res) => {
     res.send('API is running...');
