@@ -1,7 +1,7 @@
 import React from 'react';
 import './Banner.css';
 
-export default function Banner() {
+export default function MainBanner() {
   return (
     <>
       <section className='background firstSection py-5'>
