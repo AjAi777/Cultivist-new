@@ -10,7 +10,8 @@ import { ORDER_PAY_RESET } from '../Constants/orderConstants';
 
 dotenv.config();
 
-const url = 'http://localhost:4000';
+// const url = 'http://localhost:4000';
+const url = 'https://www.cultivist.co.in';
 
 function loadScript(src) {
   return new Promise((resolve) => {

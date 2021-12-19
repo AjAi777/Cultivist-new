@@ -37,7 +37,9 @@ app.use(
 // Force SSL
 var forceSSL = function (req, res, next) {
   if (req.headers['x-forwarded-proto'] !== 'https') {
-    return res.redirect(['https://', req.get('Host'), req.url].join(''));
+    return res.redirect(
+      ['https://www.cultivist.co.in/', req.get('Host'), req.url].join('')
+    );
   }
   return next();
 };
