@@ -12,7 +12,6 @@ dotenv.config();
 
 // const url = 'http://localhost:4000';
 const url = 'https://www.cultivist.co.in';
-console.log(window.location.hostname);
 
 function loadScript(src) {
   return new Promise((resolve) => {

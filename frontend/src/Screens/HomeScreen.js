@@ -1,12 +1,12 @@
 import React, { useLayoutEffect } from 'react';
 import MainBanner from '../Components/Home/Banners/MainBanner';
 import Testimonial from '../Components/Home/Testimonial/Testimonial';
+import SubBanner from '../Components/Home/Banners/SubBanner';
 import Video from '../Components/Home/Other/Video';
 import RoutineOne from '../Components/Home/Routines/RoutineOne';
 import RoutineTwo from '../Components/Home/Routines/RoutineTwo';
 import RoutineThree from '../Components/Home/Routines/RoutineThree';
-import Image from '../Components/Home/Other/Image';
-import RoutineBanner from '../Components/Home/Banners/RoutineBanner';
+import RoutineFour from '../Components/Home/Routines/RoutineFour';
 
 export default function HomeScreen() {
   useLayoutEffect(() => {
@@ -18,12 +18,12 @@ export default function HomeScreen() {
       <div style={{ marginTop: '12vh' }}>
         <MainBanner />
         <Video />
-        <RoutineBanner />
+        <SubBanner />
         <Testimonial />
         <RoutineOne />
         <RoutineTwo />
         <RoutineThree />
-        <Image />
+        <RoutineFour />
       </div>
     </>
   );
