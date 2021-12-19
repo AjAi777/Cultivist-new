@@ -34,11 +34,6 @@ app.use(
   })
 );
 
-// Logger Middleware
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
-}
-
 // Force SSL
 var forceSSL = function (req, res, next) {
   if (req.headers['x-forwarded-proto'] !== 'https') {
@@ -46,6 +41,12 @@ var forceSSL = function (req, res, next) {
   }
   return next();
 };
+
+// Logger Middleware
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+  app.use(forceSSL);
+}
 
 // Use JSON
 app.use(express.json());

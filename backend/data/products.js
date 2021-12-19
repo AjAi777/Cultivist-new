@@ -5,7 +5,7 @@ const products = [
       'Cultivist Eucalyptus Oil, Product of Nilgiris (Nilgiri tel) , Breathe Easy, Therapeutic Grade, Pure and Natural, Relief from Common cold/cough and Nasal congestion, Used for steam inhalation, Natural Substitute for VapoRubs (Eco-friendly packaging with sac and dropper cap)',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Eucalyptus_Oil.png?updatedAt=1639503383099',
-    category: 'Essential Oils',
+    category: 'essential-oils',
     price: 299,
     size: 15,
     countInStock: 10,
@@ -23,7 +23,7 @@ const products = [
       'Frankincense oil for glowing skin and face / diffuser / Aromatherapy / Fragrance  / Pure & Undiluted / Therapeutic Grade Essential Oil 15ml',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Frankincense_Oil.png?updatedAt=1639503367926',
-    category: 'Essential Oils',
+    category: 'essential-oils',
     price: 259,
     size: 15,
     countInStock: 10,
@@ -40,7 +40,7 @@ const products = [
       'Lavender Essential Oil for Healthy Hair, Skin, Sleep  /100% Pure, Natural and Undiluted, 15ML',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Lavender_Oil.png?updatedAt=1639503356348',
-    category: 'Essential Oils',
+    category: 'essential-oils',
     price: 359,
     size: 15,
     countInStock: 10,
@@ -55,10 +55,10 @@ const products = [
   {
     name: 'Rosemary Oil',
     headline:
-      'Rosemary Essential Oil 15ML, for Skin, Muscle & Joints, Hair Conditioner - 100% Pure Therapeutic Grade Organic Essential Oils',
+      'Rosemary Essential Oil 15ML, for Skin, Muscle & Joints, Hair Conditioner - 100% Pure Therapeutic Grade Organic essential-oils',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Rosemary_Oil.png?updatedAt=1639503309695',
-    category: 'Essential Oils',
+    category: 'essential-oils',
     price: 199,
     size: 15,
     countInStock: 10,
@@ -76,7 +76,7 @@ const products = [
       'Tea Tree Essential Oil 100% Pure, Undiluted, Natural & Organic for Skin, Hair, Pimples, Acne, Dandruff, T Zone & Underarm - High Potency Premium Essential Oil',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Tea_Oil.png?updatedAt=1639503330795',
-    category: 'Essential Oils',
+    category: 'essential-oils',
     price: 279,
     size: 15,
     countInStock: 10,
@@ -85,7 +85,8 @@ const products = [
     description:
       'Tea Tree Essential Oil is extracted from the leaves of Melaleuca alternifolia (Tea Tree) by steam distillation. It is SUPERIOR as it only offers the finest grade of organic essential oils. Pure and Natural Ingredients that are grown in India. Vegan. Cruelty-free. Made with expertise of 2 decades.',
     ingredients: 'Tea Tree Essential Oil',
-    howtouse: 'It is a wonderful way to comfort and enhance long term care. Ideal to use after gardening trekking, during spa, yoga, meditation and for skin and hair rejuvenation, during summer months, massage after a long hour of strenuous activity or for a facial steam.',
+    howtouse:
+      'It is a wonderful way to comfort and enhance long term care. Ideal to use after gardening trekking, during spa, yoga, meditation and for skin and hair rejuvenation, during summer months, massage after a long hour of strenuous activity or for a facial steam.',
   },
   {
     name: 'Ylang Ylang Oil',
@@ -93,7 +94,7 @@ const products = [
       'Ylang Ylang Essential Oil to Strengthen Hair Roots, Control Hair Fall, Skin Moisture, Controls Acne, Aromatherapy - 100% Pure, Natural & Undiluted Premium Essential Oil, 15ml',
     image:
       'https://ik.imagekit.io/cz92t2phsuf/Ylang_Oil.png?updatedAt=1639503344627',
-    category: 'Essential Oils',
+    category: 'essential-oils',
     price: 399,
     size: 15,
     countInStock: 10,

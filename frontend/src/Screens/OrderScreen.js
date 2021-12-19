@@ -91,13 +91,17 @@ const OrderScreen = ({ match, history }) => {
           razorpaySignature: response.razorpay_signature,
         };
 
+        const username = process.env.RAZORPAY_KEY_ID;
+        const password = process.env.RAZORPAY_SECRET;
+
+        var auth =
+          'Basic ' +
+          new Buffer.from(username + ':' + password).toString('base64');
+
         const config = {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: {
-              username: process.env.RAZORPAY_KEY_ID,
-              password: process.env.RAZORPAY_SECRET,
-            },
+            Authorization: auth,
           },
         };
         const result = await axios.post(

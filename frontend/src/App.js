@@ -13,6 +13,7 @@ import ProductScreen from './Screens/ProductScreen';
 import ErrorScreen from './Screens/ErrorScreen';
 import Footer from './Components/Footer/Footer';
 import CartScreen from './Screens/CartScreen';
+import TreeCartScreen from './Screens/TreeCartScreen';
 import ProfileScreen from './Screens/ProfileScreen';
 import ShippingScreen from './Screens/ShippingScreen';
 import PaymentScreen from './Screens/PaymentScreen';
@@ -40,9 +41,6 @@ function App() {
           <Route exact path='/shop'>
             <ShopScreen />
           </Route>
-          <Route exact path='/tree'>
-            <PlantScreen />
-          </Route>
           <Route exact path='/contact'>
             <ContactScreen />
           </Route>
@@ -66,6 +64,12 @@ function App() {
           </Route>
           <Route exact path='/cart/:id?'>
             <CartScreen />
+          </Route>
+          <Route exact path='/tree'>
+            <PlantScreen />
+          </Route>
+          <Route exact path='/treecart'>
+            <TreeCartScreen />
           </Route>
           <Route path='/shipping'>
             <ShippingScreen />
