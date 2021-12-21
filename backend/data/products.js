@@ -106,6 +106,24 @@ const products = [
     howtouse:
       'Add it to your daily bath. Use it with your daily moisturizer for your skin. Mix 2 drops with your regular oil to massage on the scalp',
   },
+  {
+    name: 'Ylang Ylang Oil',
+    headline:
+      'Ylang Ylang Essential Oil to Strengthen Hair Roots, Control Hair Fall, Skin Moisture, Controls Acne, Aromatherapy - 100% Pure, Natural & Undiluted Premium Essential Oil, 15ml',
+    image:
+      'https://ik.imagekit.io/cz92t2phsuf/Ylang_Oil.png?updatedAt=1639503344627',
+    category: 'essential-oils',
+    price: 399,
+    size: 15,
+    countInStock: 10,
+    rating: 4.4,
+    numReviews: 23,
+    description:
+      'Ylang Ylang is beautifully fragrant, with a heavy, sweet, slightly fruity floral aroma. One of the best ways to achieve all benefits of Ylang Ylang Essential Oil is to use it for diffusion. Ylang Ylang Essential Oil is extracted from the flowers of Cananga odorata (Ylang Ylang) by steam distillation. Soulflower Essential Oil offers the finest grade of organic essential oils. Pure and Natural Ingredients that are grown in India',
+    ingredients: 'Ylang Ylang Oil',
+    howtouse:
+      'Add it to your daily bath. Use it with your daily moisturizer for your skin. Mix 2 drops with your regular oil to massage on the scalp',
+  },
 ];
 
 export default products;

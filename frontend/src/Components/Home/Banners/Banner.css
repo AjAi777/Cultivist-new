@@ -50,7 +50,7 @@
     height: 80%;
   }
   .shopBanner {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Morning_routine_0lfhIIzdN.png?updatedAt=1639916203197');
+    background: #fcf4ec;
     background-size: 100%;
   }
   .shopBanner2 {
@@ -85,71 +85,43 @@
     background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Meditation.png?updatedAt=1639917375594');
     background-size: 100%;
   }
-  .shopBannerButtonBG {
-    margin-left: 60px;
-    margin-top: 26.5rem;
-    margin-bottom: 4.9rem;
+  .bannerText {
+    font-size: 16px;
+    font-weight: 600;
   }
-  .shopBannerButtonBG5 {
-    margin-left: 60px;
-    margin-top: 26.5rem;
-    margin-bottom: 4.9rem;
+  .bannerHead {
+    color: #34a853;
+    font-size: 35px;
+    font-weight: 600;
   }
-  .shopBannerButtonBG .btn {
-    border-radius: unset;
-  }
-  .shopBannerButton {
-    padding: 1.2rem 2.5rem;
-    background-color: #00b84f;
-    border: 1px solid green;
-    border-radius: 1rem;
-  }
-  .shopBannerButtonBG1 {
-    margin-left: 110px;
-    margin-top: 14rem;
-    margin-bottom: 17.65rem;
-  }
-  .shopBannerButtonBG1 .btn {
-    border-radius: unset;
-  }
-  .shopBannerButton1 {
-    padding: 1rem 2rem;
-    background-color: #00b84f;
-    border: 1px solid green;
-    border-radius: 1rem;
-  }
-  .shopBannerButtonBG2 {
-    margin-left: 66rem;
-    margin-top: 28.5rem;
-    margin-bottom: 2rem;
-  }
-  .shopBannerButtonBG2 .btn {
-    border-radius: unset;
-  }
-  .shopBannerButton2 {
-    padding: 1rem 1rem;
-    width: 10rem;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 1rem;
+  .bannerRS {
+    font-size: 17px;
   }
   .shopBannerText {
-    font-size: 15px;
     color: white;
   }
-  .shopBannerText2 {
+  .shopBannerButton {
+    padding: 0.5rem 1.5rem;
+    background-color: #00b84f;
+    border: 1px solid green;
+    border-radius: 0.5rem;
+  }
+  .bannerIMG {
+    height: 100%;
+    width: 100%;
+  }
+  .bannerONE {
+    height: 300px;
+    width: 450px;
+  }
+  .bannerCONTAINER {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+  .bannerHelp {
+    margin-top: 2.5rem;
     font-size: 15px;
-    color: black;
-  }
-  .shopBannerRS {
-    font-size: 16.5px;
-  }
-  .MainBannerButton {
-    margin-left: 1rem;
-    margin-top: 15rem;
-  }
-  .margined {
-    margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+    font-weight: 600;
   }
 }
 
@@ -193,9 +165,8 @@
     height: 80%;
   }
   .shopBanner {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Morning_routine_0lfhIIzdN.png?updatedAt=1639916203197');
+    background: #fcf4ec;
     background-size: 100%;
-    width: 100%;
   }
   .shopBanner2 {
     background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Night_routine_UWjuGl0Yx.png?updatedAt=1639916204187');
@@ -225,7 +196,6 @@
   .shopBanner7 {
     background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Air_purifier_plants_wCfcVwMHh.png?updatedAt=1639916202880');
     background-size: 100%;
-
     width: 100%;
   }
   .shopBanner8 {
@@ -238,68 +208,42 @@
     background-size: 100%;
     width: 100%;
   }
-  .shopBannerButtonBG {
-    margin-left: 13px;
-    margin-top: 100px;
-    margin-bottom: 9.7px;
+  .bannerText {
+    font-size: 13px;
+    font-weight: 600;
   }
-  .shopBannerButtonBG5 {
-    margin-left: 13px;
-    margin-top: 83px;
-    margin-bottom: 27px;
+  .bannerRS {
+    font-size: 12px;
   }
-  .margined {
-    margin: 1.5rem 0.5rem 1.5rem 0.5rem;
-  }
-  .margined2 {
-    margin: 0rem 0.5rem;
-  }
-  .shopBannerButton {
-    width: 65px;
-    padding: 0px 4px 4px 4px;
-    background-color: #00b84f;
-    border: 0.5px solid green;
-    border-radius: 6px;
+  .bannerHead {
+    color: #34a853;
+    font-size: 21px;
+    font-weight: 600;
   }
   .shopBannerText {
-    font-size: 7px;
     color: white;
   }
-  .shopBannerButtonBG1 {
-    margin-left: 25px;
-    margin-top: 55px;
-    margin-bottom: 55px;
-  }
-  .shopBannerButtonBG1 .btn {
-    border-radius: unset;
-  }
-  .shopBannerButton1 {
-    width: 63px;
-    padding: 0px 4px 4px 4px;
+  .shopBannerButton {
+    padding: 0.3rem 1rem;
     background-color: #00b84f;
-    border: 0.5px solid green;
-    border-radius: 6px;
+    border: 1px solid green;
+    border-radius: 0.5rem;
   }
-  .shopBannerButtonBG2 {
-    margin-left: 15rem;
-    margin-top: 105px;
-    margin-bottom: 10px;
+  .bannerIMG {
+    height: 100%;
+    width: 100%;
   }
-  .shopBannerButtonBG2 .btn {
-    border-radius: unset;
+  .bannerONE {
+    height: 250px;
+    width: 450px;
   }
-  .shopBannerButton2 {
-    width: 5rem;
-    padding: 0px 4px 4px 4px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 6px;
+  .bannerCONTAINER {
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
-  .shopBannerText2 {
-    font-size: 7px;
-    color: black;
-  }
-  .shopBannerRS {
-    font-size: 7px;
+  .bannerHelp {
+    margin-top: 1rem;
+    font-size: 11px;
+    font-weight: 600;
   }
 }

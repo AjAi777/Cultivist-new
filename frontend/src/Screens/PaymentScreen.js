@@ -10,19 +10,19 @@ const PaymentScreen = ({ history }) => {
   });
 
   const cart = useSelector((state) => state.cart);
-  const { shippingAddress } = cart;
+  const { shippingAddress, paymentMethod } = cart;
 
   if (!shippingAddress) {
     history.push('/shipping');
   }
 
-  const [paymentMethod, setPaymentMethod] = useState('RazorPay');
+  const [paymentType, setPaymentType] = useState(paymentMethod);
 
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(savePaymentMethod(paymentMethod));
+    dispatch(savePaymentMethod(paymentType));
     history.push('/placeorder');
   };
 
@@ -48,21 +48,77 @@ const PaymentScreen = ({ history }) => {
                 </h3>
               </div>
               <div className='form-group mb-2'>
-                <h5 className='dark-grey-text mt-4 mb-2'>Select Method</h5>
+                <h5 className='dark-grey-text mt-4 mb-2'>
+                  Select Payment Method
+                </h5>
                 <div className='col mt-4 mb-2'>
                   <div className='form-check'>
                     <input
                       className='form-check-input'
                       type='radio'
-                      id='RazorPay'
+                      id='cardPayment'
                       name='paymentMethod'
-                      value='RazorPay'
+                      value='CardPayment'
                       required
                       checked
-                      onChange={(e) => setPaymentMethod(e.target.value)}
+                      onChange={(e) => setPaymentType(e.target.value)}
                     />
-                    <label className='form-check-label' htmlFor='RazorPay'>
-                      Razor Pay
+                    <label className='form-check-label' htmlFor='CardPayment'>
+                      <strong>Card Payment</strong> (Visa,
+                      Mastercard, RuPay and Maestro)
+                    </label>
+                  </div>
+                </div>
+                <div className='col mt-4 mb-2'>
+                  <div className='form-check'>
+                    <input
+                      className='form-check-input'
+                      type='radio'
+                      id='UPI/QR_Payment'
+                      name='paymentMethod'
+                      value='UPI/QRPayment'
+                      required
+                      checked
+                      onChange={(e) => setPaymentType(e.target.value)}
+                    />
+                    <label className='form-check-label' htmlFor='UPI/QRPayment'>
+                      <strong>UPI/QR Payment</strong> (Google
+                      Pay, BHIM, PhonePe and more)
+                    </label>
+                  </div>
+                </div>
+                <div className='col mt-4 mb-2'>
+                  <div className='form-check'>
+                    <input
+                      className='form-check-input'
+                      type='radio'
+                      id='Wallet'
+                      name='paymentMethod'
+                      value='Wallet'
+                      required
+                      checked
+                      onChange={(e) => setPaymentType(e.target.value)}
+                    />
+                    <label className='form-check-label' htmlFor='Wallet'>
+                      <strong>Wallet</strong> (PhonePe and more)
+                    </label>
+                  </div>
+                </div>
+                <div className='col mt-4 mb-2'>
+                  <div className='form-check'>
+                    <input
+                      className='form-check-input'
+                      type='radio'
+                      id='PayLater'
+                      name='paymentMethod'
+                      value='PayLater'
+                      required
+                      checked
+                      onChange={(e) => setPaymentType(e.target.value)}
+                    />
+                    <label className='form-check-label' htmlFor='PayLater'>
+                      <strong>Pay Later</strong> (ICICI Bank
+                      PayLater)
                     </label>
                   </div>
                 </div>
