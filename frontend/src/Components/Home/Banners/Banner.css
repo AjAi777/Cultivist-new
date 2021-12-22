@@ -19,10 +19,12 @@
   .background {
     background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/1_s6V2_bQilQ.png?updatedAt=1639918371281');
     background-size: 100%;
+    background-repeat: no-repeat;
   }
   .background2 {
     background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/2_hdC6BrxI8.png?updatedAt=1639918371636');
     background-size: 100%;
+    background-repeat: no-repeat;
   }
   .firstSection {
     height: 90vh;
@@ -54,35 +56,42 @@
     background-size: 100%;
   }
   .shopBanner2 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Night_routine_UWjuGl0Yx.png?updatedAt=1639916204187');
+    background: #000b26;
     background-size: 100%;
   }
   .shopBanner3 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Skin_care_routine_hMCtCUJUj.png?updatedAt=1639916205699');
-    background-size: 100%;
+    background: #cfced0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
   .shopBanner4 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Skin_care_routine__2__Rn0HBO-DcdN.png?updatedAt=1639916205789');
+    background: #d0a288;
+    background-repeat: no-repeat;
     background-size: 100%;
   }
   .shopBanner5 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Skin_care_routine__3__484iV3BLo.png?updatedAt=1639916205561');
+    background: #baa583;
+    background-repeat: no-repeat;
     background-size: 100%;
   }
   .shopBanner6 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Air_purifier_plants__2__AIqVyrskj.png?updatedAt=1639916202419');
+    background: #8ce1ff;
+    background-repeat: no-repeat;
     background-size: 100%;
   }
   .shopBanner7 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Air_purifier_plants_wCfcVwMHh.png?updatedAt=1639916202880');
+    background-repeat: no-repeat;
+    background: #fcf4ec;
     background-size: 100%;
   }
   .shopBanner8 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Dog_1o86BIr7X.png?updatedAt=1639917000597');
+    background: #8ce1ff;
     background-size: 100%;
+    background-repeat: no-repeat;
   }
   .shopBanner9 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Meditation.png?updatedAt=1639917375594');
+    background: #fcb005;
+    background-repeat: no-repeat;
     background-size: 100%;
   }
   .bannerText {
@@ -106,13 +115,21 @@
     border: 1px solid green;
     border-radius: 0.5rem;
   }
+  .shopBannerButton2 {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid green;
+    border-radius: 0.5rem;
+    margin-top: 5rem;
+    margin-bottom: 15px;
+  }
   .bannerIMG {
-    height: 100%;
     width: 100%;
   }
+  .bannerIMGDOG {
+    width: 80%;
+  }
   .bannerONE {
-    height: 300px;
-    width: 450px;
+    width: 525px;
   }
   .bannerCONTAINER {
     padding-bottom: 2rem;
@@ -129,10 +146,12 @@
   .background {
     background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/1_s6V2_bQilQ.png?updatedAt=1639918371281');
     background-size: 100%;
+    background-repeat: no-repeat;
     width: 100%;
   }
   .background2 {
     background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/2_hdC6BrxI8.png?updatedAt=1639918371636');
+    background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
   }
@@ -166,47 +185,55 @@
   }
   .shopBanner {
     background: #fcf4ec;
+    background-repeat: no-repeat;
     background-size: 100%;
   }
   .shopBanner2 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Night_routine_UWjuGl0Yx.png?updatedAt=1639916204187');
+    background: #000b26;
+    background-repeat: no-repeat;
     background-size: 100%;
-    width: 100%;
   }
   .shopBanner3 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Skin_care_routine_hMCtCUJUj.png?updatedAt=1639916205699');
+    background: #cfced0;
+    background-repeat: no-repeat;
     background-size: 100%;
-    width: 100%;
   }
   .shopBanner4 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Skin_care_routine__2__Rn0HBO-DcdN.png?updatedAt=1639916205789');
+    background: #d0a288;
+    background-repeat: no-repeat;
     background-size: 100%;
-    width: 100%;
   }
   .shopBanner5 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Skin_care_routine__3__484iV3BLo.png?updatedAt=1639916205561');
+    background: #baa583;
+    background-repeat: no-repeat;
     background-size: 100%;
-    width: 100%;
   }
   .shopBanner6 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Air_purifier_plants__2__AIqVyrskj.png?updatedAt=1639916202419');
+    background: #8ce1ff;
     background-size: 100%;
-    width: 100%;
+    background-repeat: no-repeat;
   }
   .shopBanner7 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Air_purifier_plants_wCfcVwMHh.png?updatedAt=1639916202880');
+    background-repeat: no-repeat;
+    background: #fcf4ec;
     background-size: 100%;
-    width: 100%;
   }
   .shopBanner8 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/doggy_Acm7sfv3P.png?updatedAt=1639923939392');
+    background: #8ce1ff;
     background-size: 100%;
-    width: 100%;
+    background-repeat: no-repeat;
   }
   .shopBanner9 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/Meditation.png?updatedAt=1639917375594');
+    background: #fcb005;
     background-size: 100%;
-    width: 100%;
+    background-repeat: no-repeat;
+  }
+  .shopBannerButton2 {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid green;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 5px;
   }
   .bannerText {
     font-size: 13px;
@@ -223,6 +250,11 @@
   .shopBannerText {
     color: white;
   }
+  .bannerIMGDOG {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
   .shopBannerButton {
     padding: 0.3rem 1rem;
     background-color: #00b84f;
@@ -230,12 +262,13 @@
     border-radius: 0.5rem;
   }
   .bannerIMG {
-    height: 100%;
     width: 100%;
   }
   .bannerONE {
-    height: 250px;
-    width: 450px;
+    width: 500px;
+  }
+  .bannerTWO {
+    width: 550px;
   }
   .bannerCONTAINER {
     padding-bottom: 1.5rem;
