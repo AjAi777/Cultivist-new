@@ -5,7 +5,10 @@ export default function MainBanner() {
   return (
     <>
       <section className='background firstSection py-5'>
-        <div className='text-start MainBannerButton mt-2'>
+        <div
+          className='text-start MainBannerButton mt-2'
+          style={{ marginLeft: '2rem' }}
+        >
           <button type='button' className='btn btn-success button shadow-sm'>
             <span className='buttonName'> Find your routine</span>
           </button>

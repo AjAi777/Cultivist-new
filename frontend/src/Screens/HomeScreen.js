@@ -7,6 +7,7 @@ import RoutineOne from '../Components/Home/Routines/RoutineOne';
 import RoutineTwo from '../Components/Home/Routines/RoutineTwo';
 import RoutineThree from '../Components/Home/Routines/RoutineThree';
 import RoutineFour from '../Components/Home/Routines/RoutineFour';
+import BestSeller from '../Components/Home/Banners/BestSeller';
 
 export default function HomeScreen() {
   useLayoutEffect(() => {
@@ -17,6 +18,7 @@ export default function HomeScreen() {
     <>
       <div style={{ marginTop: '12vh' }}>
         <MainBanner />
+        <BestSeller />
         <Video />
         <SubBanner />
         <Testimonial />
