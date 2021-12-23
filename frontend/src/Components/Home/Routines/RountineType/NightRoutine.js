@@ -12,7 +12,7 @@ export default function NightRoutine() {
       <div className='row flex-lg-row shopBanner2 mb-3 bannerCONTAINER justify-content-md-center align-items-center g-3'>
         <div className='col-lg-6 justify-content-md-center ms-auto bannerONE text-center'>
           <img
-            src='https://ik.imagekit.io/cz92t2phsuf/2_O36IoFK4Y.png?updatedAt=1640116030872'
+            src='https://ik.imagekit.io/cz92t2phsuf/Bundles/2_O36IoFK4Y.png?updatedAt=1640263866689'
             className='bannerIMG'
             alt='BGgray'
           ></img>

@@ -22,7 +22,7 @@ const products = [
     headline:
       'Cultivist Eucalyptus Oil, Product of Nilgiris (Nilgiri tel) , Breathe Easy, Therapeutic Grade, Pure and Natural, Relief from Common cold/cough and Nasal congestion, Used for steam inhalation, Natural Substitute for VapoRubs (Eco-friendly packaging with sac and dropper cap)',
     image:
-      'https://ik.imagekit.io/cz92t2phsuf/Eucalyptus_Oil.png?updatedAt=1639503383099',
+      'https://ik.imagekit.io/cz92t2phsuf/Essential_Oils/Eucalyptus_Oil.png?updatedAt=1640263950541',
     category: 'essential-oils',
     price: 299,
     size: 15,
@@ -58,7 +58,7 @@ const products = [
     headline:
       'Frankincense oil for glowing skin and face / diffuser / Aromatherapy / Fragrance  / Pure & Undiluted / Therapeutic Grade Essential Oil 15ml',
     image:
-      'https://ik.imagekit.io/cz92t2phsuf/Frankincense_Oil.png?updatedAt=1639503367926',
+      'https://ik.imagekit.io/cz92t2phsuf/Essential_Oils/Frankincense_Oil.png?updatedAt=1640263950592',
     category: 'essential-oils',
     price: 259,
     size: 15,
@@ -93,7 +93,7 @@ const products = [
     headline:
       'Lavender Essential Oil for Healthy Hair, Skin, Sleep  /100% Pure, Natural and Undiluted, 15ML',
     image:
-      'https://ik.imagekit.io/cz92t2phsuf/Lavender_Oil.png?updatedAt=1639503356348',
+      'https://ik.imagekit.io/cz92t2phsuf/Essential_Oils/Lavender_Oil.png?updatedAt=1640263950502',
     category: 'essential-oils',
     price: 359,
     size: 15,
@@ -129,7 +129,7 @@ const products = [
     headline:
       'Rosemary Essential Oil 15ML, for Skin, Muscle & Joints, Hair Conditioner - 100% Pure Therapeutic Grade Organic essential-oils',
     image:
-      'https://ik.imagekit.io/cz92t2phsuf/Rosemary_Oil.png?updatedAt=1639503309695',
+      'https://ik.imagekit.io/cz92t2phsuf/Essential_Oils/Rosemary_Oil.png?updatedAt=1640263950482',
     category: 'essential-oils',
     price: 199,
     size: 15,
@@ -165,7 +165,7 @@ const products = [
     headline:
       'Tea Tree Essential Oil 100% Pure, Undiluted, Natural & Organic for Skin, Hair, Pimples, Acne, Dandruff, T Zone & Underarm - High Potency Premium Essential Oil',
     image:
-      'https://ik.imagekit.io/cz92t2phsuf/Tea_Oil.png?updatedAt=1639503330795',
+      'https://ik.imagekit.io/cz92t2phsuf/Essential_Oils/Tea_Oil.png?updatedAt=1640263950498',
     category: 'essential-oils',
     price: 279,
     size: 15,
@@ -201,7 +201,7 @@ const products = [
     headline:
       'Ylang Ylang Essential Oil to Strengthen Hair Roots, Control Hair Fall, Skin Moisture, Controls Acne, Aromatherapy - 100% Pure, Natural & Undiluted Premium Essential Oil, 15ml',
     image:
-      'https://ik.imagekit.io/cz92t2phsuf/Ylang_Oil.png?updatedAt=1639503344627',
+      'https://ik.imagekit.io/cz92t2phsuf/Essential_Oils/Ylang_Oil.png?updatedAt=1640263950493',
     category: 'essential-oils',
     price: 399,
     size: 15,

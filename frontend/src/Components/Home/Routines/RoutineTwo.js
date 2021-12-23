@@ -19,7 +19,7 @@ export default function RoutineTwo() {
         <div className='row flex-lg-row bannerCONTAINER justify-content-center align-items-center'>
           <div className='col-lg-4 text-center shopBanner3 mb-3'>
             <img
-              src='https://ik.imagekit.io/cz92t2phsuf/Natural_twin_wonder_Skin_care__Relaxation___Anti-ageing_v0P4uf92l.png?updatedAt=1640181071784'
+              src='https://ik.imagekit.io/cz92t2phsuf/Bundles/Natural_twin_wonder_Skin_care__Relaxation___Anti-ageing_v0P4uf92l.png?updatedAt=1640263866621'
               className='bannerIMG'
               alt='BGgray'
             ></img>
@@ -40,7 +40,7 @@ export default function RoutineTwo() {
           </div>
           <div className='col-lg-4 text-center shopBanner4 mb-3'>
             <img
-              src='https://ik.imagekit.io/cz92t2phsuf/4_fPD5VPvLv.png?updatedAt=1640179936634'
+              src='https://ik.imagekit.io/cz92t2phsuf/Bundles/4_fPD5VPvLv.png?updatedAt=1640263866786'
               className='bannerIMG'
               alt='BGgray'
             ></img>
@@ -61,7 +61,7 @@ export default function RoutineTwo() {
           </div>
           <div className='col-lg-4 text-center shopBanner5 mb-3'>
             <img
-              src='https://ik.imagekit.io/cz92t2phsuf/5_X4FKI3Pfy.png?updatedAt=1640183522236'
+              src='https://ik.imagekit.io/cz92t2phsuf/Bundles/5_X4FKI3Pfy.png?updatedAt=1640263866662'
               className='bannerIMG'
               alt='BGgray'
             ></img>

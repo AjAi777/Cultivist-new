@@ -17,7 +17,7 @@ export default function RoutineFour() {
           <div className='row flex-lg-row-reverse shopBanner8 mb-3 bannerCONTAINER justify-content-md-center align-items-center g-3'>
             <div className='col-lg-6 justify-content-md-center bannerONE text-center'>
               <img
-                src='https://ik.imagekit.io/cz92t2phsuf/7_wn0j686yI.png?updatedAt=1640186892404'
+                src='https://ik.imagekit.io/cz92t2phsuf/Bundles/7_wn0j686yI.png?updatedAt=1640263866673'
                 className='bannerIMG'
                 alt='BGgray'
               ></img>
@@ -41,7 +41,7 @@ export default function RoutineFour() {
                 </strong>
               </button>
               <img
-                src='https://ik.imagekit.io/cz92t2phsuf/dog_AvDLKkoEXED.png?updatedAt=1640187054465'
+                src='https://ik.imagekit.io/cz92t2phsuf/Bundles/dog_AvDLKkoEXED.png?updatedAt=1640263888620'
                 className='bannerIMGDOG'
                 alt='BGgray'
               />

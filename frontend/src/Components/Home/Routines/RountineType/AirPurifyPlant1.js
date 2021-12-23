@@ -12,7 +12,7 @@ export default function AirPurifyPlant1() {
       <div className='row flex-lg-row-reverse shopBanner6 mb-3 bannerCONTAINER justify-content-md-center align-items-center g-3'>
         <div className='col-lg-6 justify-content-md-center bannerONE text-center'>
           <img
-            src='https://ik.imagekit.io/cz92t2phsuf/6_7D0OdyjzZ.png?updatedAt=1640185739370'
+            src='https://ik.imagekit.io/cz92t2phsuf/Bundles/6_7D0OdyjzZ.png?updatedAt=1640263866666'
             className='bannerIMG'
             alt='BGgray'
           ></img>

@@ -16,7 +16,7 @@ export default function BestSeller() {
         <div className='row flex-lg-row justify-content-center align-items-center'>
           <div className='col-lg-4 text-center shopBanner3 mb-3'>
             <img
-              src='https://ik.imagekit.io/cz92t2phsuf/WoodGrainCoolMistHumidifierMiniAromaEssentialOilDiffuserHumidifiersEssentialOilDiffuserAromaAirHumidifierforCar_Office_Home_School_1800x1800_4QO9YtsU1.jpg?updatedAt=1640192821791'
+              src='https://ik.imagekit.io/cz92t2phsuf/Air_Humidifier.png?updatedAt=1640266496857'
               className='bannerIMG'
               alt='BGgray'
             ></img>
