@@ -11,7 +11,7 @@ export default function BestSeller() {
   return (
     <>
       <div className='jadoo px-2 text-center'>
-        <h1 className='fw-bold mt-2'>BEST SELLERS</h1>
+        <h2 className='fw-bold mt-2'>BEST SELLERS</h2>
         <h4 className='fw-bold mt-2'>AIR HUMIDIFIERS</h4>
         <div className='row flex-lg-row justify-content-center align-items-center'>
           <div className='col-lg-4 text-center shopBanner3 mb-3'>

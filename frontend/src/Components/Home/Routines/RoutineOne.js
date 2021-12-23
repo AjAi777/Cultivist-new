@@ -6,7 +6,7 @@ export default function RoutineOne() {
     <>
       <div className='jadoo px-2 text-center bg-light'>
         <div className='row mx-auto'>
-          <h1 className='fw-bold mt-2 mb-4'>DAILY ROUTINES</h1>
+          <h2 className='fw-bold mt-2 mb-4'>DAILY ROUTINES</h2>
         </div>
         <MorningRoutine />
         <NightRoutine />

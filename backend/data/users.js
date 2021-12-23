@@ -24,7 +24,7 @@ const users = [
     name: 'Prajwal Tikhe',
     phone: '7276698091',
     email: 'prajwaltikhe10@gmail.com',
-    password: bcrypt.hashSync('prajwal@cultivist4', 10),
+    password: bcrypt.hashSync('prajwal@10', 10),
   },
 ];
 

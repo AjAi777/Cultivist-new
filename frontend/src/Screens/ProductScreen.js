@@ -5,6 +5,7 @@ import Rating from '../Components/Shop/Rating';
 import { listProductDetails } from '../Actions/productActions';
 import Loader from '../Components/Utils/Loader';
 import Message from '../Components/Utils/Message';
+import { Ingredients } from '../Components/Home/Ingredients';
 
 const ProductScreen = ({ history, match }) => {
   useLayoutEffect(() => {
@@ -41,7 +42,7 @@ const ProductScreen = ({ history, match }) => {
   return (
     <>
       <div
-        className='jadoo'
+        className='jadoo jeevan'
         style={{ marginTop: '18vh', marginBottom: '15vh' }}
       >
         <Link
@@ -299,6 +300,7 @@ const ProductScreen = ({ history, match }) => {
             </div>
           </div>
         )}
+        <Ingredients />
       </div>
     </>
   );

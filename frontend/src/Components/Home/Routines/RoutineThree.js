@@ -7,7 +7,7 @@ export default function RoutineThree() {
     <>
       <div className='jadoo px-2 text-center bg-light'>
         <div className='row mx-auto'>
-          <h1 className='fw-bold mt-2 mb-4'>AIR PURIFING PLANT BUNDLES</h1>
+          <h2 className='fw-bold mt-2 mb-4'>AIR PURIFING PLANT BUNDLES</h2>
         </div>
         <AirPurifyPlant1 />
         <AirPurifyPlant2 />

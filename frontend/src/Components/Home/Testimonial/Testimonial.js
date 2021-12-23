@@ -29,21 +29,11 @@ class Testimonial extends Component {
       <>
         <div className='jadoo px-4 text-center py-4 bg-light'>
           <div className='row'>
-            <div className='col-lg-6 col-md-8 mx-auto '>
-              <h1 className='fw-bold mb-3' style={{ marginTop: '30px' }}>
-                Testimonials
-              </h1>
-              <p className='lead text-muted'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Delectus officia accusamus, architecto temporibus fugiat natus
-                aliquid necessitatibus deserunt maiores quod! Obcaecati, sed
-                quaerat?
-              </p>
-            </div>
+            <h1 className='fw-bold'>Testimonials</h1>
           </div>
 
           <ReactOwlCarousel
-            className='owl-carousel mt-5 owl-theme'
+            className='owl-carousel mt-3 owl-theme'
             margin={10}
             nav={true}
             items={3}
@@ -89,14 +79,15 @@ class Testimonial extends Component {
                       className='mt-2 text-start'
                       style={{ fontSize: '11px', lineHeight: '2' }}
                     >
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Laboriosam nisi quidem cupiditate tempora sunt nesciunt.
+                      The teas were really good, especially the green tea. The
+                      packaging was done neatly and it acts as a wonderful drink
+                      to start your day off with.
                     </p>
 
                     <div className='row justify-content-between'>
                       <div className='col-8 text-start'>
                         <strong style={{ fontSize: '13px' }}>
-                          Someone Famous 1
+                          Akanksha Singh
                         </strong>
                       </div>
                       <div className='col-4 text-end'>
@@ -149,14 +140,14 @@ class Testimonial extends Component {
                       className='mt-2 text-start'
                       style={{ fontSize: '11px', lineHeight: '2' }}
                     >
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Laboriosam nisi quidem cupiditate tempora sunt nesciunt.
+                      The essential oils are very good they provide a very calm
+                      and soothing effect and they are perfect for aromatherapy.
                     </p>
 
                     <div className='row justify-content-between'>
                       <div className='col-8 text-start'>
                         <strong style={{ fontSize: '13px' }}>
-                          Someone Famous 2
+                          Sangavee Natarajan
                         </strong>
                       </div>
                       <div className='col-4 text-end'>
@@ -209,14 +200,14 @@ class Testimonial extends Component {
                       className='mt-2 text-start'
                       style={{ fontSize: '11px', lineHeight: '2' }}
                     >
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Laboriosam nisi quidem cupiditate tempora sunt nesciunt.
+                      Authentic product with Great packaging. Awesome products,
+                      value for money. Best buy, Nice quality.
                     </p>
 
                     <div className='row justify-content-between'>
                       <div className='col-8 text-start'>
                         <strong style={{ fontSize: '13px' }}>
-                          Someone Famous 3
+                          Manoj Desai
                         </strong>
                       </div>
                       <div className='col-4 text-end'>
@@ -269,14 +260,15 @@ class Testimonial extends Component {
                       className='mt-2 text-start'
                       style={{ fontSize: '11px', lineHeight: '2' }}
                     >
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Laboriosam nisi quidem cupiditate tempora sunt nesciunt.
+                      Cultivist Essential Oils has strong fragrance. I uses
+                      specially in cough and cold which gives relief. I mostly
+                      refer to buy this oil all time.
                     </p>
 
                     <div className='row justify-content-between'>
                       <div className='col-8 text-start'>
                         <strong style={{ fontSize: '13px' }}>
-                          Someone Famous 4
+                          Venkateshrao Peruri
                         </strong>
                       </div>
                       <div className='col-4 text-end'>
@@ -329,15 +321,14 @@ class Testimonial extends Component {
                       className='mt-2 text-start'
                       style={{ fontSize: '11px', lineHeight: '2' }}
                     >
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Laboriosam nisi quidem cupiditate tempora sunt nesciunt.
+                      Such an amazing product directly from Nilgiris. Always
+                      good for my health. Thanks to team cultivist for coming up
+                      with a genuine product.
                     </p>
 
                     <div className='row justify-content-between'>
                       <div className='col-8 text-start'>
-                        <strong style={{ fontSize: '13px' }}>
-                          Someone Famous 5
-                        </strong>
+                        <strong style={{ fontSize: '13px' }}>Abin Alias</strong>
                       </div>
                       <div className='col-4 text-end'>
                         <Link to='#'>
