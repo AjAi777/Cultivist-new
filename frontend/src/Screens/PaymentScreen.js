@@ -10,19 +10,19 @@ const PaymentScreen = ({ history }) => {
   });
 
   const cart = useSelector((state) => state.cart);
-  const { shippingAddress, paymentMethod } = cart;
+  const { shippingAddress } = cart;
 
   if (!shippingAddress) {
     history.push('/shipping');
   }
 
-  const [paymentType, setPaymentType] = useState(paymentMethod);
+  const [paymentMethod, setPaymentMethod] = useState('razorpay');
 
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(savePaymentMethod(paymentType));
+    dispatch(savePaymentMethod(paymentMethod));
     history.push('/placeorder');
   };
 
@@ -61,11 +61,11 @@ const PaymentScreen = ({ history }) => {
                       value='CardPayment'
                       required
                       checked
-                      onChange={(e) => setPaymentType(e.target.value)}
+                      onChange={(e) => setPaymentMethod(e.target.value)}
                     />
                     <label className='form-check-label' htmlFor='CardPayment'>
-                      <strong>Card Payment</strong> (Visa,
-                      Mastercard, RuPay and Maestro)
+                      <strong>Card Payment</strong> (Visa, Mastercard, RuPay and
+                      Maestro)
                     </label>
                   </div>
                 </div>
@@ -79,11 +79,11 @@ const PaymentScreen = ({ history }) => {
                       value='UPI/QRPayment'
                       required
                       checked
-                      onChange={(e) => setPaymentType(e.target.value)}
+                      onChange={(e) => setPaymentMethod(e.target.value)}
                     />
                     <label className='form-check-label' htmlFor='UPI/QRPayment'>
-                      <strong>UPI/QR Payment</strong> (Google
-                      Pay, BHIM, PhonePe and more)
+                      <strong>UPI/QR Payment</strong> (Google Pay, BHIM, PhonePe
+                      and more)
                     </label>
                   </div>
                 </div>
@@ -97,7 +97,7 @@ const PaymentScreen = ({ history }) => {
                       value='Wallet'
                       required
                       checked
-                      onChange={(e) => setPaymentType(e.target.value)}
+                      onChange={(e) => setPaymentMethod(e.target.value)}
                     />
                     <label className='form-check-label' htmlFor='Wallet'>
                       <strong>Wallet</strong> (PhonePe and more)
@@ -114,11 +114,10 @@ const PaymentScreen = ({ history }) => {
                       value='PayLater'
                       required
                       checked
-                      onChange={(e) => setPaymentType(e.target.value)}
+                      onChange={(e) => setPaymentMethod(e.target.value)}
                     />
                     <label className='form-check-label' htmlFor='PayLater'>
-                      <strong>Pay Later</strong> (ICICI Bank
-                      PayLater)
+                      <strong>Pay Later</strong> (ICICI Bank PayLater)
                     </label>
                   </div>
                 </div>
