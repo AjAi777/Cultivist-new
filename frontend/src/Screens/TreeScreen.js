@@ -134,7 +134,7 @@ const TreeScreen = ({ history, match }) => {
                       <span className='fw-bold'>
                         CO<sub>2</sub>{' '}
                       </span>
-                      : <span> -{tree.CO2} kg</span>
+                      : <span> -{tree.CO2} Kg/m3</span>
                     </h6>
                   </div>
                   <div className='row mt-2'>

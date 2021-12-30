@@ -23,7 +23,7 @@ export default function RoutineTwo() {
               className='bannerIMG'
               alt='BGgray'
             ></img>
-            <strong style={{ fontStyle: 'italic' }}>For Dry Skin</strong>
+            <strong style={{ fontStyle: 'italic' }}>For Oily Skin</strong>
             <p className='lead mt-2 text-center'>
               <li className='bannerText text-light'>Rosemary Oil - 15 ml </li>
               <li className='bannerText text-light'>Tea Tree Oil - 15 ml</li>

@@ -48,6 +48,7 @@ export default function RoutineFour() {
             </div>
           </div>
         </div>
+        <div className='space3'/>
         <div className='jadoo px-2 text-center pt-4 shopBanner'>
           <div className='row flex-lg-row-reverse shopBanner9 mb-3 bannerCONTAINER justify-content-md-center align-items-center g-3'>
             <div className='col-lg-1 justify-content-md-center bannerONE text-center'></div>

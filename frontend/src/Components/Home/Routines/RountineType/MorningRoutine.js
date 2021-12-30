@@ -22,7 +22,7 @@ export default function MorningRoutine() {
           <p className='lead mt-4 para mb-3 text-start'>
             <li className='bannerText'>Fine Orthodox Black Tea</li>
             <li className='bannerText'>
-              Ayurvedic drink Lavender and Rosemary oil
+              Ayurvedic drink, Lavender and Rosemary oil
             </li>
             <li className='bannerText'> Humidifier for Aromatherapy</li>
             <li className='bannerText'>

@@ -137,3 +137,17 @@ ul {
   color: rgb(3, 158, 3);
   background: white;
 }
+
+
+@media (min-width: 600px) {
+  .cult {
+    width: 120px;
+    height: 38px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .cult {
+    width: 110px;
+    height: 35px;
+  }
+}

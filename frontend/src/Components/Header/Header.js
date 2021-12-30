@@ -65,8 +65,6 @@ function Header() {
             <img
               src='https://ik.imagekit.io/cz92t2phsuf/Cultivist/logo_sf0_-e168GGI.png?updatedAt=1633598864277'
               alt='logo'
-              width='120'
-              height='38'
               className='cult'
             />
           </Link>
@@ -314,6 +312,28 @@ function Header() {
                 >
                   Gifting
                 </Link>
+                <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
+                  <li className='p-1'>
+                    <Link className='dropdown-item drop' to='/shop'>
+                      Daily Routine Bundles
+                    </Link>
+                  </li>
+                  <li className='p-1'>
+                    <Link className='dropdown-item drop' to='/shop'>
+                      Skin Care Routine Bundles
+                    </Link>
+                  </li>
+                  <li className='p-1'>
+                    <Link className='dropdown-item drop' to='/shop'>
+                      Air Purifying Plant Bundles
+                    </Link>
+                  </li>
+                  <li className='p-1'>
+                    <Link className='dropdown-item drop' to='/shop'>
+                      Essential Oil Bundles
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li className='nav-item head'>
                 <Link
