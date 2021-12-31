@@ -14,7 +14,7 @@ export default function RoutineTwo() {
   };
   return (
     <>
-      <div className='jadoo px-2 text-center bg-light'>
+      <div className='jadoo px-2 text-center'>
         <h2 className='fw-bold mt-2'>BEDTIME SKIN CARE BUNDLES</h2>
         <div className='row flex-lg-row bannerCONTAINER justify-content-center align-items-center'>
           <div className='col-lg-4 text-center shopBanner3 mb-3'>

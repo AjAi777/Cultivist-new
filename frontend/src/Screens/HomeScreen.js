@@ -18,23 +18,23 @@ export default function HomeScreen() {
     <>
       <div style={{ marginTop: '12vh' }}>
         <MainBanner />
-        <div className='space3'></div>
+        <div className='space3' />
         <BestSeller />
-        <div className='space1'></div>
+        <div className='space1' />
         <Video />
-        <div className='space2'></div>
+        <div className='space2' />
         <SubBanner />
-        <div className='space3'></div>
+        <div className='space3' />
         <Testimonial />
-        <div className='space3'></div>
+        <div className='space2' />
         <RoutineOne />
-        <div className='space3'></div>
+        <div className='space3' />
         <RoutineTwo />
-        <div className='space3'></div>
+        <div className='space2' />
         <RoutineThree />
-        <div className='space3'></div>
+        <div className='space3' />
         <RoutineFour />
-        <div className='space3'></div>
+        <div className='space3' />
       </div>
     </>
   );
