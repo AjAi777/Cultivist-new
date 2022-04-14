@@ -19,7 +19,7 @@ export default function RoutineTwo() {
         <div className='row flex-lg-row bannerCONTAINER justify-content-center align-items-center'>
           <div className='col-lg-4 text-center shopBanner3 mb-3'>
             <img
-              src='https://ik.imagekit.io/cz92t2phsuf/Bundles/Natural_twin_wonder_Skin_care__Relaxation___Anti-ageing_v0P4uf92l.png?updatedAt=1640263866621'
+              src='https://ik.imagekit.io/mjwt5ns6bbx/A2E3E3DB-9C58-4F77-A8BE-66AA0BDEE4FE_A_KAOTP36.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648145459490'
               className='bannerIMG'
               alt='BGgray'
             ></img>
@@ -40,7 +40,7 @@ export default function RoutineTwo() {
           </div>
           <div className='col-lg-4 text-center shopBanner4 mb-3'>
             <img
-              src='https://ik.imagekit.io/cz92t2phsuf/Bundles/4_fPD5VPvLv.png?updatedAt=1640263866786'
+              src='https://ik.imagekit.io/mjwt5ns6bbx/757FBF91-BBEB-43F1-B49F-FA1E97F84ECA_grhdcU82P7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648145458302'
               className='bannerIMG'
               alt='BGgray'
             ></img>
@@ -61,7 +61,7 @@ export default function RoutineTwo() {
           </div>
           <div className='col-lg-4 text-center shopBanner5 mb-3'>
             <img
-              src='https://ik.imagekit.io/cz92t2phsuf/Bundles/5_X4FKI3Pfy.png?updatedAt=1640263866662'
+              src='https://ik.imagekit.io/mjwt5ns6bbx/88B5273C-D674-425E-9E4B-8D9B27CE450A_Ljn8tf60E.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648145458171'
               className='bannerIMG'
               alt='BGgray'
             ></img>

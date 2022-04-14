@@ -26,12 +26,14 @@ export default function RoutineFour() {
               <h2 className='bannerHead mt-1'>
                 Make your best friends tick/lice free
               </h2>
+              <p className='Bye'>Bye Bye Scratchy Legs</p>
               <p className='lead mt-4 para mb-3 text-start'>
                 <li className='bannerText'>Neem Oil - 15 ml </li>
                 <li className='bannerText'>Lemon Grass Oil - 15 ml</li>
               </p>
 
-              <button
+             <div className="r-btn">
+             <button
                 className='shopBannerButton mt-1'
                 onClick={routeChange8}
                 type='button'
@@ -40,6 +42,7 @@ export default function RoutineFour() {
                   Buy at <span style={{ fontSize: '17px' }}>₹</span> 399
                 </strong>
               </button>
+             </div>
               <img
                 src='https://ik.imagekit.io/cz92t2phsuf/Bundles/dog_AvDLKkoEXED.png?updatedAt=1640263888620'
                 className='bannerIMGDOG'

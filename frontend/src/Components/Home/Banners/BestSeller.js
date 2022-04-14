@@ -26,7 +26,7 @@ export default function BestSeller() {
               type='button'
             >
               <strong className='shopBannerText'>
-                Buy at <span style={{ fontSize: '17px' }}>₹</span> 749
+                Buy at <span style={{ fontSize: '17px' }}>₹</span> 750
               </strong>
             </button>
           </div>

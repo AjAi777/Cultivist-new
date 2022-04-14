@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Hurricane&display=swap');
+
 @media only screen and (max-width: 1140px) {
   .text-small {
     text-align: center;
@@ -17,12 +19,12 @@
 
 @media (min-width: 600px) {
   .background {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/1_s6V2_bQilQ.png?updatedAt=1639918371281');
+    background: url("https://ik.imagekit.io/cz92t2phsuf/Banners/1_s6V2_bQilQ.png?updatedAt=1639918371281");
     background-size: 100%;
     background-repeat: no-repeat;
   }
   .background2 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/2_hdC6BrxI8.png?updatedAt=1639918371636');
+    background: url("https://ik.imagekit.io/cz92t2phsuf/Banners/2_hdC6BrxI8.png?updatedAt=1639918371636");
     background-size: 100%;
     background-repeat: no-repeat;
   }
@@ -59,6 +61,7 @@
     background: #000b26;
     background-size: 100%;
   }
+
   .shopBanner3 {
     background: #cfced0;
     background-repeat: no-repeat;
@@ -97,20 +100,49 @@
   .bannerText {
     font-size: 16px;
     font-weight: 600;
+    margin-left: 1rem;
+    color: black;
   }
   .bannerHead {
     color: #34a853;
     font-size: 35px;
     font-weight: 600;
   }
+  .morn-bannerHead {
+    color: #34a853;
+    font-size: 45px;
+    font-weight: 400;
+    font-family: sans-serif;
+    width: -moz-fit-content;
+    width: -webkit-fill-available;
+    text-align: left;
+    margin-left: 8%;
+  }
+  .morningContent {
+    width: fit-content;
+    margin-right: 10rem;
+    margin-left: 2rem;
+    margin-bottom: 21rem;
+  }
+
+  .morn-btn {
+    width: fit-content;
+    margin-right: 71rem;
+    margin-top: -13rem;
+    font-family: sans-serif;
+    font-style: italic;
+  }
   .bannerRS {
     font-size: 17px;
+  }
+  .morningbtn {
+    margin-right: 8rem;
   }
   .shopBannerText {
     color: white;
   }
   .shopBannerButton {
-    padding: 0.5rem 1.5rem;
+    padding: 0.3rem 1rem;
     background-color: #00b84f;
     border: 1px solid green;
     border-radius: 0.5rem;
@@ -124,7 +156,7 @@
   }
   .bannerIMG {
     width: 100%;
-    height:468px;
+    height: 29rem;
   }
   .bannerIMGDOG {
     width: 80%;
@@ -137,32 +169,145 @@
     margin-bottom: 2rem;
   }
   .bannerHelp {
-    margin-top: 2.5rem;
+    margin-top: 5.5rem;
+    margin-bottom: .9rem;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 450;
+  }
+  .night-bannerHead {
+    font-size: 35px;
+    font-weight: 400;
+    margin-top: 3rem;
+    margin-right: 53rem;
+    width: -moz-fit-content;
+    width: -webkit-fill-available;
+  }
+  .nightContent {
+    width: fit-content;
+    margin-right: 44rem;
+    margin-left: 2rem;
+    margin-top: -53rem;
+  }
+  .night-btn {
+    width: fit-content;
+    margin-right: 71rem;
+    margin-top: -13rem;
+    font-style: italic;
+    font-family: sans-serif;
+  }
+  .nightbtn {
+    margin-right: 40rem;
+    border-radius: 1rem;
+    margin-top: -3rem;
+    margin-bottom: 0rem;
+  }
+  .nightImg {
+    margin-right: 10rem;
+  }
+
+  .ap-bannerHead {
+    color: #00b84f;
+    font-size: 35px;
+    font-weight: 400;
+    margin-top: 3rem;
+    margin-right: 53rem;
+    margin-left: 24rem;
+    font-family: sans-serif;
+    
+  }
+  .apContent {
+    width: fit-content;
+    margin-top: -52rem;
+    margin-right: 56rem;
+    color: black;
+  }
+  .ap-btn {
+    width: fit-content;
+    margin-right: 40rem;
+    margin-top: -36rem;
+    margin-top: -31rem;
+    font-family: sans-serif;
+    font-style: italic;
+    color: black;
+  }
+  .apBtn {
+    margin-right: 36rem;
+    margin-top: 6rem;
+  }
+
+  .apImg {
+    margin-left: 63rem;
+  }
+
+  
+  .ap2-bannerHead {
+    color: #00b84f;
+    font-size: 35px;
+    font-weight: 400;
+    font-family: sans-serif;
+    margin-top: 3rem;
+    margin-right: 53rem;
+    margin-left: 10rem;
+  }
+  .ap2Content {
+    width: fit-content;
+    margin-top: -53rem;
+    margin-right: 71rem;
+    color: black;
+  }
+  .ap2-btn {
+    width: fit-content;
+    margin-right: 40rem;
+    margin-top: -36rem;
+    margin-top: -31rem;
+    color: black;
+    font-family: sans-serif;
+  }
+  .ap2Btn {
+    margin-right: 36rem;
+    margin-top: 6rem;
+  }
+
+  .ap2Img {
+    margin-left: 63rem;
+  }
+  .r-btn{
+    margin-left: 2rem;
+  }
+  
+  .Bye{
+    font-family: 'Hurricane', sans-serif;
+    font-family: 'Hurricane', sans-serif;
+    font-size: 1.7rem;
+    margin-left: 1rem;
+    color: black;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .background {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/1_s6V2_bQilQ.png?updatedAt=1639918371281');
+    background: url("https://ik.imagekit.io/cz92t2phsuf/Banners/1_s6V2_bQilQ.png?updatedAt=1639918371281");
     background-size: 100%;
     background-repeat: no-repeat;
     width: 100%;
   }
+  
   .background2 {
-    background: url('https://ik.imagekit.io/cz92t2phsuf/Banners/2_hdC6BrxI8.png?updatedAt=1639918371636');
+    background: url("https://ik.imagekit.io/cz92t2phsuf/Banners/2_hdC6BrxI8.png?updatedAt=1639918371636");
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
   }
+
   .firstSection {
     margin-top: 4.5rem;
     height: 24vh;
   }
+
   .SecondSection {
     height: 19.5vh;
   }
+
   .button {
     color: white;
     font-weight: 600;
@@ -172,9 +317,11 @@
     margin-left: 0.5rem;
     margin-top: 0.8rem;
   }
+
   .buttonName {
     font-size: 11px;
   }
+
   .box-main {
     display: flex;
     justify-content: center;
@@ -184,51 +331,61 @@
     margin: auto;
     height: 80%;
   }
+
   .shopBanner {
     background: #fcf4ec;
     background-repeat: no-repeat;
     background-size: 100%;
   }
+
   .shopBanner2 {
     background: #000b26;
     background-repeat: no-repeat;
     background-size: 100%;
   }
+
   .shopBanner3 {
     background: #cfced0;
     background-repeat: no-repeat;
     background-size: 100%;
   }
+
   .shopBanner4 {
     background: #d0a288;
     background-repeat: no-repeat;
     background-size: 100%;
   }
+
   .shopBanner5 {
     background: #baa583;
     background-repeat: no-repeat;
     background-size: 100%;
   }
+
   .shopBanner6 {
     background: #8ce1ff;
     background-size: 100%;
     background-repeat: no-repeat;
   }
+
   .shopBanner7 {
     background-repeat: no-repeat;
     background: #fcf4ec;
     background-size: 100%;
   }
+
   .shopBanner8 {
     background: #8ce1ff;
     background-size: 100%;
     background-repeat: no-repeat;
   }
+
   .shopBanner9 {
     background: #fcb005;
     background-size: 100%;
     background-repeat: no-repeat;
   }
+
   .shopBannerButton2 {
     padding: 0.5rem 1.5rem;
     border: 1px solid green;
@@ -236,47 +393,87 @@
     margin-top: 1rem;
     margin-bottom: 5px;
   }
+
   .bannerText {
     font-size: 13px;
     font-weight: 600;
   }
+
   .bannerRS {
     font-size: 12px;
   }
+
   .bannerHead {
     color: #34a853;
     font-size: 21px;
     font-weight: 600;
   }
+
   .shopBannerText {
     color: white;
   }
+
   .bannerIMGDOG {
     visibility: hidden;
     clear: both;
     display: none;
   }
+
   .shopBannerButton {
     padding: 0.3rem 1rem;
     background-color: #00b84f;
     border: 1px solid green;
     border-radius: 0.5rem;
   }
+
   .bannerIMG {
     width: 100%;
   }
+
   .bannerONE {
     width: 500px;
   }
+
   .bannerTWO {
     width: 550px;
   }
+
   .bannerCONTAINER {
     padding-bottom: 1.5rem;
     margin-bottom: 2rem;
   }
+
+  .morn-bannerHead {
+    color: #34a853;
+    font-size: 33px;
+    font-weight: 600;
+    width: -moz-fit-content;
+    width: -webkit-fill-available;
+    text-align: left;
+    margin-left: 8%;
+  }
+ .night-bannerHead {
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-right: 53rem;
+  }
+ .ap-bannerHead {
+    color: #00b84f;
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 3rem;
+  }
+ .ap2-bannerHead {
+    color: #00b84f;
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 3rem;
+  }
+
   .bannerHelp {
     margin-top: 1rem;
+    margin-bottom: 1rem;
     font-size: 11px;
     font-weight: 600;
   }
