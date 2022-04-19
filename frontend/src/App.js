@@ -25,6 +25,7 @@ import RefundPage from './Components/Footer/Pages/RefundPage';
 import PrivacyPolicyPage from './Components/Footer/Pages/PrivacyPolicyPage';
 import ShippingInfoPage from './Components/Footer/Pages/ShippingInfoPage';
 import TermsAndConditions from './Components/Footer/Pages/TermsAndConditions';
+import CuratedContent from './Components/Footer/Pages/CuratedContent';
 
 function App() {
   useLayoutEffect(() => {
@@ -97,6 +98,9 @@ function App() {
           </Route>
           <Route exact path='/terms_and_conditions'>
             <TermsAndConditions />
+          </Route>
+          <Route exact path='/CuratedContent'>
+            <CuratedContent />
           </Route>
           <Route>
             <ErrorScreen />

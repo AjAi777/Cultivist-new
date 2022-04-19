@@ -339,7 +339,7 @@ function Header() {
                 <Link
                   className='nav-link dad'
                   aria-current='page'
-                  to='#'
+                  to='/CuratedContent'
                   style={{
                     fontSize: '1rem',
                     fontWeight: '600',
