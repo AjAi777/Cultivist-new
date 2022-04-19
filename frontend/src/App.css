@@ -252,6 +252,7 @@ input {
 }
 
 @media (min-width: 600px) {
+  
   .checkoutSteps {
     text-decoration: none;
     font-size: 18px;
@@ -364,6 +365,7 @@ input {
 }
 
 @media only screen and (max-width: 600px) {
+  
   .gate {
     margin-left: 1rem;
   }
@@ -451,6 +453,9 @@ input {
 }
 
 @media (min-width: 600px) {
+  .loop {
+    margin: 7.5rem 7rem !important;
+  }
   .gate {
     margin-right: 10rem;
   }
