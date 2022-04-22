@@ -26,7 +26,7 @@ const TreeScreen = ({ history, match }) => {
 
   const addToCartHandler = () => {
     history.push(
-      `/treecart/${match.params.id}?qty=${qty}?name=${treeName}?occasion=${treeOccasion}`
+      //`/treecartroute/${match.params.id}?qty=${qty}?name=${treeName}?occasion=${treeOccasion}`
     );
   };
 
@@ -325,6 +325,7 @@ const TreeScreen = ({ history, match }) => {
                 </div>
                 <div className='row mt-2'>
                   <div className='col-lg-6 mt-2'>
+
                     <button
                       type='button'
                       onClick={addToCartHandler}

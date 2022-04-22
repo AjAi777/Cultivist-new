@@ -91,13 +91,16 @@ const TreeCard = ({ tree }) => {
               </h6>
             </div>
             <div className='col d-flex justify-content-center mujeeb'>
+            <Link to='/treecartroute'>
               <button
                 type='button'
                 className='btn btn-sm btn-success p-2'
                 style={{ boxShadow: 'unset', border: 'unset' }}
+
               >
                 <span className='fw-bold'>Plant Now</span>
               </button>
+              </Link>
             </div>
           </div>
         </div>

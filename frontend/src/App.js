@@ -45,13 +45,13 @@ function App() {
           <Route exact path='/contact'>
             <ContactScreen />
           </Route>
-          <Route path='/product/:id'>
+          <Route exact path='/product/:id'>
             <ProductScreen />
           </Route>
-          <Route path='/tree/:id'>
+          <Route exact path='/tree/:id'>
             <TreeScreen />
           </Route>
-          <Route path='/profile'>
+          <Route exact path='/profile'>
             <ProfileScreen />
           </Route>
           <Route exact path='/orders'>
@@ -72,7 +72,7 @@ function App() {
           <Route exact path='/treecart'>
             <TreeCartScreen />
           </Route>
-          <Route path='/shipping'>
+          <Route exact path='/shipping'>
             <ShippingScreen />
           </Route>
           <Route exact path='/payment'>
@@ -86,6 +86,9 @@ function App() {
           </Route>
           <Route exact path='/about_us'>
             <AboutUsPage />
+          </Route>
+          <Route exact path='/treecartroute'>
+            <TreeCartScreen/>
           </Route>
           <Route exact path='/cancellation_refund'>
             <RefundPage />
